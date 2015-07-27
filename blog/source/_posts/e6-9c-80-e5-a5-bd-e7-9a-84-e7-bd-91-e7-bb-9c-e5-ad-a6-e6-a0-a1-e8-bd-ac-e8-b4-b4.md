@@ -1,0 +1,9 @@
+title: 最好的网络学校 - 转贴
+id: 120
+categories:
+  - '学英文,哎'
+date: 2007-12-25 02:06:59
+tags:
+---
+
+<div id="msgcns!9697D6160EFEBC17!1586" class="bvMsg"><p>出处:[http://angelived.org/2007/12/20/universities_with_the_best_free_online_courses/](http://angelived.org/2007/12/20/universities_with_the_best_free_online_courses/ "http://angelived.org/2007/12/20/universities_with_the_best_free_online_courses/") <p>原文地址：[Universities With the Best Free Online Courses](http://education-portal.com/articles/Universities_with_the_Best_Free_Online_Courses.html) <p>翻译：[铁灰色](http://angelived.org/) <p>最好的网络学校： <p>这篇文章并非和实用有关，不过如果你是在尝试寻找一些不错的网上课程的话，那么以下这篇关于网络学校的文章可能会对你有些帮助。 <p>1， [麻省理工学院](http://ocw.mit.edu/OcwWeb/web/home/home/index.htm) <p>麻省的网上学院涵盖的范围非常之广，总计有超过1800门的免费课程，所有的课程都是以多媒体的形式呈现的。当然了，如果你对某些课程的资料感兴趣，你也会找到想要的文本资料，更惊喜的是相当一部分文本资料是以多语言形式提供的，语言在这里，并不是问题。 <p>2， [公开学院](http://openlearn.open.ac.uk/) <p>公开学院是英国最大的学术机构，每一个注册的学生都能在里面找到自己想要的资料，无论是历史还是艺术，或者教育和信息技术。 <p>3， [卡耐基大学](http://www.cmu.edu/oli/) <p>卡耐基学院通过一个名为“开放学习原动力”的计划为所有感兴趣的学生提供详尽的课程介绍和资料共享，不仅如此，卡耐基学院还设有专门的指导人员为学生提供在线的答疑解惑。 <p>4，[ 图夫大学](http://ocw.tufts.edu/) <p>和麻省有相似之处，图夫也是对所有人开放并且提供各专业的学习资料，课堂笔记，作业展示等等，所有的资料都是按学院划分，这样在搜索的时候会很方便。 <p>5， [斯坦福大学](http://itunes.stanford.edu/) <p>作为全球最强的大学之一，斯坦福选择了和业界巨头苹果合作，这样所有在斯坦福网络得到的资料都可以直接传入iPod和Mac播放，用户更是可以在自己的iTunes中为斯坦福专门建立一个分类。 <p>6， [加州大学伯克利分校](http://webcast.berkeley.edu/courses.php) <p>伯克利在网络教学方面起步较早了，2001年开始他们就将很多课程的教学资料，课堂笔记等内容同步地放到了网络上，如今在伯克利的网络教学中心，更是可以轻而易举地找到上百种课程的资料，基本涵盖了所有的专业和课程。 <p>7， [犹他大学](http://ocw.usu.edu/) <p>犹他大学将几乎所有的课程资料都放在了网上，而且提供即时的资料下载。 <p>8， [宾夕法尼亚科茨城大学](http://www.kutztownsbdc.org/course_listing.asp) <p>科茨城的小型商务发展中心是互联网上资料最全面的小型商务资料库，涵盖了概念内的所有方面，并且提供文本，幻灯片，图片和视频等多种形式的展示手段，对于一些不熟悉小型商务的人来说是很有帮助的。 <p>9， [南昆士兰大学](http://ocw.usq.edu.au/) <p>绝大部分的课程资料都可以在网上获得，而且南昆大还提供在线的即时咨询。 <p>10，[ 加州大学埃尔文分校](http://ocw.uci.edu/) <p>埃尔文是近期才加入加州大网络学校的，所以暂时只能提供部分的专业课程和资料下载，不过鉴于加州大的雄厚实力，埃尔文的发展前景和增长速度会很快弥补缺陷的。</div>
