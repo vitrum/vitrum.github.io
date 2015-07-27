@@ -63,8 +63,9 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: next
+theme: myNext
 
+avatar: https://avatars3.githubusercontent.com/u/401767?v=3&s=140
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy: 
