@@ -1,0 +1,623 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+    
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
+
+
+
+
+  <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
+
+
+<meta name="description" content="由于新的网站对中文支持不是很完美所以张小璐由中文转为英文.Slide是一款(Mac版很快就会发布)为发现，游戏和分享图片，视频以及其他媒介而设计的免费软件.Slide将帮助您和朋友或家人在频道里一起分享您的照片，或许您也会发现一些您已经遗忘的照片…
+
+&amp;quot;PUSH&amp;quot;是在近10年硅谷的信件中提到的数量最多的单词，PointCast和他旗下的产品就是一个最好的证明.今天，低廉的宽带价">
+<meta property="og:type" content="article">
+<meta property="og:title" content="幻灯片人生--Slide Beta">
+<meta property="og:url" content="http://vitrum.github.io/2005/09/27/e5-b9-bb-e7-81-af-e7-89-87-e4-ba-ba-e7-94-9f-slide-beta/index.html">
+<meta property="og:site_name" content="Vitrum's Blog">
+<meta property="og:description" content="由于新的网站对中文支持不是很完美所以张小璐由中文转为英文.Slide是一款(Mac版很快就会发布)为发现，游戏和分享图片，视频以及其他媒介而设计的免费软件.Slide将帮助您和朋友或家人在频道里一起分享您的照片，或许您也会发现一些您已经遗忘的照片…
+
+&amp;quot;PUSH&amp;quot;是在近10年硅谷的信件中提到的数量最多的单词，PointCast和他旗下的产品就是一个最好的证明.今天，低廉的宽带价">
+<meta property="og:image" content="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/001.jpg">
+<meta property="og:image" content="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/002.jpg">
+<meta property="og:image" content="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/003.jpg">
+<meta property="og:image" content="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/004.jpg">
+<meta property="og:image" content="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/006.jpg">
+<meta property="og:image" content="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/005.jpg">
+<meta property="og:image" content="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/009.jpg">
+<meta property="og:image" content="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/010.jpg">
+<meta property="og:image" content="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/011.jpg">
+<meta property="og:image" content="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/012.jpg">
+<meta property="og:image" content="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/013.jpg">
+<meta property="og:image" content="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/007.jpg">
+<meta property="og:image" content="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/008.jpg">
+<meta property="og:updated_time" content="2015-07-27T07:54:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="幻灯片人生--Slide Beta">
+<meta name="twitter:description" content="由于新的网站对中文支持不是很完美所以张小璐由中文转为英文.Slide是一款(Mac版很快就会发布)为发现，游戏和分享图片，视频以及其他媒介而设计的免费软件.Slide将帮助您和朋友或家人在频道里一起分享您的照片，或许您也会发现一些您已经遗忘的照片…
+
+&amp;quot;PUSH&amp;quot;是在近10年硅谷的信件中提到的数量最多的单词，PointCast和他旗下的产品就是一个最好的证明.今天，低廉的宽带价">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post'
+  };
+</script>
+
+    <title> 幻灯片人生--Slide Beta // Vitrum's Blog </title>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+
+
+
+<div class="container one-column page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Vitrum's Blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            標籤
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <div class="main-inner">
+            <div id="content" class="content">
+                
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              幻灯片人生--Slide Beta
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2005-09-27T08:11:06+08:00" content="2005-09-27">
+            2005-09-27
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!258" class="bvMsg"><div><br><div><strong>由于新的网站对中文支持不是很完美所以张小璐由中文转为英文.</strong><br>Slide是一款(Mac版很快就会发布)为发现，游戏和分享图片，视频以及其他媒介而设计的免费软件.<br>Slide将帮助您和朋友或家人在频道里一起分享您的照片，或许您也会发现一些您已经遗忘的照片…</div>
+
+<p>&quot;PUSH&quot;是在近10年硅谷的信件中提到的数量最多的单词，PointCast和他旗下的产品就是一个最好的证明.<br>今天，低廉的宽带价格结束了一半美国人的窄带生活，人们期待通过简便的方式发布和预览从移动电话照片到<br>Prodcasts的数字内容。RSS和相关技术正好就是这个方法实现的桥梁，但是，这些技术对于那些技术菜鸟来说简直是太难了. </p>
+<p>这就是Slide存在的意义：发现，娱乐，分享您关心的事件. </p>
+<p><u><strong>注</strong>：PointCast是著名的频道信息“广播”软件，也是“推送”（Push ）技术的鼻祖。<br>据统计，该公司在美国一天的信息流量为8000万比特，使用者高达120万人。网上的许多朋友都使用过并喜欢它。<br>的确，PointCast以其信息量大、内容丰富、更新速度快等特点赢得了不少奖项和美誉。<br>PointCast 共有两个旗舰产品：PointCast Business Network 和PointCast College Network</u> </p>
+<p>下面我就来介绍这款软件的简单使用过程.<br> 1. 首先就是安装拉，您要到 <a href="http://www.slide.com" target="_blank" rel="external">http://www.slide.com</a> 下载本软件.Slide是个小巧玲珑的软件，只有2.1M,但是虽然只有这么小，内存的占用居然达到了21MB之多实在令人匝舌，看来正式版有很多事情可以做了。在安装的同时您还要注册一个帐号，注册过程花不了您很多时间，只要将您的E-mail、昵称和登陆silde的密码填下就好了. </p>
+<p>2. 安装的过程十分简单双击下载到的安装文件，点YES,5秒钟不到就可以了。安装完成自动启动软件. </p>
+<p><img src="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/001.jpg" alt=""></p>
+<p>3. 第一次运行的时候会出现一些提示，您只需懂得一点点英文就能看明白的，小璐在这里就不多说. </p>
+<p><img src="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/002.jpg" alt=""></p>
+<p>4. Slide将图片表示的类型叫做频道（Channle），您可以自己定义这些图片的频道名称。<br>小璐就创建一个新的频道为例子吧。<br>点击”Create Channle”,出现创建的对话框，点”floder”选择图片文件夹，或者选”Files”增加图片,至于那个Feeds当然就是RSS咯！选择好了图片以后您就可以给您的Channle起个名字了，<br>同时您还可以邀请您的朋友或者您的家人来和您分享您的图片。您还可以定义给您的频道的属性是<br>”Public”就是在网上公开您的频道；<br>”Friends Only”就是只允许您的朋友看得到您的频道；<br>”Invite Only”就是只有您邀请的朋友才能看得到.<br>您还可以给每张图片加上注释. </p>
+<p><img src="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/003.jpg" alt=""></p>
+<p>5. 在前面笔者介绍过Slide可以和朋友一起分享很多的文件，<br>不仅仅是图片还可以分享音乐拉，视频拉，等等.<br>只要您单击您在您的朋友那里看到您感兴趣的歌曲您就可以点击以下载这个文件.<br>视频和其他文件也是同样的道理.</p>
+<p><img src="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/004.jpg" alt=""></p>
+<p><img src="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/006.jpg" alt=""></p>
+<p>6. 在Ticker的顶端的勾号表示显示哪些频道的内容，而那个齿轮则代表频道的设置. </p>
+<p><img src="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/005.jpg" alt=""></p>
+<p>7. 当您不显示所有的频道的时候整个siidebar就会空白，但是只要您仔细的看就会看到”Drag files here”的字样，<br>意为拖动文件到这。<br>这就像是在《九品芝麻官》里的那个宋世杰说；“揍我啊，揍我啊”一样，既然人家说了，就不能不给他面子，<br>我们就尽管拖文件上去就是了，如您所看图片就会显示出其本来的面貌，不管这图里是帅哥或者美女.<br>放上视频就显示视频的一些信息，放什么，显示什么…….. </p>
+<p><img src="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/009.jpg" alt=""></p>
+<p><img src="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/010.jpg" alt=""></p>
+<p><img src="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/011.jpg" alt=""></p>
+<p><img src="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/012.jpg" alt=""></p>
+<p>8. 当然，您不能受到这个软件的Sidebar默认的约束，<br>既可以站着放也可以躺着放，既可以放左边也可以横右边，既可以放上边也可以放下边，<br>既可以….好象没了吧……</p>
+<p><img src="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/013.jpg" alt=""></p>
+<p>整体来说，除去内存占用有点离谱来说其他的功能还是比较实在而有用的，<br>软件界面在设计上可谓时髦，类似Vista的玻璃效果，非常的漂亮.. </p>
+<p><img src="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/007.jpg" alt=""></p>
+<p><img src="http://spaces.msn.com/mmm2005-09-14_12.54/xiaolu/slide/008.jpg" alt=""></p>
+<p>如果您对此软件有兴趣可以到www.slide.com下载测试版，<br>前段时间是需要邀请才能用的，现在已经开放注册. </p>
+<p>张小璐，2005-9-1 </p></div></div><p></p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2005/09/27/e7-94-b5-e5-bd-b1-e4-ba-ba-e7-94-9f-e7-ba-aa-e5-bf-b5-e7-8e-8b-e5-b4-b4-e5-85-84/" rel="prev">电影人生---纪念王崴兄</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2005/09/27/e8-b0-88-e8-ae-ba-e8-bf-99-e6-98-af-e4-b8-80-e4-b8-aa-e4-bb-80-e4-b9-88-e6-a0-b7-e7-9a-84-e6-97-b6-e4-bb-a3/" rel="next">谈论这是一个什么样的时代</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+            </div>
+
+            
+
+            
+              <div class="comments" id="comments">
+                
+              </div>
+            
+        </div>
+
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Vitrum Zhu" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Vitrum Zhu</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">653</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-name">分類</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <p class="post-toc-empty">此文章未包含目錄</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="copyright" >
+  
+  &copy; &nbsp;  2005 - 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vitrum Zhu</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+        </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+</div>
+
+<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.4"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.4"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.4" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.4" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (CONFIG.sidebar === 'always') {
+            displaySidebar();
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+<!-- lazyload -->
+<script type="text/javascript" src="/js/lazyload.js"></script>
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery("#posts img").lazyload({
+            placeholder: "/images/loading.gif",
+            effect: "fadeIn"
+        });
+    });
+</script>
+</body>
+</html>

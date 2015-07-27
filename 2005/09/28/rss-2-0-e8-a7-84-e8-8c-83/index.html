@@ -1,0 +1,575 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+    
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
+
+
+
+
+  <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
+
+
+<meta name="description" content="### RSS 2.0规范　　RSS是 Really Simple Syndication的缩写（对rss2.0而言，是这三个词的缩写，对rss1.0而言则是RDF Site Summary的缩写，1.0与2.0走的是两个体系）　　RSS 基于XML，所有的 RSS 必须遵循w3c网站上公布的XML 1.0 规范。　　在一个RSS文档中，根元素是&amp;lt;rss&amp;gt;，带有一个必备属性versio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RSS 2.0规范">
+<meta property="og:url" content="http://vitrum.github.io/2005/09/28/rss-2-0-e8-a7-84-e8-8c-83/index.html">
+<meta property="og:site_name" content="Vitrum's Blog">
+<meta property="og:description" content="### RSS 2.0规范　　RSS是 Really Simple Syndication的缩写（对rss2.0而言，是这三个词的缩写，对rss1.0而言则是RDF Site Summary的缩写，1.0与2.0走的是两个体系）　　RSS 基于XML，所有的 RSS 必须遵循w3c网站上公布的XML 1.0 规范。　　在一个RSS文档中，根元素是&amp;lt;rss&amp;gt;，带有一个必备属性versio">
+<meta property="og:updated_time" content="2015-07-27T07:54:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RSS 2.0规范">
+<meta name="twitter:description" content="### RSS 2.0规范　　RSS是 Really Simple Syndication的缩写（对rss2.0而言，是这三个词的缩写，对rss1.0而言则是RDF Site Summary的缩写，1.0与2.0走的是两个体系）　　RSS 基于XML，所有的 RSS 必须遵循w3c网站上公布的XML 1.0 规范。　　在一个RSS文档中，根元素是&amp;lt;rss&amp;gt;，带有一个必备属性versio">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post'
+  };
+</script>
+
+    <title> RSS 2.0规范 // Vitrum's Blog </title>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+
+
+
+<div class="container one-column page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Vitrum's Blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            標籤
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <div class="main-inner">
+            <div id="content" class="content">
+                
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              RSS 2.0规范
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2005-09-28T07:40:12+08:00" content="2005-09-28">
+            2005-09-28
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!268" class="bvMsg"><div><br><br>### RSS 2.0规范<br><br>　　RSS是 Really Simple Syndication的缩写（对<a href="http://www.infomall.cn/cgi-bin/mallgate/20040514/http://blogs.law.harvard.edu/tech/rss" target="_blank" rel="external"><u><font color="#0000ff">rss2.0</font></u></a>而言，是这三个词的缩写，对<a href="http://www.infomall.cn/cgi-bin/mallgate/20040514/http://web.resource.org/rss/1.0/" target="_blank" rel="external"><u><font color="#0000ff">rss1.0</font></u></a>而言则是RDF Site Summary的缩写，1.0与2.0走的是两个体系）<br>　　RSS 基于XML，所有的 RSS 必须遵循w3c网站上公布的XML 1.0 规范。<br>　　在一个RSS文档中，根元素是&lt;rss&gt;，带有一个必备属性version，用以指明该文档遵循的rss规范，如果rss文档遵循本规范，则version值必须是2.0。<br>　　&lt;rss&gt;元素只有一个子元素，包含关于频道的一些信息。频道(channel)是整个blog，项(item)指一篇文章或日志(也有称这为post)。<br><br><a></a><br><br>#### RSS2.0元素channel的子元素列表<br><br><table border="1"><br><tbody><br><tr><br><td>元素(Element)</td><br><td>描述(Description)</td><br><td>值域</td><br><td>重要性</td><br><td>举例(Example)</td></tr><br><tr><br><td>title</td><br><td>频道名称</td><br><td></td><br><td>必备</td><br><td>GoUpstate.com News Headlines</td></tr><br><tr><br><td>link</td><br><td>频道的URL</td><br><td></td><br><td>必备</td><br><td><a href="http://www.goupstate.com/" target="_blank" rel="external">http://www.goupstate.com/</a></td></tr><br><tr><br><td>Description</td><br><td>频道的描述</td><br><td></td><br><td>必备</td><br><td>The latest news from GoUpstate.com, a Spartanburg Herald-Journal Web site.</td></tr><br><tr><br><td></td><br><td></td><br><td></td><br><td></td><br><td></td></tr><br><tr><br><td>language</td><br><td>频道文章所用语言，</td><br><td>可用netscape或w3c推荐的列表</td><br><td>可选</td><br><td>en-us</td></tr><br><tr><br><td>copyright</td><br><td>频道内容的版权说明</td><br><td></td><br><td>可选</td><br><td>Copyright 2002, Spartanburg Herald-Journal</td></tr><br><tr><br><td>managingEditor</td><br><td>责任编辑的email</td><br><td></td><br><td>可选</td><br><td>geo@herald.com (George Matesky)</td></tr><br><tr><br><td>webMaster</td><br><td>负责频道技术事务的网站管理员email</td><br><td></td><br><td>可选</td><br><td>betty@herald.com (Betty Guernsey)</td></tr><br><tr><br><td>pubDate</td><br><td>频道内容发布日期，格式遵循RFC822格式（年份可为2们或4位）</td><br><td></td><br><td>可选</td><br><td>Sat, 07 Sep 2002 00:00:01 GMT</td></tr><br><tr><br><td>lastBuildDate</td><br><td>频道内容最后的修改日期</td><br><td></td><br><td>可选</td><br><td>Sat, 07 Sep 2002 09:42:31 GMT</td></tr><br><tr><br><td>category</td><br><td>指定频道所属的一个或几个类别</td><br><td></td><br><td>可选</td><br><td>&lt;category&gt;Newspapers&lt;/category&gt;</td></tr><br><tr><br><td>generator</td><br><td>生成该频道的程序名</td><br><td></td><br><td>可选</td><br><td>MightyInHouse Content System v2.3</td></tr><br><tr><br><td>docs</td><br><td>指向该RSS文件所用格式说明的URL</td><br><td></td><br><td>可选</td><br><td><a href="http://blogs.law.harvard.edu/tech/rss" target="_blank" rel="external">http://blogs.law.harvard.edu/tech/rss</a></td></tr><br><tr><br><td>cloud</td><br><td>Allows processes to register with a cloud to be notified of updates to the channel, implementing a lightweight publish-subscribe protocol for RSS feeds. More info here.</td><br><td></td><br><td>可选</td><br><td>&lt;cloud domain=&quot;rpc.sys.com&quot; port=&quot;80&quot; path=&quot;/RPC2&quot; registerProcedure=&quot;pingMe&quot; protocol=&quot;soap&quot;/&gt;</td></tr><br><tr><br><td>ttl</td><br><td>有效期，用以指明该频道可被缓存的最长时间</td><br><td>分钟为单位</td><br><td>可选</td><br><td>&lt;ttl&gt;60&lt;/ttl&gt;</td></tr><br><tr><br><td>image</td><br><td>指定一个 GIF或JPEG或PNG图片，用以与频道一起显示</td><br><td></td><br><td>可选</td><br><td></td></tr><br><tr><br><td>rating</td><br><td>这个频道的分级（主要指成人、限制、儿童等）</td><br><td></td><br><td>可选</td><br><td></td></tr><br><tr><br><td>textInput</td><br><td>指定一个text输入框供用户输入，具体信息及功能未定。</td><br><td></td><br><td>可选</td><br><td></td></tr><br><tr><br><td>skipHours</td><br><td>提示新闻聚合器，那些小时时段它可以跳过。</td><br><td></td><br><td>可选</td><br><td></td></tr><br><tr><br><td>skipDays</td><br><td>提示新闻聚合器，那些天它可以跳过。</td><br><td></td><br><td>可选</td><br><td></td></tr></tbody></table><br><br>#### RSS2.0元素channel的子元素image的子元素列表<br><br><table border="1"><br><tbody><br><tr><br><td>元素(Element)</td><br><td>描述(Description)</td><br><td>值域</td><br><td>重要性</td><br><td>举例(Example)</td></tr><br><tr><br><td>url</td><br><td>图片的url</td><br><td></td><br><td>必备</td><br><td></td></tr><br><tr><br><td>title</td><br><td>图片的标题，用于http的alt属性</td><br><td></td><br><td>必备</td><br><td></td></tr><br><tr><br><td>link</td><br><td>网站的url(实际中常以频道的url代替)</td><br><td></td><br><td>必备</td><br><td></td></tr><br><tr><br><td>width</td><br><td>图片的宽度(象素为单位)</td><br><td>最大144,默认88</td><br><td>可选</td><br><td></td></tr><br><tr><br><td>height</td><br><td>图片的高度(象素为单位)</td><br><td>最大400，默认31</td><br><td>可选</td><br><td></td></tr><br><tr><br><td>description</td><br><td>用于link的title属性</td><br><td></td><br><td>可选</td><br><td></td></tr></tbody></table><br><br>#### RSS2.0元素channel的子元素cloud的子元素列表<br><br><table border="1"><br><tbody><br><tr><br><td>元素(Element)</td><br><td>描述(Description)</td><br><td>值域</td><br><td>重要性</td><br><td>举例(Example)</td></tr><br><tr><br><td>domain</td><br><td>Cloud程序所在机器的域名或IP地址</td><br><td></td><br><td></td><br><td>radio.xmlstoragesystem.com</td></tr><br><tr><br><td>port</td><br><td>访问clound程序所通过的端口</td><br><td></td><br><td></td><br><td>80</td></tr><br><tr><br><td>path</td><br><td>程序所在路径（不一定是真实路径）</td><br><td></td><br><td></td><br><td>/RPC2</td></tr><br><tr><br><td>registerProcedure</td><br><td>注册的可提供的服务或过程</td><br><td></td><br><td></td><br><td>xmlStorageSystem.rssPleaseNotify</td></tr><br><tr><br><td>protocol</td><br><td>协议</td><br><td>xml-rpc, soap , http-post 之一</td><br><td></td><br><td>xml-rpc</td></tr></tbody></table><br><br>#### RSS2.0元素channel的子元素textInput的子元素列表<br><br><table border="1"><br><tbody><br><tr><br><td>元素(Element)</td><br><td>描述(Description)</td><br><td>值域</td><br><td>重要性</td><br><td>举例(Example)</td></tr><br><tr><br><td>title</td><br><td>Submit按钮的标签</td><br><td></td><br><td>必备</td><br><td></td></tr><br><tr><br><td>description</td><br><td>解释text输入区</td><br><td></td><br><td>必备</td><br><td></td></tr><br><tr><br><td>name</td><br><td>Text area对象的名字</td><br><td></td><br><td>必备</td><br><td></td></tr><br><tr><br><td>link</td><br><td>处理提交的请求的cgi程序</td><br><td></td><br><td>必备</td><br><td></td></tr></tbody></table><br><br><p align="left">关于item的内容，请看<a href="http://www.infomall.cn/cgi-bin/mallgate/20040514/http://hedong.3322.org/archives/000268.html" target="_blank" rel="external"><u><font color="#0000ff">基于XML-RPC的BloggerAPI学习</font></u></a>.<br>说明：<br>　　rss2.0要求&lt;link&gt;和&lt;url&gt;的值的非常部分开头，须是在IANA注册过的，如<a href="http://或https://或ftp://等。" target="_blank" rel="external">http://或https://或ftp://等。</a><br>　　一个rss文件中，可以包括没有这儿定义的元素，只要它是在某个命名空间被定义过。<br>　　一个常见问题是与的区别，两者在有些情况下是相同的，但前者可指几某个长文中的某个位置（即所谓的页内锚点吧）。<br><br>Matt Mower 做的一个基于RSS2.0的一个project，里面有多cloud的定义的一些应用！或许对你有用！ ：）<br><br><a href="http://www.infomall.cn/cgi-bin/mallgate/20040514/http://matt.blogs.it/specs/ENT/1.0/" target="_blank" rel="external"><u><font color="#0000ff">http://www.infomall.cn/cgi-bin/mallgate/20040514/http://matt.blogs.it/specs/ENT/1.0/</font></u></a><br></p></div></div></span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2005/09/28/e6-81-90-e6-80-96-e5-88-86-e5-ad-90-e5-9c-a8-e5-b9-bf-e5-b7-9e-e7-9a-84-e4-b8-8d-e5-b9-b8-e9-81-ad-e9-81-87/" rel="prev">恐怖分子在广州的不幸遭遇</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2005/09/28/flash-e6-98-af-e5-a6-82-e4-bd-95-e7-82-bc-e6-88-90-e7-9a-84/" rel="next">flash 是如何炼成的</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+            </div>
+
+            
+
+            
+              <div class="comments" id="comments">
+                
+              </div>
+            
+        </div>
+
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Vitrum Zhu" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Vitrum Zhu</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">653</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-name">分類</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <p class="post-toc-empty">此文章未包含目錄</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="copyright" >
+  
+  &copy; &nbsp;  2005 - 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vitrum Zhu</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+        </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+</div>
+
+<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.4"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.4"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.4" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.4" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (CONFIG.sidebar === 'always') {
+            displaySidebar();
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+<!-- lazyload -->
+<script type="text/javascript" src="/js/lazyload.js"></script>
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery("#posts img").lazyload({
+            placeholder: "/images/loading.gif",
+            effect: "fadeIn"
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,577 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+    
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
+
+
+
+
+  <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
+
+
+<meta name="description" content="Programming in Luaby Roberto IerusalimschyLua.org, December 2003ISBN 85-903798-1-7Read more about the book here.If you like the online version, please consider buying a paper copy.   Copyright © 2003-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LUA 的书,,学习中,,">
+<meta property="og:url" content="http://vitrum.github.io/2005/05/26/lua-e7-9a-84-e4-b9-a6-e5-ad-a6-e4-b9-a0-e4-b8-ad/index.html">
+<meta property="og:site_name" content="Vitrum's Blog">
+<meta property="og:description" content="Programming in Luaby Roberto IerusalimschyLua.org, December 2003ISBN 85-903798-1-7Read more about the book here.If you like the online version, please consider buying a paper copy.   Copyright © 2003-">
+<meta property="og:image" content="http://www.lua.org/pil/capa.jpg">
+<meta property="og:image" content="http://rcm-images.amazon.com/images/G/01/buttons/buy-from-tan.gif">
+<meta property="og:updated_time" content="2015-07-27T07:54:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LUA 的书,,学习中,,">
+<meta name="twitter:description" content="Programming in Luaby Roberto IerusalimschyLua.org, December 2003ISBN 85-903798-1-7Read more about the book here.If you like the online version, please consider buying a paper copy.   Copyright © 2003-">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post'
+  };
+</script>
+
+    <title> LUA 的书,,学习中,, // Vitrum's Blog </title>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+
+
+
+<div class="container one-column page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Vitrum's Blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            標籤
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <div class="main-inner">
+            <div id="content" class="content">
+                
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              LUA 的书,,学习中,,
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2005-05-26T02:58:47+08:00" content="2005-05-26">
+            2005-05-26
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!122" class="bvMsg"><br><br><a href="http://www.lua.org/pil/" target="_blank" rel="external">Programming in Lua</a><br><br><a href="http://www.inf.puc-rio.br/~roberto/book/" target="_blank" rel="external"><img src="http://www.lua.org/pil/capa.jpg" alt="" title="book"></a><br><br>by Roberto Ierusalimschy<br>Lua.org, December 2003<br>ISBN 85-903798-1-7<br><br>Read more about the book <a href="http://www.inf.puc-rio.br/~roberto/book/" target="_blank" rel="external">here</a>.<br>If you like the online version, please consider buying a paper copy. <a href="http://www.amazon.com/exec/obidos/ASIN/8590379817/theprogrammil-20" target="_blank" rel="external"><img src="http://rcm-images.amazon.com/images/G/01/buttons/buy-from-tan.gif" alt="[Buy from Amazon]"></a>  <p><font size="2">Copyright © 2003-2004 Roberto Ierusalimschy. All rights reserved.<br>This online book is for personal use only. It cannot be copied to other web sites or further distributed in any form. </font><br><font size="2">  </font> Contents  <a href="http://www.lua.org/pil/p1.html" target="_blank" rel="external">Preface</a>    <a href="http://www.lua.org/pil/p1.1.html" target="_blank" rel="external">Audience</a>  <a href="http://www.lua.org/pil/p1.2.html" target="_blank" rel="external">Other Resources</a>  <a href="http://www.lua.org/pil/p1.3.html" target="_blank" rel="external">A Few Typographical Conventions</a>  <a href="http://www.lua.org/pil/p1.4.html" target="_blank" rel="external">About the Book</a>  <a href="http://www.lua.org/pil/p1.5.html" target="_blank" rel="external">Acknowledgments</a>      <a href="http://www.lua.org/pil/1.html" target="_blank" rel="external"><strong>Part I. The Language</strong></a>    <a href="http://www.lua.org/pil/1.html" target="_blank" rel="external">1 Getting Started</a>    <a href="http://www.lua.org/pil/1.1.html" target="_blank" rel="external">1.1 Chunks</a>  <a href="http://www.lua.org/pil/1.2.html" target="_blank" rel="external">1.2 Global Variables</a>  <a href="http://www.lua.org/pil/1.3.html" target="_blank" rel="external">1.3 Some Lexical Conventions</a>  <a href="http://www.lua.org/pil/1.4.html" target="_blank" rel="external">1.4 The Stand-Alone Interpreter</a>  <a href="http://www.lua.org/pil/2.html" target="_blank" rel="external">2 Types and Values</a>    <a href="http://www.lua.org/pil/2.1.html" target="_blank" rel="external">2.1 Nil</a>  <a href="http://www.lua.org/pil/2.2.html" target="_blank" rel="external">2.2 Booleans</a>  <a href="http://www.lua.org/pil/2.3.html" target="_blank" rel="external">2.3 Numbers</a>  <a href="http://www.lua.org/pil/2.4.html" target="_blank" rel="external">2.4 Strings</a>  <a href="http://www.lua.org/pil/2.5.html" target="_blank" rel="external">2.5 Tables</a>  <a href="http://www.lua.org/pil/2.6.html" target="_blank" rel="external">2.6 Functions</a>  <a href="http://www.lua.org/pil/2.7.html" target="_blank" rel="external">2.7 Userdata and Threads</a>  <a href="http://www.lua.org/pil/3.html" target="_blank" rel="external">3 Expressions</a>    <a href="http://www.lua.org/pil/3.1.html" target="_blank" rel="external">3.1 Arithmetic Operators</a>  <a href="http://www.lua.org/pil/3.2.html" target="_blank" rel="external">3.2 Relational Operators</a>  <a href="http://www.lua.org/pil/3.3.html" target="_blank" rel="external">3.3 Logical Operators</a>  <a href="http://www.lua.org/pil/3.4.html" target="_blank" rel="external">3.4 Concatenation</a>  <a href="http://www.lua.org/pil/3.5.html" target="_blank" rel="external">3.5 Precedence</a>  <a href="http://www.lua.org/pil/3.6.html" target="_blank" rel="external">3.6 Table Constructors</a>  <a href="http://www.lua.org/pil/4.html" target="_blank" rel="external">4 Statements</a>    <a href="http://www.lua.org/pil/4.1.html" target="_blank" rel="external">4.1 Assignment</a>  <a href="http://www.lua.org/pil/4.2.html" target="_blank" rel="external">4.2 Local Variables and Blocks</a>  <a href="http://www.lua.org/pil/4.3.html" target="_blank" rel="external">4.3 Control Structures</a>    <a href="http://www.lua.org/pil/4.3.1.html" target="_blank" rel="external">4.3.1 <strong>if</strong> <strong>then</strong> <strong>else</strong></a>  <a href="http://www.lua.org/pil/4.3.2.html" target="_blank" rel="external">4.3.2 <strong>while</strong></a>  <a href="http://www.lua.org/pil/4.3.3.html" target="_blank" rel="external">4.3.3 <strong>repeat</strong></a>  <a href="http://www.lua.org/pil/4.3.4.html" target="_blank" rel="external">4.3.4 Numeric <strong>for</strong></a>  <a href="http://www.lua.org/pil/4.3.5.html" target="_blank" rel="external">4.3.5 Generic <strong>for</strong></a>  <a href="http://www.lua.org/pil/4.4.html" target="_blank" rel="external">4.4 <strong>break</strong> and <strong>return</strong></a>  <a href="http://www.lua.org/pil/5.html" target="_blank" rel="external">5 Functions</a>    <a href="http://www.lua.org/pil/5.1.html" target="_blank" rel="external">5.1 Multiple Results</a>  <a href="http://www.lua.org/pil/5.2.html" target="_blank" rel="external">5.2 Variable Number of Arguments</a>  <a href="http://www.lua.org/pil/5.3.html" target="_blank" rel="external">5.3 Named Arguments</a>  <a href="http://www.lua.org/pil/6.html" target="_blank" rel="external">6 More about Functions</a>    <a href="http://www.lua.org/pil/6.1.html" target="_blank" rel="external">6.1 Closures</a>  <a href="http://www.lua.org/pil/6.2.html" target="_blank" rel="external">6.2 Non-Global Functions</a>  <a href="http://www.lua.org/pil/6.3.html" target="_blank" rel="external">6.3 Proper Tail Calls</a>  <a href="http://www.lua.org/pil/7.html" target="_blank" rel="external">7 Iterators and the Generic <strong>for</strong></a>    <a href="http://www.lua.org/pil/7.1.html" target="_blank" rel="external">7.1 Iterators and Closures</a>  <a href="http://www.lua.org/pil/7.2.html" target="_blank" rel="external">7.2 The Semantics of the Generic <strong>for</strong></a>  <a href="http://www.lua.org/pil/7.3.html" target="_blank" rel="external">7.3 Stateless Iterators</a>  <a href="http://www.lua.org/pil/7.4.html" target="_blank" rel="external">7.4 Iterators with Complex State</a>  <a href="http://www.lua.org/pil/7.5.html" target="_blank" rel="external">7.5 True Iterators</a>  <a href="http://www.lua.org/pil/8.html" target="_blank" rel="external">8 Compilation, Execution, and Errors</a>    <a href="http://www.lua.org/pil/8.1.html" target="_blank" rel="external">8.1 The require Function</a>  <a href="http://www.lua.org/pil/8.2.html" target="_blank" rel="external">8.2 C Packages</a>  <a href="http://www.lua.org/pil/8.3.html" target="_blank" rel="external">8.3 Errors</a>  <a href="http://www.lua.org/pil/8.4.html" target="_blank" rel="external">8.4 Error Handling and Exceptions</a>  <a href="http://www.lua.org/pil/8.5.html" target="_blank" rel="external">8.5 Error Messages and Tracebacks</a>  <a href="http://www.lua.org/pil/9.html" target="_blank" rel="external">9 Coroutines</a>    <a href="http://www.lua.org/pil/9.1.html" target="_blank" rel="external">9.1 Coroutine Basics</a>  <a href="http://www.lua.org/pil/9.2.html" target="_blank" rel="external">9.2 Pipes and Filters</a>  <a href="http://www.lua.org/pil/9.3.html" target="_blank" rel="external">9.3 Coroutines as Iterators</a>  <a href="http://www.lua.org/pil/9.4.html" target="_blank" rel="external">9.4 Non-Preemptive Multithreading</a>  <a href="http://www.lua.org/pil/10.html" target="_blank" rel="external">10 Complete Examples</a>    <a href="http://www.lua.org/pil/10.1.html" target="_blank" rel="external">10.1 Data Description</a>  <a href="http://www.lua.org/pil/10.2.html" target="_blank" rel="external">10.2 Markov Chain Algorithm</a>      <a href="http://www.lua.org/pil/11.html" target="_blank" rel="external"><strong>Part II. Tables and Objects</strong></a>    <a href="http://www.lua.org/pil/11.html" target="_blank" rel="external">11 Data Structures</a>    <a href="http://www.lua.org/pil/11.1.html" target="_blank" rel="external">11.1 Arrays</a>  <a href="http://www.lua.org/pil/11.2.html" target="_blank" rel="external">11.2 Matrices and Multi-Dimensional Arrays</a>  <a href="http://www.lua.org/pil/11.3.html" target="_blank" rel="external">11.3 Linked Lists</a>  <a href="http://www.lua.org/pil/11.4.html" target="_blank" rel="external">11.4 Queues and Double Queues</a>  <a href="http://www.lua.org/pil/11.5.html" target="_blank" rel="external">11.5 Sets and Bags</a>  <a href="http://www.lua.org/pil/11.6.html" target="_blank" rel="external">11.6 String Buffers</a>  <a href="http://www.lua.org/pil/12.html" target="_blank" rel="external">12 Data Files and Persistence</a>    <a href="http://www.lua.org/pil/12.1.html" target="_blank" rel="external">12.1 Serialization</a>    <a href="http://www.lua.org/pil/12.1.1.html" target="_blank" rel="external">12.1.1 Saving Tables without Cycles</a>  <a href="http://www.lua.org/pil/12.1.2.html" target="_blank" rel="external">12.1.2 Saving Tables with Cycles</a>  <a href="http://www.lua.org/pil/13.html" target="_blank" rel="external">13 Metatables and Metamethods</a>    <a href="http://www.lua.org/pil/13.1.html" target="_blank" rel="external">13.1 Arithmetic Metamethods</a>  <a href="http://www.lua.org/pil/13.2.html" target="_blank" rel="external">13.2 Relational Metamethods</a>  <a href="http://www.lua.org/pil/13.3.html" target="_blank" rel="external">13.3 Library-Defined Metamethods</a>  <a href="http://www.lua.org/pil/13.4.html" target="_blank" rel="external">13.4 Table-Access Metamethods</a>    <a href="http://www.lua.org/pil/13.4.1.html" target="_blank" rel="external">13.4.1 The __index Metamethod</a>  <a href="http://www.lua.org/pil/13.4.2.html" target="_blank" rel="external">13.4.2 The __newindex Metamethod</a>  <a href="http://www.lua.org/pil/13.4.3.html" target="_blank" rel="external">13.4.3 Tables with Default Values</a>  <a href="http://www.lua.org/pil/13.4.4.html" target="_blank" rel="external">13.4.4 Tracking Table Accesses</a>  <a href="http://www.lua.org/pil/13.4.5.html" target="_blank" rel="external">13.4.5 Read-Only Tables</a>  <a href="http://www.lua.org/pil/14.html" target="_blank" rel="external">14 The Environment</a>    <a href="http://www.lua.org/pil/14.1.html" target="_blank" rel="external">14.1 Accessing Global Variables with Dynamic Names</a>  <a href="http://www.lua.org/pil/14.2.html" target="_blank" rel="external">14.2 Declaring Global Variables</a>  <a href="http://www.lua.org/pil/14.3.html" target="_blank" rel="external">14.3 Non-Global Environments</a>  <a href="http://www.lua.org/pil/15.html" target="_blank" rel="external">15 Packages</a>    <a href="http://www.lua.org/pil/15.1.html" target="_blank" rel="external">15.1 The Basic Approach</a>  <a href="http://www.lua.org/pil/15.2.html" target="_blank" rel="external">15.2 Privacy</a>  <a href="http://www.lua.org/pil/15.3.html" target="_blank" rel="external">15.3 Packages and Files</a>  <a href="http://www.lua.org/pil/15.4.html" target="_blank" rel="external">15.4 Using the Global Table</a>  <a href="http://www.lua.org/pil/15.5.html" target="_blank" rel="external">15.5 Other Facilities</a>  <a href="http://www.lua.org/pil/16.html" target="_blank" rel="external">16 Object-Oriented Programming</a>    <a href="http://www.lua.org/pil/16.1.html" target="_blank" rel="external">16.1 Classes</a>  <a href="http://www.lua.org/pil/16.2.html" target="_blank" rel="external">16.2 Inheritance</a>  <a href="http://www.lua.org/pil/16.3.html" target="_blank" rel="external">16.3 Multiple Inheritance</a>  <a href="http://www.lua.org/pil/16.4.html" target="_blank" rel="external">16.4 Privacy</a>  <a href="http://www.lua.org/pil/16.5.html" target="_blank" rel="external">16.5 The Single-Method Approach</a>  <a href="http://www.lua.org/pil/17.html" target="_blank" rel="external">17 Weak Tables</a>    <a href="http://www.lua.org/pil/17.1.html" target="_blank" rel="external">17.1 Memoize Functions</a>  <a href="http://www.lua.org/pil/17.2.html" target="_blank" rel="external">17.2 Object Attributes</a>  <a href="http://www.lua.org/pil/17.3.html" target="_blank" rel="external">17.3 Revisiting Tables with Default Values</a>      <a href="http://www.lua.org/pil/18.html" target="_blank" rel="external"><strong>Part III. The Standard Libraries</strong></a>    <a href="http://www.lua.org/pil/18.html" target="_blank" rel="external">18 The Mathematical Library</a>  <a href="http://www.lua.org/pil/19.html" target="_blank" rel="external">19 The Table Library</a>    <a href="http://www.lua.org/pil/19.1.html" target="_blank" rel="external">19.1 Array Size</a>  <a href="http://www.lua.org/pil/19.2.html" target="_blank" rel="external">19.2 Insert and Remove</a>  <a href="http://www.lua.org/pil/19.3.html" target="_blank" rel="external">19.3 Sort</a>  <a href="http://www.lua.org/pil/20.html" target="_blank" rel="external">20 The String Library</a>    <a href="http://www.lua.org/pil/20.1.html" target="_blank" rel="external">20.1 Pattern-Matching Functions</a>  <a href="http://www.lua.org/pil/20.2.html" target="_blank" rel="external">20.2 Patterns</a>  <a href="http://www.lua.org/pil/20.3.html" target="_blank" rel="external">20.3 Captures</a>  <a href="http://www.lua.org/pil/20.4.html" target="_blank" rel="external">20.4 Tricks of the Trade</a>  <a href="http://www.lua.org/pil/21.html" target="_blank" rel="external">21 The I/O Library</a>    <a href="http://www.lua.org/pil/21.1.html" target="_blank" rel="external">21.1 The Simple I/O Model</a>  <a href="http://www.lua.org/pil/21.2.html" target="_blank" rel="external">21.2 The Complete I/O Model</a>    <a href="http://www.lua.org/pil/21.2.1.html" target="_blank" rel="external">21.2.1 A Small Performance Trick</a>  <a href="http://www.lua.org/pil/21.2.2.html" target="_blank" rel="external">21.2.2 Binary Files</a>  <a href="http://www.lua.org/pil/21.3.html" target="_blank" rel="external">21.3 Other Operations on Files</a>  <a href="http://www.lua.org/pil/22.html" target="_blank" rel="external">22 The Operating System Library</a>    <a href="http://www.lua.org/pil/22.1.html" target="_blank" rel="external">22.1 Date and Time</a>  <a href="http://www.lua.org/pil/22.2.html" target="_blank" rel="external">22.2 Other System Calls</a>  <a href="http://www.lua.org/pil/23.html" target="_blank" rel="external">23 The Debug Library</a>    <a href="http://www.lua.org/pil/23.1.html" target="_blank" rel="external">23.1 Introspective Facilities</a>    <a href="http://www.lua.org/pil/23.1.1.html" target="_blank" rel="external">23.1.1 Accessing Local Variables</a>  <a href="http://www.lua.org/pil/23.1.2.html" target="_blank" rel="external">23.1.2 Accessing Upvalues</a>  <a href="http://www.lua.org/pil/23.2.html" target="_blank" rel="external">23.2 Hooks</a>  <a href="http://www.lua.org/pil/23.3.html" target="_blank" rel="external">23.3 Profiles</a>      <a href="http://www.lua.org/pil/24.html" target="_blank" rel="external"><strong>Part IV. The C API</strong></a>    <a href="http://www.lua.org/pil/24.html" target="_blank" rel="external">24 An Overview of the C API</a>    <a href="http://www.lua.org/pil/24.1.html" target="_blank" rel="external">24.1 A First Example</a>  <a href="http://www.lua.org/pil/24.2.html" target="_blank" rel="external">24.2 The Stack</a>    <a href="http://www.lua.org/pil/24.2.1.html" target="_blank" rel="external">24.2.1 Pushing Elements</a>  <a href="http://www.lua.org/pil/24.2.2.html" target="_blank" rel="external">24.2.2 Querying Elements</a>  <a href="http://www.lua.org/pil/24.2.3.html" target="_blank" rel="external">24.2.3 Other Stack Operations</a>  <a href="http://www.lua.org/pil/24.3.html" target="_blank" rel="external">24.3 Error Handling with the C API</a>    <a href="http://www.lua.org/pil/24.3.1.html" target="_blank" rel="external">24.3.1 Error Handling in Application Code</a>  <a href="http://www.lua.org/pil/24.3.2.html" target="_blank" rel="external">24.3.2 Error Handling in Library Code</a>  <a href="http://www.lua.org/pil/25.html" target="_blank" rel="external">25 Extending your Application</a>    <a href="http://www.lua.org/pil/25.1.html" target="_blank" rel="external">25.1 Table Manipulation</a>  <a href="http://www.lua.org/pil/25.2.html" target="_blank" rel="external">25.2 Calling Lua Functions</a>  <a href="http://www.lua.org/pil/25.3.html" target="_blank" rel="external">25.3 A Generic Call Function</a>  <a href="http://www.lua.org/pil/26.html" target="_blank" rel="external">26 Calling C from Lua</a>    <a href="http://www.lua.org/pil/26.1.html" target="_blank" rel="external">26.1 C Functions</a>  <a href="http://www.lua.org/pil/26.2.html" target="_blank" rel="external">26.2 C Libraries</a>  <a href="http://www.lua.org/pil/27.html" target="_blank" rel="external">27 Techniques for Writing C Functions</a>    <a href="http://www.lua.org/pil/27.1.html" target="_blank" rel="external">27.1 Array Manipulation</a>  <a href="http://www.lua.org/pil/27.2.html" target="_blank" rel="external">27.2 String Manipulation</a>  <a href="http://www.lua.org/pil/27.3.html" target="_blank" rel="external">27.3 Storing State in C Functions</a>    <a href="http://www.lua.org/pil/27.3.1.html" target="_blank" rel="external">27.3.1 The Registry</a>  <a href="http://www.lua.org/pil/27.3.2.html" target="_blank" rel="external">27.3.2 References</a>  <a href="http://www.lua.org/pil/27.3.3.html" target="_blank" rel="external">27.3.3 Upvalues</a>  <a href="http://www.lua.org/pil/28.html" target="_blank" rel="external">28 User-Defined Types in C</a>    <a href="http://www.lua.org/pil/28.1.html" target="_blank" rel="external">28.1 Userdata</a>  <a href="http://www.lua.org/pil/28.2.html" target="_blank" rel="external">28.2 Metatables</a>  <a href="http://www.lua.org/pil/28.3.html" target="_blank" rel="external">28.3 Object-Oriented Access</a>  <a href="http://www.lua.org/pil/28.4.html" target="_blank" rel="external">28.4 Array Access</a>  <a href="http://www.lua.org/pil/28.5.html" target="_blank" rel="external">28.5 Light Userdata</a>  <a href="http://www.lua.org/pil/29.html" target="_blank" rel="external">29 Managing Resources</a>    <a href="http://www.lua.org/pil/29.1.html" target="_blank" rel="external">29.1 A Directory Iterator</a>  <a href="http://www.lua.org/pil/29.2.html" target="_blank" rel="external">29.2 An XML Parser</a></p></div></span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2005/05/30/wow-apis-e5-9c-a8-e7-ba-bf-e6-9f-a5/" rel="prev">wow apis 在线查</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2005/05/26/e5-a5-bd-e4-b9-a0-e6-83-af-e8-a6-81-e5-85-bb-e6-88-90/" rel="next">好习惯要养成</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+            </div>
+
+            
+
+            
+              <div class="comments" id="comments">
+                
+              </div>
+            
+        </div>
+
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Vitrum Zhu" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Vitrum Zhu</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">653</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-name">分類</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <p class="post-toc-empty">此文章未包含目錄</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="copyright" >
+  
+  &copy; &nbsp;  2005 - 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vitrum Zhu</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+        </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+</div>
+
+<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.4"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.4"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.4" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.4" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (CONFIG.sidebar === 'always') {
+            displaySidebar();
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+<!-- lazyload -->
+<script type="text/javascript" src="/js/lazyload.js"></script>
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery("#posts img").lazyload({
+            placeholder: "/images/loading.gif",
+            effect: "fadeIn"
+        });
+    });
+</script>
+</body>
+</html>

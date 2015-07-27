@@ -1,0 +1,575 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+    
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
+
+
+
+
+  <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
+
+
+<meta name="description" content="[重构] 于 2005-11-14 10:12:19上贴  *北京奥运吉祥物的深层文化解读一年半前，笔者撰文《文鳐鱼：北京奥运吉祥物》，鼎力举荐文鳐鱼入选北京奥运吉祥物（帝禹时代文献《五藏山经》记述的“见则天下大穰”动物）。2005年11月11日，北京奥运吉祥物揭晓，由５个“福娃”组成：“福娃欢欢”以奥运圣火为原型，代表激情。“福娃晶晶”的原型是熊猫，来自森林，代表欢乐。“福娃贝贝”是鱼娃，来自江">
+<meta property="og:type" content="article">
+<meta property="og:title" content="北京奥运吉祥物的深层文化解读">
+<meta property="og:url" content="http://vitrum.github.io/2005/11/14/e5-8c-97-e4-ba-ac-e5-a5-a5-e8-bf-90-e5-90-89-e7-a5-a5-e7-89-a9-e7-9a-84-e6-b7-b1-e5-b1-82-e6-96-87-e5-8c-96-e8-a7-a3-e8-af-bb/index.html">
+<meta property="og:site_name" content="Vitrum's Blog">
+<meta property="og:description" content="[重构] 于 2005-11-14 10:12:19上贴  *北京奥运吉祥物的深层文化解读一年半前，笔者撰文《文鳐鱼：北京奥运吉祥物》，鼎力举荐文鳐鱼入选北京奥运吉祥物（帝禹时代文献《五藏山经》记述的“见则天下大穰”动物）。2005年11月11日，北京奥运吉祥物揭晓，由５个“福娃”组成：“福娃欢欢”以奥运圣火为原型，代表激情。“福娃晶晶”的原型是熊猫，来自森林，代表欢乐。“福娃贝贝”是鱼娃，来自江">
+<meta property="og:updated_time" content="2015-07-27T07:54:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="北京奥运吉祥物的深层文化解读">
+<meta name="twitter:description" content="[重构] 于 2005-11-14 10:12:19上贴  *北京奥运吉祥物的深层文化解读一年半前，笔者撰文《文鳐鱼：北京奥运吉祥物》，鼎力举荐文鳐鱼入选北京奥运吉祥物（帝禹时代文献《五藏山经》记述的“见则天下大穰”动物）。2005年11月11日，北京奥运吉祥物揭晓，由５个“福娃”组成：“福娃欢欢”以奥运圣火为原型，代表激情。“福娃晶晶”的原型是熊猫，来自森林，代表欢乐。“福娃贝贝”是鱼娃，来自江">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post'
+  };
+</script>
+
+    <title> 北京奥运吉祥物的深层文化解读 // Vitrum's Blog </title>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+
+
+
+<div class="container one-column page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Vitrum's Blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            標籤
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <div class="main-inner">
+            <div id="content" class="content">
+                
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              北京奥运吉祥物的深层文化解读
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2005-11-14T07:15:43+08:00" content="2005-11-14">
+            2005-11-14
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/恶搞全球/" itemprop="url" rel="index"><span itemprop="name">恶搞全球</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!373" class="bvMsg"><div><br><table cellpadding="5" width="95%" border="0"><br><tbody><br><tr><br><td align="middle" colspan="2"></td></tr><br><tr><br><td width="50%">[<a href="http://spaces.msn.com/mmm2005-10-24_14.28/GetGuestInfo?GuestID=27485" target="_blank" rel="external"><u><font color="#0000ff">重构</font></u></a>] 于 2005-11-14 10:12:19上贴</td></tr></tbody></table><br><br><em> </em> *<br><br><table width="100%" border="0"><br><tbody><br><tr><br><td width="100%"><font size="3">北京奥运吉祥物的深层文化解读<br>一年半前，笔者撰文《文鳐鱼：北京奥运吉祥物》，鼎力举荐文鳐鱼入选北京奥运吉祥物（帝禹时代文献《五藏山经》记述的“见则天下大穰”动物）。2005年11月11日，北京奥运吉祥物揭晓，由５个“福娃”组成：“福娃欢欢”以奥运圣火为原型，代表激情。“福娃晶晶”的原型是熊猫，来自森林，代表欢乐。“福娃贝贝”是鱼娃，来自江河湖海，代表繁荣。“福娃迎迎”的原型是藏羚羊，来自草原大地，代表健康。“福娃妮妮”的原型是燕子，来自天空，代表幸运。<br>有关报导认为，福娃向世界各国人民传递友谊、和平、积极进取的精神和人与自然和谐相处的美好愿望。他们的原型和头饰蕴含着其与海洋、森林、火、大地和天空的联系，其形象设计应用了中国传统艺术的表现方式，展现了中国的灿烂文化。<br>关于北京奥运吉祥物福娃的创意和造型，引起社会各界广泛关注和讨论，民众评论不一，当在意料之中。创作《经典图读山海经》700幅彩图的画家孙晓琴说，这次北京奥运吉祥物的设计，创意不错，造型太没有特色，如果由我来绘制，一定会出奇，太可惜了。<br>一 、数字五的文化内涵<br>北京奥运吉祥物选择五个福娃，既可与奥运会标志五环相呼应之外，又符合中国人口众多、历史悠久、文化丰富的国情。与此同时，也与中国传统文化的重要组成数字文化密切相关，诸如五行、五福临门、五方保护神、五湖四海等等，有兴趣的读者可参阅笔者的《生活中的神妙数字和文化》（中国对外翻译出版公司）一书。<br>进一步说，用数字五代表东西南北中五方，是中国一项非常悠久的文化传统。4200年前帝禹时代文献《五藏山经》，就把天下分为《南山经》、《西山经》、《北山经》、《东山经》、《中山经》五大区域，中华民族的“中”、中国的“中”，中国人的“中央”观念，都源自于这种方位观念。<br>二 、双鱼福娃贝贝的文化内涵<br>有关报导称，贝贝传递的祝福是繁荣。在中国传统文化艺术中，“鱼”和“水”的图案是繁荣与收获的象征，人们用“鲤鱼跳龙门”寓意事业有成和梦想的实现，“鱼”还有吉庆有余、年年有余的蕴涵。贝贝的头部纹饰使用了中国新石器时代的鱼纹图案，贝贝温柔纯洁，是水上运动的高手，与奥林匹克五环中的蓝环相互辉映。<br>笔者在《文鳐鱼：北京奥运吉祥物》等文中指出，龙的原型就是鱼（准确说是娃娃鱼），而文鳐鱼是“天下大穰”的吉祥动物。《五藏山经·西山经》记有：“又西百八十里，曰泰器之山。观水出焉，西流注于流沙。是多文鳐鱼，状如鲤鱼，鱼身而鸟翼，苍文而白首赤喙，常行西海，游于东海，以夜飞。其音如鸾鸡，其味酸甘，食之已狂，见则天下大穰。”泰器山位于今日阴山山脉以南的河套一带的西面，属于沙漠中的绿洲。<br>文鳐鱼是一种会飞的鱼，可以象征体育运动的飞跃，更高、更快、更强；文鳐鱼飞翔在西海和东海之间，可以象征东西方文明与文化的交流。从设计造型的角度来说，文鳐鱼的样子是有翅膀的鲤鱼，鲤鱼是红色的或金色的，翅膀的伸展具有强烈鲜明的运动感和韵律，这些特点都有助于设计出理想的吉祥物图案来。<br>也就是说，丰年有鱼的观念，不仅仅因为鱼与余谐音，而是源自远古的文鳐鱼。<br>三 、熊猫福娃晶晶的文化内涵<br>报导称，晶晶来自广袤的森林，象征着人与自然的和谐共存。他的头部纹饰源自宋瓷上的莲花瓣造型。晶晶憨厚乐观，充满力量，代表奥林匹克五环中黑色的一环。<br>进一步说，熊猫属于熊类动物，黄帝族图腾之一就是熊（有熊氏），楚国先祖亦用熊命名。《五藏山经·中山经》第9条山脉记有熊神：“又东一百五十里，曰熊山。有穴焉，熊之穴，恒出入神人。夏启而冬闭，是穴也，冬启乃必有兵。其上多白玉，其下多白金，其木多樗柳，其草多寇脱。”<br>笔者在《全本绘图山海经》（待出版）中解读如下：熊山理应多熊，熊有冬眠习性，熊冬季出来活动属于异常现象；熊有多种，可惜此处经文未言这里熊的模样。众所周知，大熊猫是我国特产，其毛色黑白相间非常有特色，主要分布在秦岭、大巴山一带。由于此处熊山位于大巴山山脉，因此这里的熊有可能是指大熊猫；与此同时，熊神亦可能是由当地人装扮成大熊猫的样子，并于夏季在熊穴里举行祭祀熊神的活动。因此，如果人们冬季聚集在熊穴里，一定是发生了紧急情况，预示着将爆发战争。<br>值得注意的是，《史记·楚本纪》称“楚之先祖出自帝颛顼高阳”。此后，高阳生称，称生卷章（老童），卷章生重黎。重黎之弟为吴回（祝融），吴回生陆终；陆终生子六人，六曰季连，芈姓，楚其后也。季连生附沮，附沮生穴熊。其后中微，或在中国，或在蛮夷，弗能纪其世。周文王时，季连之苗裔曰鬻熊，其后世姓名多用“熊”字。据此，中次九经的熊山、熊穴、熊神，有可能就是楚国先祖“穴熊”。<br>总之，熊猫虽然憨态可踞，但是熊类也有威武性格之一面：人不犯我，我不犯人，并非软弱可欺。<br>四 、圣火福娃欢欢的文化内涵<br>报导称，欢欢福娃是火娃娃，象征奥林匹克圣火，是运动激情的化身，他将激情散播世界，传递着更快、更高、更强的奥林匹克精神。欢欢所到之处，洋溢着北京2008对世界的热情。欢欢的头部纹饰源自敦煌壁画中火焰的纹样。他性格外向奔放，熟稔各项球类运动，代表奥林匹克五环中红色的一环。<br>进一步说，中国人喜欢用红红火火比喻兴旺，因为火是活力的象征。与此同时，中国人自古就有对火的崇拜，笔者在《毕方鸟、灶王爷、燧人氏的科学内涵》一文中指出，毕方鸟是最早的消防员，灶王爷（炎帝）最早解决了避免一氧化碳中毒的技术难题，燧人氏是最早的人类。事实上，笔者近年撰写了一系列文章，提出了智因自主设计论、万有智力论，该理论认为人的定义应该是“使用火的动物”，只有“举起火把才算人”！由于在中国发现了人类最早使用火的证据（周口店北京人），因此中国才真正是人类起源的故乡。<br>五 、藏羚羊福娃迎迎的文化内涵<br>报导称，迎迎是一只机敏灵活、驰骋如飞的藏羚羊，他来自中国辽阔的西部大地，将健康的美好祝福传向世界。迎迎是青藏高原特有的保护动物藏羚羊，是绿色奥运的展现。迎迎的头部纹饰融入了青藏高原和新疆等西部地区的装饰风格。他身手敏捷，是田径好手，代表奥林匹克五环中黄色的一环。<br>进一步说，羊在中国古代是吉祥、美好的象征动物，例如三羊开泰。在先夏时期，炎帝族（发源于姜水）、后稷族（母为姜原），以及羌族、藏族，均以羊为图腾动物。因此，选择藏羚羊为北京奥运吉祥物，可以向世界传达“西藏自古就是中华民族文化的重要组成部分”的明确信息。<br>六 、燕子福娃妮妮的文化内涵<br>报导称，妮妮来自天空，是一只展翅飞翔的燕子，其造型创意来自北京传统的沙燕风筝。“燕”还代表燕京（古代北京的称谓）。妮妮把春天和喜悦带给人们，飞过之处播撒“祝您好运”的美好祝福。天真无邪、欢快矫捷的妮妮将在体操比赛中闪亮登场，她代表奥林匹克五环中绿色的一环。<br>进一步说，燕子就是“玄鸟”，它是殷商族的图腾动物。此外，少昊族以鸟命名官职，俨然是一个百鸟朝凤的古老王国。与此同时，中国先民认为太阳里面有三足乌（太阳鸟、金鸟、火凤凰），因此鸟也可以代表太阳和光明。<br>综上所述，鱼实际上就是中国龙，熊猫福娃晶晶（jing）谐音今（jin）,圣火福娃欢欢（hui）与会（hui）音相近，藏羚羊福娃象征奔腾，燕子福娃象征飞翔，五个福娃合起来，字面是“北京欢迎你”，内涵却还有“中国龙今天会腾飞”的意境。<br>重构（王红旗）电话010－51843850 信箱whqtpw@sohu.com<br>北京山海文化企划苑·重构文集051112FN39－3600 </font></td></tr></tbody></table></div></div></span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2005/11/14/e5-85-ac-e7-9b-8a-e7-9a-84-e5-8e-95-e6-89-80/" rel="prev">公益的厕所.</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2005/11/14/e9-a9-b3-e6-96-a5-e2-80-9c-e5-8c-97-e4-ba-ac-e5-a5-a5-e8-bf-90-e5-90-89-e7-a5-a5-e7-89-a9-e2-80-9d-e7-9a-84-e8-af-b4-e8-be-9e/" rel="next">驳斥“北京奥运吉祥物”的说辞</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+            </div>
+
+            
+
+            
+              <div class="comments" id="comments">
+                
+              </div>
+            
+        </div>
+
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Vitrum Zhu" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Vitrum Zhu</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">653</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-name">分類</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <p class="post-toc-empty">此文章未包含目錄</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="copyright" >
+  
+  &copy; &nbsp;  2005 - 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vitrum Zhu</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+        </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+</div>
+
+<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.4"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.4"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.4" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.4" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (CONFIG.sidebar === 'always') {
+            displaySidebar();
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+<!-- lazyload -->
+<script type="text/javascript" src="/js/lazyload.js"></script>
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery("#posts img").lazyload({
+            placeholder: "/images/loading.gif",
+            effect: "fadeIn"
+        });
+    });
+</script>
+</body>
+</html>

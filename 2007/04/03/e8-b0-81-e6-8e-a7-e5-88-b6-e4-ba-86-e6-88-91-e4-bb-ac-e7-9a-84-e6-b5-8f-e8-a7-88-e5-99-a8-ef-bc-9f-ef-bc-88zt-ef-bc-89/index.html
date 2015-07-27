@@ -1,0 +1,575 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+    
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
+
+
+
+
+  <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
+
+
+<meta name="description" content="最近在浏览一些网站（包括本站）的时候，经常发现页面顶端会出现一个多余的广告BANNER，地址后面被填加了一个莫名其妙的“/？”。经过多次本机查毒，卸载了“星空极速”安装的名为“LIGHTEN”的可疑的广告软件后，该现象依然存在；但可以肯定这一定是四川电信ADSL服务端搞的鬼。&amp;gt; 观看一下源代码：居然被人挟持了http协议，强插了一条广告！！！原来是什么雪花啤酒、死海，原来采用的类似浮动广告，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谁控制了我们的浏览器？（ZT）">
+<meta property="og:url" content="http://vitrum.github.io/2007/04/03/e8-b0-81-e6-8e-a7-e5-88-b6-e4-ba-86-e6-88-91-e4-bb-ac-e7-9a-84-e6-b5-8f-e8-a7-88-e5-99-a8-ef-bc-9f-ef-bc-88zt-ef-bc-89/index.html">
+<meta property="og:site_name" content="Vitrum's Blog">
+<meta property="og:description" content="最近在浏览一些网站（包括本站）的时候，经常发现页面顶端会出现一个多余的广告BANNER，地址后面被填加了一个莫名其妙的“/？”。经过多次本机查毒，卸载了“星空极速”安装的名为“LIGHTEN”的可疑的广告软件后，该现象依然存在；但可以肯定这一定是四川电信ADSL服务端搞的鬼。&amp;gt; 观看一下源代码：居然被人挟持了http协议，强插了一条广告！！！原来是什么雪花啤酒、死海，原来采用的类似浮动广告，">
+<meta property="og:updated_time" content="2015-07-27T07:54:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="谁控制了我们的浏览器？（ZT）">
+<meta name="twitter:description" content="最近在浏览一些网站（包括本站）的时候，经常发现页面顶端会出现一个多余的广告BANNER，地址后面被填加了一个莫名其妙的“/？”。经过多次本机查毒，卸载了“星空极速”安装的名为“LIGHTEN”的可疑的广告软件后，该现象依然存在；但可以肯定这一定是四川电信ADSL服务端搞的鬼。&amp;gt; 观看一下源代码：居然被人挟持了http协议，强插了一条广告！！！原来是什么雪花啤酒、死海，原来采用的类似浮动广告，">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post'
+  };
+</script>
+
+    <title> 谁控制了我们的浏览器？（ZT） // Vitrum's Blog </title>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+
+
+
+<div class="container one-column page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Vitrum's Blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            標籤
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <div class="main-inner">
+            <div id="content" class="content">
+                
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              谁控制了我们的浏览器？（ZT）
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2007-04-03T01:27:22+08:00" content="2007-04-03">
+            2007-04-03
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!986" class="bvMsg"><div><br><br>最近在浏览一些网站（包括本站）的时候，经常发现页面顶端会出现一个多余的广告BANNER，地址后面被填加了一个莫名其妙的“/？”。经过多次本机查毒，卸载了“星空极速”安装的名为“LIGHTEN”的可疑的广告软件后，该现象依然存在；但可以肯定这一定是四川电信ADSL服务端搞的鬼。<br>&gt; 观看一下源代码：居然被人挟持了http协议，强插了一条广告！！！原来是什么雪花啤酒、死海，原来采用的类似浮动广告，被网络骂死了，现在居然用frame了，我真是服那批人了。<br>&gt; <p>……两边的小图片地址是：<br>&gt; http: // sc.vnet.cn/06vnet_images/ 0515_100_100.gif<br>&gt; 也就是所谓的互联星空干的事情。<br>&gt; </p><p>毕竟我是每个月花了100多包月上adsl，没有义务再看中国电信的广告了！我立刻电话了10000，投诉了他们，请他们把我的帐号从他们的广告测试网中去掉。明天看中国电信咋个答复。实在不行就只有找中国电信的朋友去处理一下。转自<a href="http://bbs.newssc.org/dispbbs.asp?boardID=7&amp;ID=394749&amp;page=1" target="_blank" rel="external"><u><font color="#800080">麻辣社区</font></u></a><br></p><p><u><font color="#800080"></font></u><br></p><p><u><font color="#800080"></font></u><br><li>参考：谁控制了我们的浏览器？<br><p><br></p><p>本文遵从GPL协议，欢迎转载。<br></p><p>　　1、现象是什么？<br></p><p>　　大约从今年年初开始，很多人就发现，在浏览一些网站的时候，地址栏的url后面会被莫名其妙地加上“?curtime=xxxxxxxxxx”（x为数字），并且弹出广告窗口。很多人以为这是网站自己弹出的广告，也就没有在意。<br></p><p>　　我是属于很在意的那些人之一。<br></p><p>　　2、这是怎么回事？<br><div><br><div><br><p>　　经过测试和分析，我们发现，上述现象与使用何种浏览器无关（我们测试了各种流行的http客户端），与使用何种操作系统也无关（linux用户也有相关报告）。我对出现该现象的IE浏览器进程进行了跟踪调试，没有发现任何异常。可以断定，并不是系统被安装了adware或者spyware。<br></p><p>　　那么是不是那些网站自己做的呢？后来发现，访问我们自己管理的网站时也出现了这种情况，排除了这个可能。<br></p><p>　　那么剩下唯一的可能就是：有人在某个或某几个关键网络节点上安装了inject设备，劫持了我们的HTTP会话——我实在是不愿相信这个答案，这个无耻、龌龊的答案。<br></p><p>　　伟大的谢洛克·福尔摩斯说过：当其他可能都被排除之后，剩下的，即使再怎么不可思议，也一定是答案。<br></p><p>　　为了验证这个想法，我选择了一个曾经出现过上述现象的网站附近网段的某个IP。直接访问这个IP的HTTP服务，正常情况下是没有页面的，应该返回404错误。我写了一个脚本，不断访问这个IP，同时记录进出的数据包。在访问进行了120次的时候，结束请求，查看数据。120次请求中，118次返回的都是正常的404错误：<br></p><p>HTTP/1.1 404 Object Not Found<br>Server: Microsoft-IIS/5.0<br>Date: Mon, 19 Jul 2004 12:57:37 GMT<br>Connection: close<br>Content-Type: text/html<br>Content-Length: 111<br></p><p>〈html〉〈head〉〈title〉Site Not Found〈/title〉〈/head〉<br>〈body〉No web site is configured at this address.〈/body〉〈/html〉<br></p><p>　　但是有两次，返回了这个：<br></p><p>HTTP/1.1 200 OK<br>Content-type: text/html<br></p><p>〈html〉<br>〈meta http-equiv=’Pragma’ content=’no-cache’〉<br>〈meta http-equiv=’Refresh’ content=’0;URL=?curtime=1091231851’〉<br>〈script〉<br>window.open(‘<a href="http://211.147.5.121/DXT06-005.htm" target="_blank" rel="external">http://211.147.5.121/DXT06-005.htm</a>‘, ‘’, ‘width=400,height=330’);<br>〈/script〉<br>〈head〉<br>〈title〉〈/title〉<br>〈/head〉<br>〈body〉<br>〈/body〉<br>〈/html〉<br></p><p>　　更进一步分析数据包，可知劫持流程如下：<br></p><p>　　A、在某个骨干路由器的边上，躺着一台旁路的设备，监听所有流过的HTTP会话。这个设备按照某种规律，对于某些HTTP请求进行特殊处理。<br></p><p>　　B、当一个不幸的HTTP请求流过，这个设备根据该请求的seq和ack，把早已准备好的数据作为回应包，发送给客户端。这个过程是非常快的，我们的HTTP请求发出之后，仅过了0.008秒，就收到了上面的回应。而任何正常的服务器都不可能在这么短的时间内做出回应。<br></p><p>　　C、因为seq和ack已经被伪造的回应用掉了，所以，真正的服务器端数据过来的时候，会被当作错误的报文而不被接受。<br></p><p>　　D、浏览器会根据〈meta http-equiv=’Refresh’ content=’0;URL=?curtime=1091231851’〉这一行，重新对你要访问的URL进行请求，这一次，得到了请求的真正页面，并且调用window.open函数打开广告窗口。<br></p><p>　　在google中以“php?curtime”、“htm?curtime”、“asp?curtime”为关键字搜索，出现的基本上是国内网站，这表明，问题出在国内。用于inject的设备插在国内的某个或某几个大节点上。<br></p><p>　　真相大白。我们被愚弄了，全中国的网民都成了某些人的赚钱工具。<br></p><p>　　3、现在怎么办？<br></p><p>　　在坏家伙被捉出来之前，我们要想不受这个玩意的骚扰，可以考虑下面的方法：<br></p><p>　　A、请各单位的网络管理员，在网络的边界设备上，完全封锁211.147.5.121。<br>　　B、在你自己的个人防火墙上，完全封锁211.147.5.121。<br>　　C、如果你的浏览器是FireFox、Opera、GreenBrowser、或者MyIE，可以把“<a href="http://211.147.5.121/*”丢到弹出窗口过滤列表中去。" target="_blank" rel="external">http://211.147.5.121/*”丢到弹出窗口过滤列表中去。</a><br></p><p>　　绝不只是广告那么简单，这涉及到我们的选择，我们的自由，这比垃圾邮件更加肮脏和无耻。今天是广告，明天就可能在你下载软件的时候给你加个adware或者加个病毒进去，谁知道呢？我们的HTTP通信完全控制在别人手里。<br></p><p>　　4、如何把坏家伙揪出来？<br></p><p>　　如果你是一个有权力调查和处理这件事的人，从技术上，可以考虑下面的手段：<br></p><p>　　方法1、<br></p><p>　　伪造的回应数据中并没有处理TTL，也就是说，我们得到的回应数据中TTL是和inject设备位置相关的。以我收到的数据包为例，真实的服务器端回应TTL是107，伪造的回应TTL是53。那么，从我们这里到被请求的服务器之间经过了21（128-107）个节点，从我们这里到inject设备经过了11（64-53）个节点。只需要traceroute一下请求的服务器，得到路由回溯，往外数第11个节点就是安插inject设备的地方！<br></p><p>　　方法2：<br></p><p>　　假如坏家伙也看到了这篇文章，修改了TTL，我们仍然有办法。在google上以下面这些关键字搜索：php?curtime，htm?curtime，asp?curtime，可以得到大量访问时会被inject的网址。编写脚本反复访问这些网址，验证从你的ip访问过去是否会被inject。将确实会被inject的结果搜集起来，在不同的网络接入点上挨个用traceroute工具进行路由回溯。分析回溯的结果。<br></p><p>　　上面我们已经说明了，坏家伙是在某个或者某些重要节点上安插了inject设备，那么这个节点必然在被inject的那些网址到我们的IP之间的某个位置上。例如有A、B、C、D四个被inject到的网站，从四个地方进行路由回溯的结果如下：<br></p><p>MyIP-12-13-14-15-65-[89]-15-57-A<br>MyIP-66-67-68-69-85-[89]-45-68-84-52-44-B<br>MyIP-34-34-36-28-83-[89]-45-63-58-64-48-41-87-C<br>MyIP-22-25-29-32-65-45-[89]-58-D<br></p><p>　　显然，inject设备极大可能就在“89”所在的机房。<br></p><p>　　方法3：<br></p><p>　　另一方面，可以从存放广告业面的211.147.5.121这个IP入手，whois查询结果如下：<br></p><p>inetnum: 211.147.0.0 - 211.147.7.255<br>netname: DYNEGY-COMMUNICATION<br>descr: DYNEGY-COMMUNICATION<br>descr: CO.LTD<br>descr: BEIJING<br>country: CN<br>admin-c: PP40-AP<br>tech-c: SD76-AP<br>mnt-by: MAINT-CNNIC-AP<br>changed: hui_zh@sina.com 20011112<br>status: ALLOCATED PORTABLE<br>source: APNIC<br></p><p>person: Pang Patrick<br>nic-hdl: PP40-AP<br>e-mail: bill.pang@bj.datadragon.net<br>address: Fl./8, South Building, Bridge Mansion, No. 53<br>phone: +86-10-63181513<br>fax-no: +86-10-63181597<br>country: CN<br>changed: ipas@cnnic.net.cn 20030304<br>mnt-by: MAINT-CNNIC-AP<br>source: APNIC<br></p><p>person: ShouLan Du<br>address: Fl./8, South Building, Bridge Mansion, No. 53<br>country: CN<br>phone: +86-010-83160000<br>fax-no: +86-010-83155528<br>e-mail: dsl327@btamail.net.cn<br>nic-hdl: SD76-AP<br>mnt-by: MAINT-CNNIC-AP<br>changed: dsl327@btamail.net.cn 20020403<br>source: APNIC<br></p><p>　　5、我为什么要写这篇文章？<br></p><p>　　新浪为我提供桃色新闻，我顺便看看新浪的广告，这是天经地义的；或者我安装某某网站的广告条，某某网站付给我钱，这也是天经地义的。可是这个211.147.5.121既不给我提供桃色新闻，又不给钱，却强迫我看广告，这就严重伤害了我脆弱而幼小的心灵。事实上，你可以敲诈克林斯·潘，强奸克里奥·佩德拉，咬死王阳明，挖成吉思汗墓，我都不会计较，但是现在你既然打搅了我的生活，我就不得不说几句了。<br></p><p>　　6、我是谁？<br></p><p>　　如果你知道MyName，又知道MyCount的话，那么，用下面这段perl可以得到：2f4f587a80c2dbbd870a46481b2b1882。<br></p><p>#!/usr/bin/perl -w<br></p><p>use Digest::MD5 qw(md5 md5_hex md5_base64);<br></p><p>$name = ‘MyName’;<br>$count = MyCount;<br></p><p>for ($i=0; $i〈$count; $i++)<br>&#123;<br>$name = md5_hex($name);<br>&#125;<br></p><p>print $name;<br></p><p>以下签名，用于以后可能出现的关于此文的交流：<br>1 6631876c2aea042934a5c4aaeabb88e9<br>2 a6a607b3bcff63980164d793ff61d170<br>3 6a58e8148eb75ce9c592236ef66a3448<br>4 ded96d29f7b49d0dd3f9d17187356310<br>5 cc603145bb5901a0ec8ec815d83eea66<br></p><p>　　注：本文为转载，作者不详，发布日期为：2004.7.20。<br></p></div></div></p></li></p></div></div></span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2007/04/03/e4-b8-8a-e6-b5-b7-e7-94-b5-e4-bf-a1-e4-b9-9f-e5-9c-a8-e6-90-9eadsl-e7-bb-91-e5-ae-9a/" rel="prev">上海电信也在搞ADSL绑定</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2007/03/29/e8-b0-88-e8-ae-ba-e5-85-b6-e5-ae-9e-e7-94-b7-e5-ad-a9-e5-ad-90-e9-83-bd-e4-b8-8d-e7-9f-a5-e9-81-93-e8-bd-ac-e6-9d-a5-e5-9c-b0hihi/" rel="next">谈论 其实男孩子都不知道 -转来地,HIHI</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+            </div>
+
+            
+
+            
+              <div class="comments" id="comments">
+                
+              </div>
+            
+        </div>
+
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Vitrum Zhu" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Vitrum Zhu</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">653</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-name">分類</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <p class="post-toc-empty">此文章未包含目錄</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="copyright" >
+  
+  &copy; &nbsp;  2005 - 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vitrum Zhu</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+        </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+</div>
+
+<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.4"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.4"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.4" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.4" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (CONFIG.sidebar === 'always') {
+            displaySidebar();
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+<!-- lazyload -->
+<script type="text/javascript" src="/js/lazyload.js"></script>
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery("#posts img").lazyload({
+            placeholder: "/images/loading.gif",
+            effect: "fadeIn"
+        });
+    });
+</script>
+</body>
+</html>

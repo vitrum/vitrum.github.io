@@ -39,12 +39,12 @@
 
 <meta name="description">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:title" content="Vitrum's Blog">
+<meta property="og:url" content="http://vitrum.github.io/index.html">
+<meta property="og:site_name" content="Vitrum's Blog">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Vitrum's Blog">
 <meta name="twitter:description">
 
 
@@ -55,7 +55,7 @@
   };
 </script>
 
-    <title> Hexo </title>
+    <title> Vitrum's Blog </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
 <!--[if lte IE 8]>
@@ -82,7 +82,7 @@
       <span class="logo">
         <i class="icon-logo"></i>
       </span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">Vitrum's Blog</span>
   </a>
   <span class="logo-line-after"><i></i></span>
 </h1>
@@ -211,9 +211,767 @@
 
 
     
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2012/03/24/add-a-new-thing-in-life-at-30th-days/" itemprop="url">
+                Add a new thing in life at 30th days.
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2012-03-24T20:03:52+08:00" content="2012-03-24">
+            2012-03-24
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>Try some 3D webGL things~~~</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2011/09/27/e5-9c-a8ec2-e4-b8-ad-e6-90-ad-e5-bb-banode-js-e7-8e-af-e5-a2-83/" itemprop="url">
+                在EC2 中搭建node.js 环境
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2011-09-27T09:15:24+08:00" content="2011-09-27">
+            2011-09-27
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p><strong>1，为什么用EC2搭建node.js环境。</strong></p>
+<p><div>首先，本地虚拟机装centOs是很好的选择，但是需要在家里和公司同时搭好相同的环境比较麻烦，而且也不方便小团队一起折腾。</div></p>
+<p><div>亚马逊的免费虚拟机只要不跑太复杂的运算大概不会有额外的费用，而且亚马逊么有被墙，国内的托管目前cnode的邀请号求不到啊，还是自己动手丰衣足食吧。</div><br><strong>2，如何申请免费一年的EC2</strong></p>
+<p><div>在<a href="http://aws.amazon.com/上注册。" target="_blank" rel="external">http://aws.amazon.com/上注册。</a></div></p>
+<p><div>网上有很多教程，请自行GOOGLE。</div></p>
+<p><div><strong>3，EC2虚拟机简单的管理和设置</strong></div></p>
+<p><div>新建KEY，保存。</div></p>
+<p><div>For MAC &amp; Linux</div></p>
+<p><div>很简单，只要一句话</div></p>
+<p><div></div></p>
+<p><pre>ssh -i user.pem ec2-user@ec2-XXX-XXX-XXX-XXX.compute-1.amazonaws.com</pre><br></p>
+<p><div>以上user.pem可以是你的KEY的路径。</div></p>
+<p><div>For PC</div></p>
+<p><div>putty 链接ec2-XXX-XXX-XXX-XXX.compute-1.amazonaws.com</div></p>
+<p><div>注意需要在connection-&gt;SSH-&gt;Auth里选上你的KEY，之前需要转pem到ppk。</div></p>
+<p><div>怎么看DNS名：在管理界面里，先点击你要查看的虚拟机，点右键，再弹出的菜单上点“connect”就可以看到如下图：</div></p>
+<p><div>其中ec2-XXX-XXX-XXX-XXX.compute-1.amazonaws.com是你的DNS名</div></p>
+<p><div>一般不太需要调整什么，可能要改的就是端口8080要开启。</div></p>
+<p><div><strong>4，搭建node前的准备</strong></div></p>
+<p><div>默认的liunx中不会吧所有工具都装好，一些基本的工具，需要我们自己装。</div></p>
+<p><div>以下：</div></p>
+<p><div>a. make</div></p>
+<p><div>b.gcc++</div></p>
+<p><div>c.curl</div></p>
+<p><div>d.git</div></p>
+<p><div>一句话安装：</div></p>
+<p><div></div></p>
+<p><pre>sudo yum install gcc-c++ openssl-devel make curl git</pre><br><br><strong>5，安装node</strong></p>
+<p><div></div></p>
+<p><pre>wget <a href="http://nodejs.org/dist/node-v0.4.12.tar.gz" target="_blank" rel="external">http://nodejs.org/dist/node-v0.4.12.tar.gz</a><br>tar -xvf node-v0.4.12.tar.gz<br>cd node-v0.4.12<br>./configure<br>make</pre><br></p>
+<p><div>由于是在云里跑的，所以make可能会花上30多分钟， 我出去吃了个中饭，回办公室发现好了的。所以，不用在屏幕前傻等，出去走走，预防一下颈椎病。</div></p>
+<p><div></div></p>
+<p><pre>make install</pre><br></p>
+<p><div>其他调整，由于EC2中path的问题，node装完了不一定能直接跑。所以有时候需要做些映射。</div></p>
+<p><div></div></p>
+<p><pre>sudo ln -s /usr/local/bin/node /usr/bin/node<br>sudo ln -s /usr/local/lib/node /usr/lib/node<br>sudo ln -s /usr/local/bin/npm /usr/bin/npm<br>sudo ln -s /usr/local/bin/node-waf /usr/bin/node-waf</pre><br></p>
+<p><div><strong>6，测试第一个静态文件服务</strong></div></p>
+<p><div>先在/home/ec2-user/上建个nodeweb目录，里面放静态页面，然后可以测试了～～</div></p>
+<p><div></div></p>
+<p><pre>var libpath = require(‘path’),<br>    http = require(“http”),<br>    fs = require(‘fs’),<br>    url = require(“url”),<br>    mime = require(‘mime’);<br>var path = “/home/ec2-user/nodeweb”;<br>var port = 8080;<br>http.createServer(function (request, response) {<br>    var uri = url.parse(request.url).pathname;<br>    var filename = libpath.join(path, uri);<br>    libpath.exists(filename, function (exists) {<br>        if (!exists) {<br>            response.writeHead(404, {<br>                “Content-Type”: “text/plain”<br>            });<br>            response.write(“404 Not Found\n”);<br>            response.end();<br>            return;<br>        }<br>        if (fs.statSync(filename).isDirectory()) {<br>            filename += ‘/index.html’;<br>        }<br>        fs.readFile(filename, “binary”, function (err, file) {<br>            if (err) {<br>                response.writeHead(500, {<br>                    “Content-Type”: “text/plain”<br>                });<br>                response.write(err + “\n”);<br>                response.end();<br>                return;<br>            }<br>            var type = mime.lookup(filename);<br>            response.writeHead(200, {<br>                “Content-Type”: type<br>            });<br>            response.write(file, “binary”);<br>            response.end();<br>        });<br>    });<br>}).listen(port);</pre><br><br><strong>7，推荐阅读：</strong></p>
+<p><div> a.Installing Node.js On Amazon EC2 :<a href="http://www.embracingthecloud.com/2010/12/05/InstallingNodejsOnAmazonEC2.aspx" target="_blank" rel="external">http://www.embracingthecloud.com/2010/12/05/InstallingNodejsOnAmazonEC2.aspx</a></div></p>
+<p><div> b.npm : <a href="https://github.com/isaacs/npm" target="_blank" rel="external">https://github.com/isaacs/npm</a></div></p>
+<p><div> c.mime : <a href="https://github.com/bentomas/node-mime" target="_blank" rel="external">https://github.com/bentomas/node-mime</a></div></p>
+<p><div><strong>8，其他～</strong></div><br>求推荐操作简单的配合node用数据库。</p>
+<p>我的微博：<a href="http://weibo.com/vitrum" target="_blank" rel="external">http://weibo.com/vitrum</a></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2011/08/16/e8-bd-ac-e8-bd-bd-ef-bc-9a-e5-a4-96-e5-9b-bd-e7-94-b5-e5-95-86-e7-bd-91-e7-ab-99/" itemprop="url">
+                转载：外国电商网站
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2011-08-16T10:09:16+08:00" content="2011-08-16">
+            2011-08-16
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="来源：http://www-shui-mo-com/daohang/">来源：<a href="http://www.shui-mo.com/daohang/" target="_blank" rel="external">http://www.shui-mo.com/daohang/</a></h2><h2 id="国外部分">国外部分</h2><ul>
+<li>NET-A-PORTER <a href="http://www.net-a-porter.com/" target="_blank" rel="external">www.net-a-porter.com</a></li>
+<li>Macy’s <a href="http://www.macys.com/" target="_blank" rel="external">www.macys.com</a></li>
+<li>Neiman Marcus <a href="http://www.neimanmarcus.com/" target="_blank" rel="external">www.neimanmarcus.com</a></li>
+<li>Nordstrom <a href="http://shop.nordstrom.com/" target="_blank" rel="external">shop.nordstrom.com</a></li>
+<li>UNIQLO <a href="http://www.uniqlo.com/" target="_blank" rel="external">www.uniqlo.com</a></li>
+<li>Fashion Hire <a href="http://www.fashionhire.co.uk/" target="_blank" rel="external">www.fashionhire.co.uk</a></li>
+<li>lanebryant <a href="http://www.lanebryant.com/" target="_blank" rel="external">www.lanebryant.com</a></li>
+<li>Nine West <a href="http://www.ninewest.com/" target="_blank" rel="external">www.ninewest.com</a></li>
+<li>threadless <a href="http://www.threadless.com/" target="_blank" rel="external">www.threadless.com</a></li>
+<li>target <a href="http://www.etao.com/" target="_blank" rel="external">www.etao.com</a></li>
+<li>bestbuy <a href="http://www.bestbuy.com/" target="_blank" rel="external">www.bestbuy.com</a></li>
+<li>walmart <a href="http://www.walmart.com/" target="_blank" rel="external">www.walmart.com</a></li>
+<li>buy <a href="http://www.buy.com/" target="_blank" rel="external">www.buy.com</a></li>
+<li>JCPenney <a href="http://www.jcpenney.com/" target="_blank" rel="external">www.jcpenney.com</a></li>
+<li>ebay <a href="http://www.ebay.com/" target="_blank" rel="external">www.ebay.com</a></li>
+<li>OnSale <a href="http://store.onsale.com/" target="_blank" rel="external">store.onsale.com</a></li>
+<li>Macy’s <a href="http://www.macys.com/" target="_blank" rel="external">www.macys.com</a></li>
+<li>Blue nile <a href="http://www.bluenile.com/" target="_blank" rel="external">www.bluenile.com</a></li>
+<li>Sears Outlet <a href="http://www.searsoutlet.com/" target="_blank" rel="external">www.searsoutlet.com</a></li>
+<li>staples <a href="http://www.staples.com/" target="_blank" rel="external">www.staples.com</a></li>
+<li>OfficeMax <a href="http://www.officemax.com/" target="_blank" rel="external">www.officemax.com</a></li>
+<li>Auto parts <a href="http://www.autopartswarehouse.com/" target="_blank" rel="external">www.autopartswarehouse.com</a></li>
+<li>etsy <a href="http://www.etsy.com/" target="_blank" rel="external">www.etsy.com</a></li>
+<li>grainger <a href="http://www.grainger.com/" target="_blank" rel="external">www.grainger.com</a></li>
+<li>costco <a href="http://www.costco.com/" target="_blank" rel="external">www.costco.com</a></li>
+<li>vente-privee <a href="http://vente-privee.com/" target="_blank" rel="external">vente-privee.com</a></li>
+</ul>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2011/07/25/train-wreck-in-china/" itemprop="url">
+                伊伊（项炜伊）还不知道，她的父亲项余岸@闲坐不谈语文、母亲施李虹@一一成长回忆录 均已遇难。
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2011-07-25T14:55:41+08:00" content="2011-07-25">
+            2011-07-25
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>[slideshow]</p>
+<p>女孩的眼睛里还透露着惊慌，发生了什么？她还不知道，她的父母已经遇难了。本来幸福的一家人，欢乐的去旅行，就在回家的路上，悲剧就这么发生了。</p>
+<p>我只想说，这不是天灾，这一定是人祸。</p>
+<p>作为一个几乎和这个伊伊同岁的小女孩的爸爸，我绝对不能答应这事就调查调查就算了，绝对不能接受任何粉饰太平，因为今天发生在她身上的惨剧，也有可能发生在我女儿身上，发生在所有人身上。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2011/06/21/e5-bc-80-e6-ba-90-e4-b8-ad-e6-9c-80-e5-a5-bd-e7-9a-84web-e5-bc-80-e5-8f-91-e7-9a-84-e8-b5-84-e6-ba-90-e8-bd-ac-e8-b4-b4/" itemprop="url">
+                开源中最好的Web开发的资源-转贴
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2011-06-21T18:27:16+08:00" content="2011-06-21">
+            2011-06-21
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/HTML5/" itemprop="url" rel="index"><span itemprop="name">HTML5</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p><a href="http://www.css88.com/archives/3697" target="_blank" rel="external">http://www.css88.com/archives/3697</a></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2011/06/20/wordpress-com-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e6-97-a0-e6-b3-95-e7-99-bb-e9-99-86-e9-97-ae-e9-a2-98/" itemprop="url">
+                wordpress.com 博客后台无法登陆问题
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2011-06-20T17:33:34+08:00" content="2011-06-20">
+            2011-06-20
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>困扰我一个多月，今天刚找到办法，原来只要在wordpress.com首页上的登录栏里，就可以登录了。不需要从自己的BLOG里登录</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2011/06/20/html5-css-reset/" itemprop="url">
+                HTML5 CSS Reset
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2011-06-20T17:30:10+08:00" content="2011-06-20">
+            2011-06-20
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p><a href="http://html5reset.org/" target="_blank" rel="external">http://html5reset.org/<img src="http://html5reset.org/_/img/tree-before-after.png" alt="" title="HTML5  css reset"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2011/05/05/install-7zip-at-centos/" itemprop="url">
+                Install 7zip at CentOS
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2011-05-05T21:29:42+08:00" content="2011-05-05">
+            2011-05-05
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>1.yum</p>
+<p><strong>yum –y install p7zip</strong></p>
+<p>2.gcc-c++</p>
+<p>wget <a href="http://nchc.dl.sourceforge.net/sourceforge/p7zip/p7zip_4.65_src_all.tar.bz2" target="_blank" rel="external">http://nchc.dl.sourceforge.net/sourceforge/p7zip/p7zip_4.65_src_all.tar.bz2</a><br>tar -xjvf p7zip_4.65_src_all.tar.bz2<br>cd p7zip_4.65<br>make<br>make install</p>
+<p><strong>
+</strong></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2011/04/26/e6-90-ad-e5-bb-banode-socket-e7-8e-af-e5-a2-83/" itemprop="url">
+                搭建Node + socket 环境
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2011-04-26T15:09:57+08:00" content="2011-04-26">
+            2011-04-26
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>1、NPM (<a href="http://npmjs.org/" target="_blank" rel="external">http://npmjs.org/</a>)</p>
+<p>curl <a href="http://npmjs.org/install.sh" target="_blank" rel="external">http://npmjs.org/install.sh</a> | sh</p>
+<p>2、Node WebSocket Server</p>
+<p><a href="https://github.com/miksago/node-websocket-server" target="_blank" rel="external">https://github.com/miksago/node-websocket-server</a></p>
+<pre>npm install websocket-server</pre></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/66/">66</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
+  </nav>
+
 
             </div>
 
@@ -239,28 +997,28 @@
 
       <section class="site-overview">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="John Doe" itemprop="image"/>
-          <p class="site-author-name" itemprop="name">John Doe</p>
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Vitrum Zhu" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Vitrum Zhu</p>
         </div>
         <p class="site-description motion-element" itemprop="description"></p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">653</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">分類</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
@@ -294,12 +1052,12 @@
         <div class="footer-inner">
             <div class="copyright" >
   
-  &copy; &nbsp; 
+  &copy; &nbsp;  2005 - 
   <span itemprop="copyrightYear">2015</span>
   <span class="with-love">
     <i class="icon-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Vitrum Zhu</span>
 </div>
 
 <div class="powered-by">

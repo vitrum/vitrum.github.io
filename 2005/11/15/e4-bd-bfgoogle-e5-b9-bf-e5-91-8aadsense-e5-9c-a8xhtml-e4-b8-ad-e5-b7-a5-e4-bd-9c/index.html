@@ -1,0 +1,614 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+    
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
+
+
+
+
+  <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
+
+
+<meta name="description" content="# http://www.omemo.net/neo/tech/adsense.php主页 &amp;gt; 设计与技术 &amp;gt; 使Google广告AdSense在XHTML中工作### 翻译手记我开始使用XHTML 1.1的时候，发现Google的AdSense广告在IE上正常，在Firefox和Opera中则一片空白，纳闷，对着代码检查了良久，终究无法得知问题于何处。幸亏还有Google，我终于找到">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使Google广告AdSense在XHTML中工作">
+<meta property="og:url" content="http://vitrum.github.io/2005/11/15/e4-bd-bfgoogle-e5-b9-bf-e5-91-8aadsense-e5-9c-a8xhtml-e4-b8-ad-e5-b7-a5-e4-bd-9c/index.html">
+<meta property="og:site_name" content="Vitrum's Blog">
+<meta property="og:description" content="# http://www.omemo.net/neo/tech/adsense.php主页 &amp;gt; 设计与技术 &amp;gt; 使Google广告AdSense在XHTML中工作### 翻译手记我开始使用XHTML 1.1的时候，发现Google的AdSense广告在IE上正常，在Firefox和Opera中则一片空白，纳闷，对着代码检查了良久，终究无法得知问题于何处。幸亏还有Google，我终于找到">
+<meta property="og:updated_time" content="2015-07-27T07:54:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使Google广告AdSense在XHTML中工作">
+<meta name="twitter:description" content="# http://www.omemo.net/neo/tech/adsense.php主页 &amp;gt; 设计与技术 &amp;gt; 使Google广告AdSense在XHTML中工作### 翻译手记我开始使用XHTML 1.1的时候，发现Google的AdSense广告在IE上正常，在Firefox和Opera中则一片空白，纳闷，对着代码检查了良久，终究无法得知问题于何处。幸亏还有Google，我终于找到">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post'
+  };
+</script>
+
+    <title> 使Google广告AdSense在XHTML中工作 // Vitrum's Blog </title>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+
+
+
+<div class="container one-column page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Vitrum's Blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            標籤
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <div class="main-inner">
+            <div id="content" class="content">
+                
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              使Google广告AdSense在XHTML中工作
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2005-11-15T08:39:14+08:00" content="2005-11-15">
+            2005-11-15
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!380" class="bvMsg"><div><br><br># <a href="http://www.omemo.net/neo/tech/adsense.php" target="_blank" rel="external">http://www.omemo.net/neo/tech/adsense.php</a><br><br><a href="http://spaces.msn.com/" target="_blank" rel="external"><u><font color="#0000ff">主页</font></u></a> &gt; <a href="http://spaces.msn.com/neo/tech/" target="_blank" rel="external"><u><font color="#0000ff">设计与技术</font></u></a> &gt; <a href="http://spaces.msn.com/mmm2005-10-24_14.28/adsense.php" target="_blank" rel="external"><u><font color="#0000ff">使Google广告AdSense在XHTML中工作</font></u></a><br><br><div><br><div><br><div><br><br>### 翻译手记<br><br>我开始使用XHTML 1.1的时候，发现Google的AdSense广告在IE上正常，在Firefox和Opera中则一片空白，纳闷，对着代码检查了良久，终究无法得知问题于何处。幸亏还有Google，我终于找到这个解决方案。我也不能不说，推广标准，还真的是任重道远，连Google都无法保证它的代码会在任何的(X)HTML上工作。<br><br>这其实是一个JavaScript的问题，假如你发现你在XHTML 1.0 Stric或者XHTML 1.1中无法使用JavaScript的调用，或许，这篇文章对你也有启示。<br></div>
+
+<h2 id="为什么AdSense不能在真正的XHTML中工作？">为什么AdSense不能在真正的XHTML中工作？</h2><p>Google的<a href="https://www.google.com/adsense/afc-online-overview" title="Google AdSense：概述" target="_blank" rel="external"><u><font color="#0000ff">AdSense</font></u></a>使用JavaScript生成一个<code>iframe</code>来动态地发送广告。如果页面是使用常规的<abbr title="Hypertext Markup Language">HTML</abbr>或者不严格版本的XHTML，以<code>text/html</code>来伺服的话，没有任何问题。这个JavaScript如你所愿地生成<code>iframe</code>，任何事情都工作得很好。不幸的是，对于站长以<code>application/xhtml+xml</code>来伺服的XHTML，Google的方法不能工作。</p>
+<p>主要问题出在JavaScript。<code>Document.Write()</code>不会在正确伺服的由一个<abbr title="Extensible Markup Language">XML</abbr>解析器处理的XML页面中工作。Ian Hickson给出了为什么会这样的<a href="http://ln.hixie.ch/?start=1091626816&amp;count=1" title="Hixie:  Why document.write() doesn" target="_blank" rel="external"><u><font color="#0000ff">理由</font></u></a>（中文版本站已经翻译：<a href="http://spaces.msn.com/neo/tech/dw_not_work.php" target="_blank" rel="external"><u><font color="#0000ff">为什么<code>document.write</code>在XML中不工作</font></u></a>）。就如我们所觉察到的，<code>Document.Write()</code>用来生成<code>iframe</code>，因此，Google的广告永远不会出现。</p>
+<p>第二个问题在于<code>iframe</code>本身。这个元素没有出现在任何严格的XHTML版本中，所以尽管JavaScript可以生成，<code>iframe</code>会使这个页面的XHTML不合法。</p>
+<h2 id="怎么才能使它工作呢？">怎么才能使它工作呢？</h2><p>解决这些问题的一条途径是，简单地以<code>text/html</code>来伺服AdSense代码。为达到目的，有必要创建一个独立的网页，使用<code>text/html</code>的<acronym title="Multipurpose Internet Mail Extension">MIME</acronym>类型，然后以<code>object</code>的形式插入到需要的页面中。下面是一个独立的文档的样例：</p>
+<pre>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;title&gt;Sponsorship&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body &#123; margin: 0; padding: 0; &#125;
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+这里是Google AdSense的参数
+&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://pagead2.googlesyndication.com/pagead/show_ads.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>对于使用这个<a href="http://spaces.msn.com/neo/tech/mime_type.php" title="使用正确的MIME类型伺服XHTML" target="_blank" rel="external"><u><font color="#0000ff">分离内容和MIME内容脚本</font></u></a>来同时伺服<code>application/xhtml+xml</code>和<code>text/html</code>的站长，最好能够利用已经存在的代码来决定这两种不同的方法的采用。在原始的分离内容和MIME内容脚本中，MIME类型由<code>$mime</code>变量来保存。如果该变量的值是“application/xhtml+xml”，则可以在文档中使用<code>object</code>。否则，则把标准AdSense的JavaScript包含进来。下面的脚本演示这是如何做到的：</p>
+<pre> &lt;div class=&quot;ads&quot;&gt;
+&lt;?php
+if($mime == &quot;application/xhtml+xml&quot;) &#123; print &quot; &lt;object data=&quot;/includes/google.php&quot; type=&quot;text/html&quot;&gt;&lt;/object&gt;n&quot;;
+&#125; else &#123;
+?&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+这里是Google AdSense的参数 
+&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://pagead2.googlesyndication.com/pagead/show_ads.js&quot;&gt;&lt;/script&gt;
+&lt;?php
+&#125;
+?&gt;
+&lt;/div&gt;</pre>
+
+<p>这个解决方案业已在IE 6， <a href="http://www.spreadfirefox.com/?q=affiliates&amp;id=38491&amp;t=72" target="_blank" rel="external"><u><font color="#0000ff">Firefox</font></u></a> 0.92和Opera 7.0中测试通过。<br></p></div></div></div></div><p></p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2005/11/17/ebay-e5-bc-80-e5-a7-8b-e4-b8-ba-e5-ba-97-e9-93-ba-e6-8f-90-e4-be-9brss-e8-be-93-e5-87-ba/" rel="prev">eBay开始为店铺提供RSS输出</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2005/11/15/e7-9c-8b-e7-9c-8b-e8-bf-99-e4-b8-aa-e7-90-83-e8-bf-b7-e6-80-8e-e6-a0-b7-e8-a2-ab-e9-aa-97-ef-bc-9f-ef-bc-88-e8-bd-ac-e8-b4-b4-ef-bc-89/" rel="next">看看这个球迷怎样被骗？（转贴）</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+            </div>
+
+            
+
+            
+              <div class="comments" id="comments">
+                
+              </div>
+            
+        </div>
+
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Vitrum Zhu" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Vitrum Zhu</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">653</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-name">分類</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么AdSense不能在真正的XHTML中工作？"><span class="nav-number">1.</span> <span class="nav-text">为什么AdSense不能在真正的XHTML中工作？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么才能使它工作呢？"><span class="nav-number">2.</span> <span class="nav-text">怎么才能使它工作呢？</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="copyright" >
+  
+  &copy; &nbsp;  2005 - 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vitrum Zhu</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+        </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+</div>
+
+<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.4"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.4"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.4" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.4" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (CONFIG.sidebar === 'always') {
+            displaySidebar();
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+<!-- lazyload -->
+<script type="text/javascript" src="/js/lazyload.js"></script>
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery("#posts img").lazyload({
+            placeholder: "/images/loading.gif",
+            effect: "fadeIn"
+        });
+    });
+</script>
+</body>
+</html>
