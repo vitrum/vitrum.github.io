@@ -160,6 +160,102 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/28/Opencv-应用，图片里取出四边形/" itemprop="url">
+                Opencv应用，图片里取出四边形
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-07-28T10:18:26+08:00" content="2015-07-28">
+            2015-07-28
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/opencv/" itemprop="url" rel="index"><span itemprop="name">opencv</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>有这样一个需求，在桌上有张纸，可能是票据，合同什么的，用手机咔嚓咔嚓拍下来，然后自动把纸张缩放到合适的大小。可是拍的时候有可能是歪的，不一定就对的很正，桌子也可能是有花纹啊，边上有小干扰物啥的。</p>
+<p>这要是做APP的话，可怎么搞，总之是要检测纸张边缘，取出四边形，然后拉伸成规则长方形。</p>
+<p>好像选opencv是必然的，还有更好的选择吗？</p>
+<p>一、图像预处理<br>据说通常都要对图像进行降噪避免误测，常见的做法是先进行高斯模糊，然而这并没有什么卵用，会把图像弄模糊，边界都不清楚就没法玩了。所以有人说，可以用Mean Shift，Mean Shift的优点就在于如果是像背景桌面的浅色纹理，图像分割的过程中相当于将这些小的浮动过滤掉，并且保留相对明显的纸张边缘，结果如下：</p>
+<p>原图<br>!(<a href="http://www.linuxidc.com/upload/2015_01/150118102418484.png" target="_blank" rel="external">http://www.linuxidc.com/upload/2015_01/150118102418484.png</a>)<br>处理后<br>!(<a href="http://www.linuxidc.com/upload/2015_01/150118102418485.png" target="_blank" rel="external">http://www.linuxidc.com/upload/2015_01/150118102418485.png</a>)</p>
+<p>顺便说一句，现在手机分辨率好高，直接处理这么大的图片会比较消耗资源，把图缩小之后处理速度会提升，而且也变相消除了部分干扰。</p>
+<p>二、边缘检测<br>边缘检测这一步，最好是能有人工干预，把大范围标出来，类似这样：<br>!(<a href="http://www.linuxidc.com/upload/2015_01/150118102418486.png" target="_blank" rel="external">http://www.linuxidc.com/upload/2015_01/150118102418486.png</a>)</p>
+<p>但实际上这样的用户体验肯定是负分了，所以假设用户的桌面不会这么极端，而是使用相对整洁的桌面并且纸张放置相对规整，类似这样的：<br>!(<a href="http://ww2.sinaimg.cn/large/6cea169fjw1edopgxi1vvj21kw2t4e81.jpg" target="_blank" rel="external">http://ww2.sinaimg.cn/large/6cea169fjw1edopgxi1vvj21kw2t4e81.jpg</a>)</p>
+<p>这样就不需要用GrabCut做分割，而是直接灰度处理后用canny算子检测边缘。</p>
+<pre><code><span class="comment">// bw is the grayscaled source image</span>
+cv<span class="tag">::Canny</span>(<span class="literal">bw</span>, <span class="literal">bw</span>, <span class="number">100</span>, <span class="number">100</span>, <span class="number">3</span>);
+</code></pre><p>得到边缘图：<br>!(<a href="http://ww4.sinaimg.cn/large/6cea169fjw1edorxrxncwj205k07ewf3.jpg" target="_blank" rel="external">http://ww4.sinaimg.cn/large/6cea169fjw1edorxrxncwj205k07ewf3.jpg</a>)</p>
+<p>三、直线检测</p>
+<p>待…</p>
+<p>四、判断有效多边形</p>
+<p>待…</p>
+<p>五、求四顶点坐标</p>
+<p>待…</p>
+<p>参考资料：</p>
+<p><a href="http://daisygao.com/2014/02/17/%E7%94%A8opencv%E5%AE%9E%E7%8E%B0%E6%89%AB%E6%8F%8F%E5%85%A8%E8%83%BD%E7%8E%8Bcamscanner/" target="_blank" rel="external">用OpenCV实现“扫描全能王”APP</a></p>
+<p><a href="http://www.linuxidc.com/Linux/2015-01/111962.htm" target="_blank" rel="external">利用OpenCV检测图像中的长方形画布或纸张并提取图像内容</a>好像原帖在知乎上</p>
+<p><a href="http://opencv-code.com/tutorials/automatic-perspective-correction-for-quadrilateral-objects/" target="_blank" rel="external">Automatic perspective correction for quadrilateral objects</a><br>注：我是觉得这篇里硬要凑4条线拼一个四边形有点难，还是检测出一些，然后判断抛弃一些比较好。</p>
+<p><a href="http://blog.csdn.net/mysteryrat/article/details/8955229" target="_blank" rel="external">自动透视校正为四边形对象</a> 上一篇加了写中文注释。</p>
+<p><a href="http://blog.163.com/liangq_11/blog/static/35743824201092242725214/" target="_blank" rel="external">深入剖析mean shift 图像分割 原理及代码</a> </p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/27/hello-world/" itemprop="url">
                 Hello World
               </a>
@@ -897,82 +993,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2011/04/26/e6-90-ad-e5-bb-banode-socket-e7-8e-af-e5-a2-83/" itemprop="url">
-                搭建Node + socket 环境
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2011-04-26T15:09:57+08:00" content="2011-04-26">
-            2011-04-26
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>1、NPM (<a href="http://npmjs.org/" target="_blank" rel="external">http://npmjs.org/</a>)</p>
-<p>curl <a href="http://npmjs.org/install.sh" target="_blank" rel="external">http://npmjs.org/install.sh</a> | sh</p>
-<p>2、Node WebSocket Server</p>
-<p><a href="https://github.com/miksago/node-websocket-server" target="_blank" rel="external">https://github.com/miksago/node-websocket-server</a></p>
-<pre>npm install websocket-server</pre></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1012,21 +1032,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">653</span>
+              <span class="site-state-item-count">654</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">分類</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>

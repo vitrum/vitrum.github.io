@@ -160,6 +160,78 @@
           
           
             
+              <a class="post-title-link" href="/2008/06/18/e5-85-b3-e4-ba-8e-e5-a6-82-e4-bd-95-e6-9e-b6-e8-ae-besproutcore-e7-8e-af-e5-a2-83-2/" itemprop="url">
+                关于如何架设sproutcore环境-2
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2008-06-18T09:26:06+08:00" content="2008-06-18">
+            2008-06-18
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!1688" class="bvMsg"><div>windowsXP里面,我下了个ruby-1.8.6,直接就带了GEM,</div><br><div> </div><br><div>命令行</div><br><div>gem install sproutcore</div><br><div> </div><br><div>第一次运行的时候,要提示安装很多东西,搞不懂,都选YES了,后来某个选择选错了,就报错咯,</div><br><div>总结一下,还是要选x86-mswin32的安装方式,后面第二次试就安装成功了,时间关系,下班,明天再试,</div><br><div> </div><br><div>SproutCore 的地址是,<a href="http://rubyforge.rubyuser.de/gems/sproutcore-0.9.10.gem(还有1~9,10应该是最新的吧" target="_blank" rel="external">http://rubyforge.rubyuser.de/gems/sproutcore-0.9.10.gem(还有1~9,10应该是最新的吧</a>)</div><br><div> </div><br><div>代码如下:</div><br><div>运行文件:RubyGems Package Manager</div><br><div>C:rubybingemhelp.bat</div><br><div><br>c:ruby&gt;cmd /k &quot;c:rubybingem&quot;</div><br><div>RubyGems is a sophisticated package manager for Ruby.  This is a<br>basic help message containing pointers to more information.</div><br><div>  Usage:<br>    gem -h/—help<br>    gem -v/—version<br>    gem command [arguments…] [options…]</div><br><div>  Examples:<br>    gem install rake<br>    gem list —local<br>    gem build package.gemspec<br>    gem help install</div><br><div>  Further help:<br>    gem help commands            list all ‘gem’ commands<br>    gem help examples            show some examples of usage<br>    gem help &lt;COMMAND&gt;           show help on COMMAND<br>                                   (e.g. ‘gem help install’)<br>  Further information:<br>    <a href="http://rubygems.rubyforge.org/" target="_blank" rel="external">http://rubygems.rubyforge.org</a></div><br><div>c:ruby&gt;gem install sproutcore<br>Bulk updating Gem source index for: <a href="http://gems.rubyforge.org/" target="_blank" rel="external">http://gems.rubyforge.org</a><br>Install required dependency activesupport? [Yn]  y<br>Install required dependency merb-core? [Yn]  y<br>Install required dependency erubis? [Yn]  y<br>Install required dependency abstract? [Yn]  y<br>Install required dependency json_pure? [Yn]  y<br>Install required dependency rspec? [Yn]  y<br>Install required dependency rack? [Yn]  y<br>Install required dependency mime-types? [Yn]  y<br>Install required dependency erubis? [Yn]  y<br>Install required dependency rubigen? [Yn]  y<br>Install required dependency mongrel? [Yn]  y<br>Select which gem to install for your platform (i386-mswin32)<br> 1. mongrel 1.1.5 (ruby)<br> 2. mongrel 1.1.5 (x86-mswin32-60)<br> 3. mongrel 1.1.5 (java)<br> 4. mongrel 1.1.4 (x86-mswin32-60)<br> 5. mongrel 1.1.4 (ruby)<br> 6. mongrel 1.1.4 (java)<br> 7. Skip this gem<br> 8. Cancel installation<br>&gt; 1<br>Install required dependency gem_plugin? [Yn]  y<br>Install required dependency daemons? [Yn]  y<br>Install required dependency fastthread? [Yn]  y<br>Select which gem to install for your platform (i386-mswin32)<br> 1. fastthread 1.0.1 (mswin32)<br> 2. fastthread 1.0.1 (ruby)<br> 3. fastthread 1.0.1 (i386-mswin32)<br> 4. Skip this gem<br> 5. Cancel installation<br>&gt; 2<br>Building native extensions.  This could take a while…<br>ERROR:  While executing gem … (Gem::Installer::ExtensionBuildError)<br>    ERROR: Failed to build gem native extension.</div><br><div>ruby extconf.rb install sproutcore<br>creating Makefile</div><br><div>nmake<br>‘nmake’ 不是内部或外部命令，也不是可运行的程序<br>或批处理文件。</div><br><div><br>Gem files will remain installed in c:/ruby/lib/ruby/gems/1.8/gems/fastthread-1.0<br>.1 for inspection.<br>Results logged to c:/ruby/lib/ruby/gems/1.8/gems/fastthread-1.0.1/ext/fastthread<br>/gem_make.out</div><br><div>c:ruby&gt;gem install sproutcore<br>Install required dependency mongrel? [Yn]  y<br>Select which gem to install for your platform (i386-mswin32)<br> 1. mongrel 1.1.5 (ruby)<br> 2. mongrel 1.1.5 (x86-mswin32-60)<br> 3. mongrel 1.1.5 (java)<br> 4. mongrel 1.1.4 (x86-mswin32-60)<br> 5. mongrel 1.1.4 (ruby)<br> 6. mongrel 1.1.4 (java)<br> 7. Skip this gem<br> 8. Cancel installation<br>&gt; 2<br>Install required dependency cgi_multipart_eof_fix? [Yn]  y<br>Successfully installed sproutcore-0.9.10<br>Successfully installed mongrel-1.1.5-x86-mswin32-60<br>Successfully installed cgi_multipart_eof_fix-2.5.0<br>Installing ri documentation for sproutcore-0.9.10…<br>Installing ri documentation for mongrel-1.1.5-x86-mswin32-60…<br>Installing ri documentation for cgi_multipart_eof_fix-2.5.0…<br>Installing RDoc documentation for sproutcore-0.9.10…<br>Installing RDoc documentation for mongrel-1.1.5-x86-mswin32-60…<br>Installing RDoc documentation for cgi_multipart_eof_fix-2.5.0…</div><br><div>c:ruby&gt;</div></div></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2008/06/17/ruby-e4-b8-ad-e6-96-87-e7-a4-be-e5-8c-ba-e8-ae-ba-e5-9d-9b-e9-9d-9e-e5-ae-98-e6-96-b9-e7-bd-91-e7-ab-99/" itemprop="url">
                 Ruby中文社区论坛 _非官方网站
               </a>
@@ -819,78 +891,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2008/05/26/e5-93-80-e6-82-bc-e4-b8-8e-e5-9b-a2-e7-bb-93-e7-9a-84-e6-9b-b2-e7-ba-bf-e8-bd-ac-e8-b4-b4/" itemprop="url">
-                哀悼与团结的曲线-  转贴
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2008-05-26T03:24:48+08:00" content="2008-05-26">
-            2008-05-26
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/新闻与政治/" itemprop="url" rel="index"><span itemprop="name">新闻与政治</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!1670" class="bvMsg"><br><br>##### <a>哀悼与团结的曲线</a><br> <p>2008年5月22日 上午 10:07:00 </p><p>发表者：中国工程研究院工程师方坤<br>汶川大地震——这场三十年来降临在华夏大地上最大的一次灾难，令整个中国陷入巨大的震惊与无比的悲痛之中。仅仅在几天之前，&quot;地震&quot;仿佛还是一个与你我无关的字眼，&quot;汶川&quot;也不过是厚厚的地图集中一个无人知晓的偏僻的所在。而在今天，一切都改变了。<br>当我们依照惯例整理和分析谷歌搜索引擎的流量数据时，一条从未见过的曲线出现在我们面前。当意识到发生了什么事情时，我们的眼睛湿润了。<br><a href="http://bp0.blogger.com/_hk4GrggD0hw/SDTV-uX8EdI/AAAAAAAAA8o/Yh4TvjgbRgg/s1600-h/0search.jpg" target="_blank" rel="external"><br><img src="http://bp0.blogger.com/_hk4GrggD0hw/SDTV-uX8EdI/AAAAAAAAA8o/Yh4TvjgbRgg/s200/0search.jpg" alt=""></a><br>2008 年 5 月 19 日 14 时 28 分，全国人民默哀三分钟，悼念在汶川大地震中遇难的同胞。<br>中国网民——他们中很多人如此习惯于通过谷歌来搜寻生活、工作和学习中所需<br>的各种信息。而在这一刻，他们——中国网民，散布在九百六十万平方公里神州大地上的中国网民，说着标准普通话的中国网民和带着四川、陕西、河南、浙江、广东、安徽、贵州、福建口音的中国网民——在这一刻，他们全部放下手中的键盘和鼠标，立起身来，低下他们的头颅，为他们的祖国，为他们的同胞。那一刻，庄严，肃穆。<br>所有人都这样做了；没有人监督，也不需要监督。这条谷歌搜索流量的曲线说明了一切。<br>在那一刻，谷歌的全体员工也放下手中的工作，齐聚会议室，为地震中遭遇不幸的同胞致哀，为我们多灾多难的民族祈祷。但我们的数据仪没有停止工作，它默默地记录下这条笔直下降的流量曲线。<br>2008 年的磨难把我们如此真切的凝聚在一起，2008 年的磨难让我们如此接近的与国家靠在一起。<br>如果机器也会思想，如果我们的数据仪也能读懂这条曲线背后的含义，它也会流泪吗？<br>或者，它更应该感动？因为它看到——<br>一个伟大的民族，在巨大的悲痛中低下她的头颅。而当她擦干眼泪，她的头颅扬得更高。</p></div></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -930,21 +930,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">653</span>
+              <span class="site-state-item-count">654</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">分類</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
