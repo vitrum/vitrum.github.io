@@ -213,14 +213,18 @@
 <p>顺便说一句，现在手机分辨率好高，直接处理这么大的图片会比较消耗资源，把图缩小之后处理速度会提升，而且也变相消除了部分干扰。</p>
 <h2 id="二、边缘检测">二、边缘检测</h2><p>边缘检测这一步，最好是能有人工干预，把大范围标出来，类似这样：</p>
 <p><img src="http://www.linuxidc.com/upload/2015_01/150118102418486.png" alt="类似"></p>
-<p>但实际上这样的用户体验肯定是负分了，所以假设用户的桌面不会这么极端，而是使用相对整洁的桌面并且纸张放置相对规整，类似这样的：<br><img src="http://ww2.sinaimg.cn/large/6cea169fjw1edopgxi1vvj21kw2t4e81.jpg =250x" alt="类似"></p>
+<p>但实际上这样的用户体验肯定是负分了，所以假设用户的桌面不会这么极端，而是使用相对整洁的桌面并且纸张放置相对规整，类似这样的：<br><img src="http://ww3.sinaimg.cn/large/6cea169fjw1edorxi2nqqj20dc0hs414.jpg" alt="类似"></p>
 <p>这样就不需要用GrabCut做分割，而是直接灰度处理后用canny算子检测边缘。</p>
 <pre><code><span class="comment">// bw is the grayscaled source image</span>
 cv<span class="tag">::Canny</span>(<span class="literal">bw</span>, <span class="literal">bw</span>, <span class="number">100</span>, <span class="number">100</span>, <span class="number">3</span>);
 </code></pre><p>得到边缘图：</p>
 <p><img src="http://ww4.sinaimg.cn/large/6cea169fjw1edorxrxncwj205k07ewf3.jpg" alt="边缘图"></p>
-<h2 id="三、直线检测">三、直线检测</h2><p>待…</p>
-<h2 id="四、判断有效多边形">四、判断有效多边形</h2><p>待…</p>
+<h2 id="三、直线检测">三、直线检测</h2><p>直线检测就是利用概率霍夫变换累加求出图像中的直线，看<a href="http://blog.csdn.net/zhaocj/article/details/40047397" target="_blank" rel="external">介绍</a>。这里我们可以对后面的参数做些微调，在我们的参数里，假设了纸张的宽度和高度都接近边缘，并且各自至少大于画面宽高的一半，那么过短的线就可以直接抛弃了。</p>
+<pre><code><span class="comment">// w_proc 就是缩小后的画面宽度，20是把间距20以内的线段延长拼接为一条直线</span>
+HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<span class="literal">PI</span> / <span class="number">180</span>, w_proc / <span class="number">2</span>, w_proc / <span class="number">2</span>, <span class="number">20</span>)</span>;
+</code></pre><p>顺利的得到了这个：</p>
+<p><img src="http://ww4.sinaimg.cn/large/6cea169fjw1edp0p51cs6j205k07eq3o.jpg" alt="线图"></p>
+<h2 id="四、判断有效多边形">四、判断有效多边形</h2><p>上例中的lines，就是我们得到的所有线的集合，每条线包含点的偏移和向量。<br>如何判断其中哪些是有效的多边形，或者说我们要的多边形，对我来说蛮纠结的。有的<a href="http://opencv-code.com/tutorials/automatic-perspective-correction-for-quadrilateral-objects/" target="_blank" rel="external">例子</a>里直接HoughLinesP跑完就有了，我测试的图基本都不行。</p>
 <h2 id="五、求四顶点坐标">五、求四顶点坐标</h2><p>待…</p>
 <p>参考资料：</p>
 <p><a href="http://daisygao.com/2014/02/17/%E7%94%A8opencv%E5%AE%9E%E7%8E%B0%E6%89%AB%E6%8F%8F%E5%85%A8%E8%83%BD%E7%8E%8Bcamscanner/" target="_blank" rel="external">用OpenCV实现“扫描全能王”APP</a></p>
