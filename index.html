@@ -219,13 +219,19 @@
 cv<span class="tag">::Canny</span>(<span class="literal">bw</span>, <span class="literal">bw</span>, <span class="number">100</span>, <span class="number">100</span>, <span class="number">3</span>);
 </code></pre><p>得到边缘图：</p>
 <p><img src="http://ww4.sinaimg.cn/large/6cea169fjw1edorxrxncwj205k07ewf3.jpg" alt="边缘图"></p>
-<h2 id="三、直线检测">三、直线检测</h2><p>直线检测就是利用概率霍夫变换累加求出图像中的直线，看<a href="http://blog.csdn.net/zhaocj/article/details/40047397" target="_blank" rel="external">介绍</a>。这里我们可以对后面的参数做些微调，在我们的参数里，假设了纸张的宽度和高度都接近边缘，并且各自至少大于画面宽高的一半，那么过短的线就可以直接抛弃了。</p>
+<h2 id="三、直线检测">三、直线检测</h2><p>直线检测就是利用概率霍夫变换累加求出图像中的直线，看<a href="http://blog.csdn.net/zhaocj/article/details/40047397" target="_blank" rel="external">介绍</a>和<a href="http://www.tuicool.com/articles/Mn2EBn" target="_blank" rel="external">介绍2</a>。这里我们可以对后面的参数做些微调，在我们的参数里，假设了纸张的宽度和高度都接近边缘，并且各自至少大于画面宽高的一半，那么过短的线就可以直接抛弃了。</p>
 <pre><code><span class="comment">// w_proc 就是缩小后的画面宽度，20是把间距20以内的线段延长拼接为一条直线</span>
 HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<span class="literal">PI</span> / <span class="number">180</span>, w_proc / <span class="number">2</span>, w_proc / <span class="number">2</span>, <span class="number">20</span>)</span>;
 </code></pre><p>顺利的得到了这个：</p>
 <p><img src="http://ww4.sinaimg.cn/large/6cea169fjw1edp0p51cs6j205k07eq3o.jpg" alt="线图"></p>
 <h2 id="四、判断有效多边形">四、判断有效多边形</h2><p>上例中的lines，就是我们得到的所有线的集合，每条线包含点的偏移和向量。<br>如何判断其中哪些是有效的多边形，或者说我们要的多边形，对我来说蛮纠结的。有的<a href="http://opencv-code.com/tutorials/automatic-perspective-correction-for-quadrilateral-objects/" target="_blank" rel="external">例子</a>里直接HoughLinesP跑完就有了，我测试的图基本都不行。</p>
-<h2 id="五、求四顶点坐标">五、求四顶点坐标</h2><p>待…</p>
+<p><a href="http://daisygao.com/2014/02/17/%E7%94%A8opencv%E5%AE%9E%E7%8E%B0%E6%89%AB%E6%8F%8F%E5%85%A8%E8%83%BD%E7%8E%8Bcamscanner/" target="_blank" rel="external">这里</a>的方法是把所有横向的线中取最上和最下两条，纵向线中取最左和最右两条。这里是基于纸张正放的假设，如果侧放就不行了，例如这样的</p>
+<p><img src="http://opencv-code.com/wp-content/uploads/perspective-quadrilateral-src-img.jpg" alt="很难这样测出来的"></p>
+<h2 id="五、求四顶点坐标">五、求四顶点坐标</h2><p>总之不管三七二十一，我们有了四边形的四条边。两两相交有6个点，除去画面外的两个，剩下的四个点就是我们要的四个顶点了。</p>
+<p>使用这个<a href="http://en.wikipedia.org/wiki/Line_intersection" target="_blank" rel="external">公式</a>，带入两条直线上的两个点坐标。</p>
+<p><img src="http://opencv-code.com/wp-content/uploads/perspective-quadrilateral-line-intersections-equation.png" alt="公式"></p>
+<h2 id="六、透视转换">六、透视转换</h2><p><img src="http://opencv-code.com/wp-content/uploads/perspective-quadrilateral-match-corners.png" alt="转换"></p>
+<p>用<code>getPerspectiveTransform</code>计算转化矩阵，再用<code>warpPerspective</code>调用转化矩阵进行拉伸。</p>
 <p>参考资料：</p>
 <p><a href="http://daisygao.com/2014/02/17/%E7%94%A8opencv%E5%AE%9E%E7%8E%B0%E6%89%AB%E6%8F%8F%E5%85%A8%E8%83%BD%E7%8E%8Bcamscanner/" target="_blank" rel="external">用OpenCV实现“扫描全能王”APP</a></p>
 <p><a href="http://www.linuxidc.com/Linux/2015-01/111962.htm" target="_blank" rel="external">利用OpenCV检测图像中的长方形画布或纸张并提取图像内容</a>好像原帖在知乎上</p>
