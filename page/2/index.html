@@ -160,6 +160,84 @@
           
           
             
+              <a class="post-title-link" href="/2011/05/05/install-7zip-at-centos/" itemprop="url">
+                Install 7zip at CentOS
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2011-05-05T21:29:42+08:00" content="2011-05-05">
+            2011-05-05
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>1.yum</p>
+<p><strong>yum –y install p7zip</strong></p>
+<p>2.gcc-c++</p>
+<p>wget <a href="http://nchc.dl.sourceforge.net/sourceforge/p7zip/p7zip_4.65_src_all.tar.bz2" target="_blank" rel="external">http://nchc.dl.sourceforge.net/sourceforge/p7zip/p7zip_4.65_src_all.tar.bz2</a><br>tar -xjvf p7zip_4.65_src_all.tar.bz2<br>cd p7zip_4.65<br>make<br>make install</p>
+<p><strong>
+</strong></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2011/04/26/e6-90-ad-e5-bb-banode-socket-e7-8e-af-e5-a2-83/" itemprop="url">
                 搭建Node + socket 环境
               </a>
@@ -1030,105 +1108,6 @@ jQuery('.drogbox').bind('touchstart',function(e){
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2011/04/07/use-jquery-to-asynchronous-loading-sina-weibo-openid-javascript/" itemprop="url">
-                Use jQuery to asynchronous loading Sina weibo OPENID javascript
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2011-04-07T10:47:27+08:00" content="2011-04-07">
-            2011-04-07
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/jQuery/" itemprop="url" rel="index"><span itemprop="name">jQuery</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>HTML CODE</p>
-<pre>&lt;div&gt;
-  &lt;a href="####" alt="新浪微博" id="openidweibolink"&gt;新浪微博&lt;/a&gt;
-  &lt;form id="openidsinafrom" action="" method="post"&gt;&lt;/form&gt;
-&lt;/div&gt;</pre>
-javascript with jQuery
-<pre>jQuery(document).ready(function(){
-  var weiboUrl = "";
-  jQuery('#openidweibolink').bind('click', function() {
-    var ajaxUrl     = "/openid/weibo/";  // 后台PHP页面内配置OPENID相关参数，包括KEY值、登录回调页面地址等
-    var urlCheckTime = 0 ;
-    if (weiboUrl =='' ){
-      jQuery.ajax({ //一个Ajax过程
-      type: "post",  //以post方式与后台沟通
-      url :  ajaxUrl,//与此php页面沟通
-      dataType:'json',//从php返回的值以 JSON方式 解释
-      data:  '', //发给php的数据
-      success: function(json){//如果调用php成功
-        weiboUrl = json.urlAuth;
-        //window.open(newUrl);
-        //alert("weiboUrl:"+weiboUrl);
-        jQuery('#openidsinafrom').attr("action",weiboUrl);
-        jQuery('#openidsinafrom').submit();
-        }
-      });
-    }
-  });
-});</pre></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1168,7 +1147,7 @@ javascript with jQuery
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">654</span>
+              <span class="site-state-item-count">655</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -1182,7 +1161,7 @@ javascript with jQuery
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">29</span>
+              <span class="site-state-item-count">30</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
