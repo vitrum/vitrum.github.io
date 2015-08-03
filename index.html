@@ -105,7 +105,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-home"></i> <br />
-            首頁
+            首页
           </a>
         </li>
       
@@ -113,7 +113,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             <i class="menu-item-icon icon-about"></i> <br />
-            關於
+            关于
           </a>
         </li>
       
@@ -121,7 +121,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-archives"></i> <br />
-            歸檔
+            归档
           </a>
         </li>
       
@@ -129,7 +129,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             <i class="menu-item-icon icon-tags"></i> <br />
-            標籤
+            标签
           </a>
         </li>
       
@@ -170,7 +170,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-08-03T13:22:09+08:00" content="2015-08-03">
             2015-08-03
           </time>
@@ -193,16 +193,17 @@
         
           <span itemprop="articleBody"><p>某天，嘴炮打的太嗨，说可以用APP识别连续拍的几个图片，然后拼接起来，就像iPhone自带的那个全景拍照模式，Panorama mode。<a href="http://stackoverflow.com/questions/14062932/libraries-to-capture-panorama-in-ios-6" target="_blank" rel="external">很多人也在问</a>。</p>
 <p><img src="https://github.com/foundry/OpenCVSwiftStitch/raw/meta/meta/example.big.jpg" alt=""></p>
-<h2 id="OpenCV">OpenCV</h2><p>回头一查，发现这个老高深了，单纯用opencv Stitch功能限制相当多，图片处理很慢不说，还超占内存，我的iPhone5上跑3张连拍就闪退了。</p>
-<p>附上<a href="https://github.com/foundry/OpenCVStitch" target="_blank" rel="external">一开始找到的代码</a>，坦率的说不行啊～</p>
-<h2 id="SIFT">SIFT</h2><p>后来网上又搜到这个<a href="https://en.wikipedia.org/wiki/Scale-invariant_feature_transform" target="_blank" rel="external">SIFT</a>(<a href="http://blog.csdn.net/pi9nc/article/details/9251387" target="_blank" rel="external">中文介绍</a>)据说也是碉堡扎天的很，通过比对特征点，来拼接图片。<a href="https://github.com/search?l=C%2B%2B&amp;o=desc&amp;q=SIFT&amp;s=stars&amp;type=Repositories&amp;utf8=%E2%9C%93" target="_blank" rel="external">github</a>上面的一些代码了。</p>
+<h2 id="OpenCV">OpenCV</h2><p>发现OpenCV里已经集成了一个stitch，附上<a href="https://github.com/foundry/OpenCVStitch" target="_blank" rel="external">找到的例程代码</a>。</p>
+<h2 id="SIFT">SIFT</h2><p>网上搜到，说叫Rob Hess的大神搞了个基于OpenCV的SIFT算法。这个<a href="https://en.wikipedia.org/wiki/Scale-invariant_feature_transform" target="_blank" rel="external">SIFT</a>(<a href="http://blog.csdn.net/pi9nc/article/details/9251387" target="_blank" rel="external">中文介绍</a>)据说是碉堡扎天的很，通过比对特征点，来拼接图片。<a href="https://github.com/search?l=C%2B%2B&amp;o=desc&amp;q=SIFT&amp;s=stars&amp;type=Repositories&amp;utf8=%E2%9C%93" target="_blank" rel="external">github</a>上面的有很多应用。</p>
+<p><a href="http://ppwwyyxx.com/2013/SIFT-and-Image-Stiching/" target="_blank" rel="external">另一篇中文SIFT使用的介绍</a>，<a href="http://github.com/ppwwyyxx/panorama" target="_blank" rel="external">他的例程</a></p>
 <p><img src="https://github.com/ppwwyyxx/panorama/raw/master/results/small/apartment.jpg" alt="例子"></p>
 <p>这有个例子<a href="http://www.cs.bath.ac.uk/brown/autostitch/autostitch.html" target="_blank" rel="external">AutoStitch</a>，据说可以免费用，有MAC版，而且我手机拍的照片直接就拼起来了，敬仰啊。可惜这个找不到源码。</p>
 <p><img src="http://www.cs.bath.ac.uk/brown/autostitch/half950.jpg" alt="例子"></p>
 <p><img src="http://www.cs.bath.ac.uk/brown/autostitch/serratus950.jpg" alt="例子"></p>
-<p>然后又发现一个叫<a href="http://hugin.sourceforge.net/" target="_blank" rel="external">Hugin</a>的，好像很了得～</p>
+<p>然后又发现一个叫<a href="http://hugin.sourceforge.net/" target="_blank" rel="external">Hugin</a>的，好像很了得，就是太大了，不知道怎么搞进APP里去。</p>
 <h2 id="K-Means,_RANSAC">K-Means, RANSAC</h2><p>这俩是什么鬼完全不懂了～好吧，谷歌一下之后发现K-Means是聚类算法，RANSAC是什么随机一致性什么什么算法。  ：（</p>
-<h2 id="总之">总之</h2><p>为什么在avfoundation就没有接口啊，擦！直接开出来大家不都可以直接用了嘛！差评！</p>
+<h2 id="总之">总之</h2><p><a href="http://mi.eng.cam.ac.uk/~cipolla/lectures/4F12/Slides/4F12-ImageStitching.pdf" target="_blank" rel="external">一个PDF快速了解关键点～</a></p>
+<p><code>为什么在avfoundation就没有接口啊，擦！直接开出来大家不都可以直接用了嘛！差评！</code></p>
 </span>
         
       
@@ -243,7 +244,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-30T09:49:20+08:00" content="2015-07-30">
             2015-07-30
           </time>
@@ -319,7 +320,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-28T10:18:26+08:00" content="2015-07-28">
             2015-07-28
           </time>
@@ -327,7 +328,7 @@
 
         
           <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
+            &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/opencv/" itemprop="url" rel="index"><span itemprop="name">opencv</span></a></span>
 
@@ -429,7 +430,7 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2015-07-27T16:29:08+08:00" content="2015-07-27">
             2015-07-27
           </time>
@@ -499,7 +500,7 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2012-03-24T20:03:52+08:00" content="2012-03-24">
             2012-03-24
           </time>
@@ -507,7 +508,7 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
 
         
           <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
+            &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a></span>
 
@@ -572,7 +573,7 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2011-09-27T09:15:24+08:00" content="2011-09-27">
             2011-09-27
           </time>
@@ -580,7 +581,7 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
 
         
           <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
+            &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
 
@@ -689,7 +690,7 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2011-08-16T10:09:16+08:00" content="2011-08-16">
             2011-08-16
           </time>
@@ -697,7 +698,7 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
 
         
           <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
+            &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a></span>
 
@@ -789,7 +790,7 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2011-07-25T14:55:41+08:00" content="2011-07-25">
             2011-07-25
           </time>
@@ -797,7 +798,7 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
 
         
           <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
+            &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a></span>
 
@@ -865,7 +866,7 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2011-06-21T18:27:16+08:00" content="2011-06-21">
             2011-06-21
           </time>
@@ -873,7 +874,7 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
 
         
           <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
+            &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
 
@@ -946,7 +947,7 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          发表于
           <time itemprop="dateCreated" datetime="2011-06-20T17:33:34+08:00" content="2011-06-20">
             2011-06-20
           </time>
@@ -954,7 +955,7 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
 
         
           <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
+            &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a></span>
 
@@ -1038,21 +1039,21 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">656</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">33</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">31</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-name">标签</span>
               </a>
           </div>
 
@@ -1108,11 +1109,11 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  主題 -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT
   </a>
