@@ -37,25 +37,24 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="源自：这篇
-先挖坑，以后再填。
-ACL / Roles + Permissionshttps://github.com/djvirgen/virgen-aclSimple and elegant, create your own checks. No middleware? 
-https://github.com/OptimalBits/node_aclUse as middleware, cre">
+<meta name="description" content="权限管理，是管理系统中的常见组件。通常需要定义资源，把资源调配给用户，通过判断用户是否有权限增删改查来实现。
+ACL：Access Control List，访问控制列表，是比较流行的设计方式。通过吧用户和权限挂钩来实现。
+RBAC：Role Based Access Control，角色访问控制系统，是另一个实现思路。提炼出角色对象，把用户和角色绑定，角色来对应权限，角色和权限没有直接关联，对复">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nodejs项目中用到的用户权限管理系统">
 <meta property="og:url" content="http://vitrum.github.io/2015/08/03/Nodejs项目中用到的用户权限管理系统/index.html">
 <meta property="og:site_name" content="Vitrum's Blog">
-<meta property="og:description" content="源自：这篇
-先挖坑，以后再填。
-ACL / Roles + Permissionshttps://github.com/djvirgen/virgen-aclSimple and elegant, create your own checks. No middleware? 
-https://github.com/OptimalBits/node_aclUse as middleware, cre">
-<meta property="og:updated_time" content="2015-08-03T10:27:42.000Z">
+<meta property="og:description" content="权限管理，是管理系统中的常见组件。通常需要定义资源，把资源调配给用户，通过判断用户是否有权限增删改查来实现。
+ACL：Access Control List，访问控制列表，是比较流行的设计方式。通过吧用户和权限挂钩来实现。
+RBAC：Role Based Access Control，角色访问控制系统，是另一个实现思路。提炼出角色对象，把用户和角色绑定，角色来对应权限，角色和权限没有直接关联，对复">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/en/c/c3/RBAC.jpg">
+<meta property="og:image" content="http://dl.iteye.com/upload/attachment/425543/d2573c4d-dca7-380f-b2fc-6cda19d6eaf5.jpg">
+<meta property="og:updated_time" content="2015-08-04T09:37:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nodejs项目中用到的用户权限管理系统">
-<meta name="twitter:description" content="源自：这篇
-先挖坑，以后再填。
-ACL / Roles + Permissionshttps://github.com/djvirgen/virgen-aclSimple and elegant, create your own checks. No middleware? 
-https://github.com/OptimalBits/node_aclUse as middleware, cre">
+<meta name="twitter:description" content="权限管理，是管理系统中的常见组件。通常需要定义资源，把资源调配给用户，通过判断用户是否有权限增删改查来实现。
+ACL：Access Control List，访问控制列表，是比较流行的设计方式。通过吧用户和权限挂钩来实现。
+RBAC：Role Based Access Control，角色访问控制系统，是另一个实现思路。提炼出角色对象，把用户和角色绑定，角色来对应权限，角色和权限没有直接关联，对复">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -196,9 +195,17 @@ https://github.com/OptimalBits/node_aclUse as middleware, cre">
       
 
       
-        <span itemprop="articleBody"><p>源自：<a href="https://gist.github.com/facultymatt/6370903" target="_blank" rel="external">这篇</a></p>
-<p>先挖坑，以后再填。</p>
-<h2 id="ACL_/_Roles_+_Permissions">ACL / Roles + Permissions</h2><p><a href="https://github.com/djvirgen/virgen-acl" target="_blank" rel="external">https://github.com/djvirgen/virgen-acl</a><br>Simple and elegant, create your own checks. No middleware? </p>
+        <span itemprop="articleBody"><p>权限管理，是管理系统中的常见组件。通常需要定义资源，把资源调配给用户，通过判断用户是否有权限增删改查来实现。</p>
+<p><a href="https://en.wikipedia.org/wiki/Access_control_list" target="_blank" rel="external">ACL</a>：Access Control List，访问控制列表，是比较流行的设计方式。通过吧用户和权限挂钩来实现。</p>
+<p><a href="https://en.wikipedia.org/wiki/Role-based_access_control" target="_blank" rel="external">RBAC</a>：Role Based Access Control，角色访问控制系统，是另一个实现思路。提炼出角色对象，把用户和角色绑定，角色来对应权限，角色和权限没有直接关联，对复杂的系统来说，更加容易管理。</p>
+<h2 id="RBAC">RBAC</h2><p><img src="https://upload.wikimedia.org/wikipedia/en/c/c3/RBAC.jpg" alt="wiki"></p>
+<p><img src="http://dl.iteye.com/upload/attachment/425543/d2573c4d-dca7-380f-b2fc-6cda19d6eaf5.jpg" alt=""></p>
+<h2 id="资料">资料</h2><p><a href="http://rongxh2010.iteye.com/blog/930648" target="_blank" rel="external">扩展RBAC用户角色权限设计方案</a></p>
+<p><a href="http://blog.csdn.net/tch918/article/details/18449043" target="_blank" rel="external">基于AOP实现权限管理：访问控制模型RBAC和ACL</a></p>
+<p><a href="http://blog.csdn.net/gxp/article/details/6741652" target="_blank" rel="external">基于RBAC模型的权限管理系统的设计和实现</a></p>
+<h2 id="node_实现">node 实现</h2><p>源自：<a href="https://gist.github.com/facultymatt/6370903" target="_blank" rel="external">这篇</a></p>
+<p><a href="https://github.com/seeden/rbac" target="_blank" rel="external">https://github.com/seeden/rbac</a><br>Hierarchical Role Based Access Control for NodeJS</p>
+<p><a href="https://github.com/djvirgen/virgen-acl" target="_blank" rel="external">https://github.com/djvirgen/virgen-acl</a><br>Simple and elegant, create your own checks. No middleware? </p>
 <p><a href="https://github.com/OptimalBits/node_acl" target="_blank" rel="external">https://github.com/OptimalBits/node_acl</a><br>Use as middleware, create your own roles and access. Great choice. </p>
 <p><a href="https://github.com/tschaub/authorized" target="_blank" rel="external">https://github.com/tschaub/authorized</a><br>Similar to connect roles… but a bit more robust? you can create roles and action, and associate many roles with that action</p>
 <p><a href="https://github.com/scottkf/ability-js" target="_blank" rel="external">https://github.com/scottkf/ability-js</a><br>Like canCan for rails. This is a traditional controller / function type permission system. May be too abstract. </p>
@@ -371,7 +378,7 @@ https://github.com/OptimalBits/node_aclUse as middleware, cre">
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ACL_/_Roles_+_Permissions"><span class="nav-number">1.</span> <span class="nav-text">ACL / Roles + Permissions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mongoose_Field_Access_Control"><span class="nav-number">2.</span> <span class="nav-text">Mongoose Field Access Control</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RBAC"><span class="nav-number">1.</span> <span class="nav-text">RBAC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-number">2.</span> <span class="nav-text">资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node_实现"><span class="nav-number">3.</span> <span class="nav-text">node 实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mongoose_Field_Access_Control"><span class="nav-number">4.</span> <span class="nav-text">Mongoose Field Access Control</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
