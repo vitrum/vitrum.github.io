@@ -160,6 +160,214 @@
           
           
             
+              <a class="post-title-link" href="/2011/04/13/drag-and-touch-in-ios-whit-jquery/" itemprop="url">
+                Drag image gallery  in iOS whit jQuery 
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2011-04-13T11:16:00+08:00" content="2011-04-13">
+            2011-04-13
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/HTML5/" itemprop="url" rel="index"><span itemprop="name">HTML5</span></a></span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/HTML5/jQuery/" itemprop="url" rel="index"><span itemprop="name">jQuery</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>key point:</p>
+<p>e.preventDefault();<br>var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];</p>
+<p><a href="http://www.glamour-sales.com.cn/m/t.drag" target="_blank" rel="external">Demo</a></p>
+<pre>
+<pre>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+&lt;meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" /&gt;
+
+&lt;title&gt;moblie test&lt;/title&gt;
+
+&lt;script src="[http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js](http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js)" type="text/javascript" &gt;&lt;/script&gt;
+
+&lt;style&gt;
+html, body { margin: 0;   padding: 0;}
+.droginfo { width:100%; height:40px; background:#ffc;line-height:18px}
+.droginfo div {width:100px; float:left;}
+.drogbox {background: #333377;    clear: left;    min-height: 240px;    min-width: 320px; max-width:480px;    position: relative;  overflow:hidden;  }
+#moveBox {width:3200px; height:200px; position:absolute; left:0; top:20px; background:  #ddd; padding: 0;}
+#moveBox .photo { width:150px; height:180px;  padding: 10px 5px; float:left;  }
+&lt;/style&gt;
+
+&lt;/head&gt;</pre>
+<pre>&lt;body&gt;
+
+&lt;div class="drogbox"&gt;
+    &lt;div id="moveBox"&gt;
+      &lt;img class="photo" src="[http://www.glamour-sales.com.cn/media/catalog/product/yv/s/YR0-518-00007.jpg](http://www.glamour-sales.com.cn/media/catalog/product/yv/s/YR0-518-00007.jpg)" /&gt;
+      &lt;img class="photo" src="[http://www.glamour-sales.com.cn/media/catalog/product/yv/s/YR0-518-00006.jpg](http://www.glamour-sales.com.cn/media/catalog/product/yv/s/YR0-518-00006.jpg)" /&gt;
+      &lt;img class="photo" src="[http://www.glamour-sales.com.cn/media/catalog/product/yv/s/YR0-518-00005.jpg](http://www.glamour-sales.com.cn/media/catalog/product/yv/s/YR0-518-00005.jpg)" /&gt;
+      &lt;img class="photo" src="[http://www.glamour-sales.com.cn/media/catalog/product/yv/s/YR0-518-00004.jpg](http://www.glamour-sales.com.cn/media/catalog/product/yv/s/YR0-518-00004.jpg)" /&gt;
+      &lt;img class="photo" src="[http://www.glamour-sales.com.cn/media/catalog/product/yv/s/YR0-518-00003.jpg](http://www.glamour-sales.com.cn/media/catalog/product/yv/s/YR0-518-00003.jpg)" /&gt;
+      &lt;img class="photo" src="[http://www.glamour-sales.com.cn/media/catalog/product/yv/s/YR0-518-00002.jpg](http://www.glamour-sales.com.cn/media/catalog/product/yv/s/YR0-518-00002.jpg)" /&gt;</pre>
+<pre>      &lt;img class="photo" src="[http://www.glamour-sales.com.cn/media/catalog/product/yv/s/YR0-518-00001.jpg](http://www.glamour-sales.com.cn/media/catalog/product/yv/s/YR0-518-00001.jpg)" /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="droginfo"&gt;
+  &lt;div&gt;pageX:&lt;span  id="movex" &gt;&lt;/span&gt;&lt;/div&gt;
+  &lt;div&gt;pageY:&lt;span  id="movey" &gt;&lt;/span&gt;&lt;/div&gt;
+  &lt;div&gt;changeX:&lt;span  id="changex" &gt;&lt;/span&gt;&lt;/div&gt;
+  &lt;div&gt;autofix:&lt;span  id="moveend" &gt;&lt;/span&gt;&lt;/div&gt;</pre>
+<pre>&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+
+var changeXOld = 0;
+var changeXNew = 0;
+var firstTouchX = 0;
+var moveThing =  jQuery('#moveBox');
+var moveList = jQuery('#moveBox img').length;
+
+jQuery('#moveBox').width( moveList  * 160);
+
+jQuery('.drogbox').bind('touchstart',function(e){
+
+      var moveBoxoffset = moveThing.offset();
+      e.preventDefault();
+      var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+
+      changeXOld = moveBoxoffset .left;
+      firstTouchX = touch.pageX;
+
+}).bind('touchmove',function(e){
+
+      e.preventDefault();
+      var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+      var elm = jQuery(this).offset();
+      var x = touch.pageX - elm.left;
+      var y = touch.pageY - elm.top;
+      if(x &lt; jQuery(this).width() &amp;&amp; x &gt; 0){
+           if(y &lt; jQuery(this).height() &amp;&amp; y &gt; 0){
+                  //CODE GOES HERE
+                  //console.log(touch.pageY+' '+touch.pageX);
+                      jQuery('#movex').text(touch.pageX);
+                      jQuery('#movey').text(touch.pageY);
+                      jQuery('#changex').text(changeXOld + "," + changeXNew );
+                      jQuery('#moveend').text('');
+           }
+      }
+
+      var newXpoint = (changeXOld - ( firstTouchX  - touch.pageX)) + 'px';
+      jQuery('#moveBox').css("left",newXpoint);
+
+}).bind('touchend',function(e){
+      e.preventDefault();
+      var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+      var moveBoxoffset = moveThing.offset();
+      var maxLeft = moveThing.width();
+
+      changeXNew = moveBoxoffset .left;
+
+      jQuery('#changex').text(changeXOld + "," + changeXNew);
+
+      var jumpX = jQuery('.drogbox').width();
+      var drogChange = changeXNew - changeXOld ;
+
+      if ( drogChange  &gt; 10  )  {
+         var newXpoint = ( (parseInt(moveBoxoffset.left / jumpX )) * jumpX )  + 'px';
+         jQuery('#moveBox').animate({left: newXpoint }, 180);
+         jQuery('#moveend').text('&gt;10 +++');
+      }
+     if ( drogChange  &lt; -10  )  {
+         var newXpoint = ( (parseInt(moveBoxoffset.left / jumpX )) * jumpX - jumpX) ;
+        if ( (newXpoint* -1) &gt;= (maxLeft - jumpX) ){
+             newXpoint = (maxLeft * -1) + jumpX + 'px';
+         }else {     newXpoint = newXpoint  + 'px';     }
+
+         jQuery('#moveBox').animate({left:newXpoint }, 180);
+         jQuery('#moveend').text('&lt;-10 ---');
+      }
+     if ( drogChange  &gt;= -10 &amp;&amp; drogChange  &lt;= 10  ){
+        var newXpoint = changeXOld + 'px';
+        jQuery('#moveBox').animate({left:newXpoint }, 50);
+     }
+});
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</pre></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2011/04/13/ie10-oh-no/" itemprop="url">
                 IE10 ?  Oh no!
               </a>
@@ -922,82 +1130,6 @@ javascript with jQuery
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2010/08/21/yahoo-e2-80-98delivers-e2-80-99-mail-optimized-for-ipad/" itemprop="url">
-                Yahoo! ‘Delivers’ Mail Optimized for iPad
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2010-08-21T21:57:22+08:00" content="2010-08-21">
-            2010-08-21
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>Here at Yahoo! we’re focused on reaching consumers wherever they are – across PC, mobile, TV and increasingly across tablet devices like iPad.</p>
-<p>On the heels of our recently launched HTML5 mobile web mail for iPhone you’ll feel right at home with this experience. We’re keeping all the things users love about our new mobile Web mail, while optimizing it for the gorgeous large screen of the iPad. The iPad experience is:<br>Faster and more reliable: If you’re offline, Yahoo! Mail uses local caching capabilities to help you access and search your messages even without an internet connection.<br>Smart: You can find and organize your messages using Full Search, personal folders and Smart Folders with messages from your most important contacts and optimized views for photos and file attachments.</p>
-<p><img src="http://ymobileblog.com/blog/wp-content/uploads/2010/08/iPad-Inbox-Full3-300x234.png" alt="" title="iPad-Inbox"><br>Feature Rich: View rich photo attachments in their full form, or as previews directly in the inbox view. Also includes a dual-pane view to make reading and organizing a breeze.<br>The new Yahoo! Mail experience is available globally to anyone who has an iPad. To check out Yahoo! Mail on your iPad, simply open up Safari and head on over to <a href="http://mail.yahoo.com" target="_blank" rel="external">http://mail.yahoo.com</a>.</p>
-<p>Of course this is just the first version, and we be constantly iterating to add new features, improve performance, and make Yahoo! Mail for iPad the best it can possibly be. And please let us know what you think.</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1037,7 +1169,7 @@ javascript with jQuery
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">658</span>
+              <span class="site-state-item-count">659</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -1051,7 +1183,7 @@ javascript with jQuery
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
