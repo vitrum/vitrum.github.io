@@ -52,7 +52,8 @@
 这个项目是InstaPDF公司开发的。他们以前的MAImagePickerController项目确实用的也是OpenCV。
 现在IPDFCameraViewCon">
 <meta property="og:image" content="https://raw.githubusercontent.com/mmackh/IPDFCameraViewController/master/mockup.png">
-<meta property="og:updated_time" content="2015-08-07T10:28:32.000Z">
+<meta property="og:image" content="https://www.shinobicontrols.com/wp-content/uploads/2014/08/rectangle_detector.png">
+<meta property="og:updated_time" content="2015-08-10T02:42:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS的CIDetector">
 <meta name="twitter:description" content="前两天还在抱怨说为啥iOS不自带矩形识别之类的功能，今天就被抽脸了。
@@ -117,7 +118,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-home"></i> <br />
-            首頁
+            Домой
           </a>
         </li>
       
@@ -125,7 +126,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             <i class="menu-item-icon icon-about"></i> <br />
-            關於
+            О сайте
           </a>
         </li>
       
@@ -133,7 +134,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-archives"></i> <br />
-            歸檔
+            Архив
           </a>
         </li>
       
@@ -141,7 +142,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             <i class="menu-item-icon icon-tags"></i> <br />
-            標籤
+            Тэги
           </a>
         </li>
       
@@ -180,7 +181,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於
+          отправлено
           <time itemprop="dateCreated" datetime="2015-08-07T18:04:52+08:00" content="2015-08-07">
             2015-08-07
           </time>
@@ -207,6 +208,50 @@
 <p>现在IPDFCameraViewController支持相机定焦拍摄、滤镜、闪光、实时边框检测以及透视矫正功能，并有简单易用的API。</p>
 <p>CIDetector是CoreImage的功能，现在常用于人脸识别、笑容识别、QRCode识别等领域。</p>
 <p><a href="http://developer.xamarin.com/guides/ios/platform_features/introduction_to_coreimage/" target="_blank" rel="external">xamarin上更多CoreImage的介绍</a></p>
+<h2 id="补一篇介绍_2015-08-10">补一篇介绍 2015-08-10</h2><p><a href="https://www.shinobicontrols.com/blog/ios8-day-by-day-day-13-coreimage-detectors" target="_blank" rel="external">iOS8 Day-by-Day :: Day 13 :: CoreImage Detectors</a></p>
+<h3 id="Detecting_Rectangles">Detecting Rectangles</h3><p>Detecting rectangles in images is often one of the first parts of a computer vision algorithm – whether it be automatic business card interpretation, or road sign processing. Although rectangle detection sounds like it should be a really simple process, as with many problems in computer vision, it’s far harder than you might expect. So it’s great that Apple have implemented an efficient algorithm as part of the CoreImage detectors.</p>
+<p>The main class associated with CoreImage detectors is the aptly-named CIDetector. The same class is used for all the different types of detectors, and is instantiated with the CIDetector(ofType:, context:, options:) initializer. The type argument is a string, which for a rectangle detector is CIDetectorTypeRectangle. The options argument is a dictionary of settings associated with this detector. The following method created a CIDetector to be used for detecting rectangles:</p>
+<pre><code>func prepareRectangleDetector() -&gt; CIDetector {
+  let <span class="string">options:</span> [<span class="string">String :</span> AnyObject] = [<span class="string">CIDetectorAccuracy:</span> CIDetectorAccuracyHigh, <span class="string">CIDetectorAspectRatio:</span> <span class="number">1.0</span>]
+  <span class="keyword">return</span> CIDetector(<span class="string">ofType:</span> CIDetectorTypeRectangle, <span class="string">context:</span> nil, <span class="string">options:</span> options)
+}
+</code></pre><p>You can see that the options here are specifying the accuracy as high, with the CIDetectorAccuracy key, and the CIDetectorAspectRatio key is used to specify that you’re searching for squares. This aspect ratio doesn’t mean that you’re only looking for squares, but it will be used in the ranking of possible rectangles to determine which is the most likely candidate. For example, if you know that you’re going to use the detector for business cards then setting the aspect ratio to 2.0 will likely yield better results.</p>
+<p>Once you’ve created a CIDetector it’s actually really simple to use. The method featuresInImage() takes a CIImage and then returns an array of CIFeature objects (well, a subclass of) which represent the detected objects. In the case of a rectangle detector, the CIFeature subclass is CIRectangleFeature, which has CGPoint properties for each of the four corners of the detected rectangle.</p>
+<p>The following method demonstrates how you can use the detector to find a rectangle in a supplied CIImage:</p>
+<pre><code><span class="func"><span class="keyword">func</span> <span class="title">performRectangleDetection</span><span class="params">(image: CIImage)</span></span> -&gt; <span class="type">CIImage</span>? {
+  <span class="keyword">var</span> resultImage: <span class="type">CIImage</span>?
+  <span class="keyword">if</span> <span class="keyword">let</span> detector = detector {
+<span class="comment">// Get the detections</span>
+<span class="keyword">let</span> features = detector.featuresInImage(image)
+<span class="keyword">for</span> feature <span class="keyword">in</span> features <span class="keyword">as</span>! [<span class="type">CIRectangleFeature</span>] {
+  resultImage = drawHighlightOverlayForPoints(image, topLeft: feature.topLeft, topRight: feature.topRight,
+                                              bottomLeft: feature.bottomLeft, bottomRight: feature.bottomRight)
+}
+  }
+  <span class="keyword">return</span> resultImage
+}
+</code></pre><p>This unwraps the option detector, before using the featuresInImage() method to perform the detection itself. At the time of writing, the rectangle detector will only ever detect one rectangle in an image, so the features array will have either exactly one or zero CIRectangleFeature objects in it.</p>
+<p>This method returns a new CIImage, which contains a red patch overlaid on the source image over the position of the detected rectangle. This uses the utility method drawHighlightOverlayForPoints() method:</p>
+<pre><code>func drawHighlightOverlayForPoints(image: <span class="built_in">CIImage</span>, topLeft: <span class="built_in">CGPoint</span>, topRight: <span class="built_in">CGPoint</span>,
+                               bottomLeft: <span class="built_in">CGPoint</span>, bottomRight: <span class="built_in">CGPoint</span>) -&gt; <span class="built_in">CIImage</span> {
+  var overlay = <span class="built_in">CIImage</span>(color: <span class="built_in">CIColor</span>(red: <span class="number">1.0</span>, green: <span class="number">0</span>, blue: <span class="number">0</span>, alpha: <span class="number">0.5</span>))
+  overlay = overlay<span class="variable">.imageByCroppingToRect</span>(image<span class="variable">.extent</span>())
+  overlay = overlay<span class="variable">.imageByApplyingFilter</span>(<span class="string">"CIPerspectiveTransformWithExtent"</span>,
+withInputParameters: [
+  <span class="string">"inputExtent"</span>: <span class="built_in">CIVector</span>(<span class="built_in">CGRect</span>: image<span class="variable">.extent</span>()),
+  <span class="string">"inputTopLeft"</span>: <span class="built_in">CIVector</span>(<span class="built_in">CGPoint</span>: topLeft),
+  <span class="string">"inputTopRight"</span>: <span class="built_in">CIVector</span>(<span class="built_in">CGPoint</span>: topRight),
+  <span class="string">"inputBottomLeft"</span>: <span class="built_in">CIVector</span>(<span class="built_in">CGPoint</span>: bottomLeft),
+  <span class="string">"inputBottomRight"</span>: <span class="built_in">CIVector</span>(<span class="built_in">CGPoint</span>: bottomRight)
+])
+  <span class="keyword">return</span> overlay<span class="variable">.imageByCompositingOverImage</span>(image)
+}
+</code></pre><p>This method creates a colored image, and then uses the perspective transform filter to map it to the points provided. It then creates a new CIImage by overlaying this colored image with the source image.</p>
+<p>In the LiveDetection sample project, the performRectangleDetection() method is used as part in the CoreImageVideoFilter class to run the detector on each of the frames received from the camera, before rendering it on screen. This class is a little more involved than you might expect it to be, and it isn’t within the scope of this article to go in to much detail, however an overview might be helpful.</p>
+<p>An AVFoundation pipeline is created which uses the camera as input, and provides a pixel buffer of each frame to a delegate method.<br>In this delegate method a CIImage is created from this pixel buffer.<br>The provided filter function (which takes an input CIImage and returns a new CIImage, much like a map function) is passed the current image.<br>The image is cropped to match the view size it is to be rendered in.<br>The CIImage is then rendered on the OpenGLES surface using a pre-created CIRenderContext.<br>Rinse and repeat for each frame received from the camera.<br>If you need to do live video processing using CoreImage then it might be worth taking a look at this class in greater detail, but if you don’t then the performRectangleDetection() method just takes a CIImage, which you can create using one of the many constructors.</p>
+<p>Running this app up will kick off the rectangle detection right away, and you’ll see results like the following on the screen:</p>
+<p><img src="https://www.shinobicontrols.com/wp-content/uploads/2014/08/rectangle_detector.png" alt="Rectangle Detector"></p>
+<p>The performance is pretty good for real-time use – certainly the demo app copes well on an iPad 3.</p>
 <h2 id="另">另</h2><p>人家说至少要iOS8,iPhone5以上。</p>
 <p>呵呵</p>
 </span>
@@ -299,10 +344,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
+            Содержание
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
+            Обзор
           </li>
         </ul>
       
@@ -317,21 +362,21 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">658</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-name">записи</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
               <span class="site-state-item-count">33</span>
-              <span class="site-state-item-name">分類</span>
+              <span class="site-state-item-name">категории</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
               <span class="site-state-item-count">33</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-name">тэги</span>
               </a>
           </div>
 
@@ -372,7 +417,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#另"><span class="nav-number">1.</span> <span class="nav-text">另</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#补一篇介绍_2015-08-10"><span class="nav-number">1.</span> <span class="nav-text">补一篇介绍 2015-08-10</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Detecting_Rectangles"><span class="nav-number">1.1.</span> <span class="nav-text">Detecting Rectangles</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#另"><span class="nav-number">2.</span> <span class="nav-text">另</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -398,11 +443,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT
   </a>
