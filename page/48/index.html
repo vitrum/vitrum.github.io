@@ -160,6 +160,78 @@
           
           
             
+              <a class="post-title-link" href="/2005/12/19/e5-8e-9f-e5-88-9b-e7-bb-99sxna-e5-8a-a0-e4-b8-8afaq/" itemprop="url">
+                原创-给sxna加上FAQ
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2005-12-19T01:26:17+08:00" content="2005-12-19">
+            2005-12-19
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!438" class="bvMsg"><div><a href="http://www.sxna.cn/f" target="_blank" rel="external">SXNA</a></div><br><div> </div><br><div>第一步<br>======================<br>======================<br>======================<br>文件<br>INCLUDEfunction_default.asp<br>中,第112行加上<br> Case &quot;Faq&quot;<br> Export=Export_Faq()</div><br><div>第372行加上</div><br><div>Function Export_Faq()<br>        If not isempty(Application(SessionStr&amp;&quot;Template_Faq&quot;)) then<br>  Application.Lock<br>  Export_Faq2=Application(SessionStr&amp;&quot;Template_Faq&quot;)<br>  Application.UnLock<br>  Else<br>  Export_Faq2=ReadfileByStream(&quot;TEMPLATE/&quot;&amp;TFolder&amp;&quot;/faq.html&quot;)<br>  Application.Lock<br>  Application(SessionStr&amp;&quot;Template_Faq&quot;)=Export_Faq2<br>  Application.UnLock<br>  End If<br>  Export_Faq=Export_Faq2<br>End Function</div><br><div>第二步<br>======================<br>======================<br>======================<br>文件default.asp</div><br><div>第43行加上<br>&lt;A HREF=&quot;default.asp?action=Faq&quot;&gt;问&amp;答&lt;/A&gt;</div><br><div>第三步<br>======================<br>======================<br>======================<br>在TEMPLATE所选的皮肤目录中<br>新建一个文件&quot;faq.html&quot;<br>里面写上自己的F&amp;Q就可以了</div></div></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2005/12/16/e5-82-bb-e7-93-9c-e6-b8-b8-e9-95-bf-e5-9f-8e-zt-e5-85-b3-e4-ba-8egtw/" itemprop="url">
                 傻瓜游长城 -zt (关于:GTW)
               </a>
@@ -797,78 +869,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2005/12/14/e5-9c-b0-e9-93-81-e5-91-98-e5-b7-a5-e4-ba-b2-e5-b1-9e-e5-85-8d-e7-a5-a8-e6-83-b9-e4-ba-89-e8-ae-ae/" itemprop="url">
-                地铁员工亲属免票惹争议
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2005-12-14T06:20:28+08:00" content="2005-12-14">
-            2005-12-14
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/恶搞全球/" itemprop="url" rel="index"><span itemprop="name">恶搞全球</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!422" class="bvMsg"><div><br><table cellspacing="0" cellpadding="0" width="90%" border="0"><br><tbody><br><tr><br><td valign="center" align="middle">昨天上午，广州举行地铁票价调整听证会<br><strong>地铁员工亲属免票惹争议</strong><br></td></tr></tbody></table><br><table cellspacing="0" cellpadding="0" width="85%" border="0"><br><tbody><br><tr><br><td><img src="http://spaces.msn.com/images/content_line.gif" alt=""></td></tr></tbody></table><br><table cellspacing="0" cellpadding="0" width="85%" border="0"><br><tbody><br><tr><br><td><img src="http://spaces.msn.com/images/list_dot.gif" alt=""><br>    本报讯  广州消息：昨天上午，广州地铁线网票价调整听证会举行，28名代表出席听证会。听证代表们对方案存在的不合理之处，提出质疑。<br><br>    乘客代表：乘客为何要为员工家属买单<br><br>    卢晓照(乘客代表、信息时报记者)：从11月30日～12月4日，有80人次反馈对方案的意见，有54人认为调整后仍然偏高，目前的方案票价水平仍是一般工薪阶层不能承受的。然而，地铁公司每名工作人员可以有3名直系亲属享受免票待遇，按6000名员工算，加上每人3名直系亲属免票，等于有24000人免票，难道直系亲属免费坐地铁也要打入营运成本吗？<br><br>    地铁公司总经理：员工亲属兼管安全，所以享受免费待遇<br><br>    对于地铁员工及其家属享受优惠的问题，广州地铁总公司总经理卢光霖先表示“不是这回事”，继而解释道，地铁员工免票在所难免。另外，反恐是地铁的头等大事，为保证地铁安全，除增加监控设备，还需确保每趟车有义务安全员，公司员工家属就是来当义务安全员的。<br><br>    卢光霖说，票价优惠并非降价，优惠只是调节不同时段的客流状况。目前对于票价调整周期没有预期。这次主要是出于对大站距的考虑，计价方式有了变化，关于起步里程的调整，代表意见可以帮助政府决策。(李婧)</td></tr></tbody></table></div></div></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -908,7 +908,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">659</span>
+              <span class="site-state-item-count">660</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -922,7 +922,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-count">35</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>

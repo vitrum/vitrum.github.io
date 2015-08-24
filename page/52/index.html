@@ -160,6 +160,78 @@
           
           
             
+              <a class="post-title-link" href="/2005/11/22/e8-87-aa-e5-b7-b1-e5-8a-a8-e6-89-8b-e5-b1-8f-e8-94-bd-e6-81-b6-e6-84-8f-e7-bd-91-e7-ab-99/" itemprop="url">
+                自己动手屏蔽恶意网站
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2005-11-22T09:18:46+08:00" content="2005-11-22">
+            2005-11-22
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!387" class="bvMsg"><br><br>恶意网站非常讨厌，以下是hosts文件，大家把虚线下面的内容复制到记事本，然后把它另存为hosts(扩展名不要)，覆盖C:WINDOWSsystem32driversetc的原文件就可以屏蔽将近100个恶意网站！<br><br># Copyright (c) 1993-1999 Microsoft Corp.<br>#<br># This is a sample HOSTS file used by Microsoft TCP/IP for Windows.<br>#<br># This file contains the mappings of IP addresses to host names. Each<br># entry should be kept on an individual line. The IP address should<br># be placed in the first column followed by the corresponding host name.<br># The IP address and the host name should be separated by at least one<br># space.<br>#<br># Additionally, comments (such as these) may be inserted on individual<br># lines or following the machine name denoted by a ‘#’ symbol.<br>#<br># For example:<br>#<br>#      102.54.94.97     rhino.acme.com          # source server<br>#       38.25.63.10     x.acme.com              # x client host<br><br>127.0.0.1       localhost<br>127.0.0.1      www.borlander.com.cn   #流氓软件网络猪<br>127.0.0.1      borlander.com.cn<br>127.0.0.1 　 www.qq3344.com 　　　# qq病毒<br><br>127.0.0.1 　 www.dj3344.com 　　　# qq病毒<br><br>127.0.0.1 　 www.qq3344.com 　　　# qq病毒<br><br>127.0.0.1 　 www.yysky.net 　　　 # qq病毒<br><br>127.0.0.1 　 www.cnqb.net 　　　　# 禁止你的注册表，改首页…栏变灰，改右键<br><br>127.0.0.1 　　 hothack.home.chinaren.com<br><br>127.0.0.1 　 www.777888.com<br><br>127.0.0.1 　 www.5dsoft.com<br><br>127.0.0.1 　 www.wokoo.net<br><br>127.0.0.1 　　 movie.sx.zj.cn<br><br>127.0.0.1 　　 xyxy68.8u8.net<br><br>127.0.0.1 　 www.youmiss.com<br><br>127.0.0.1 　　 www.cctv8.net<br><br>127.0.0.1 　　 www.kuliao.com<br><br>127.0.0.1 　　 www.yyqy.com<br><br>127.0.0.1 　　 www.sunvod.com<br><br>127.0.0.1 　　 www.t168.com<br><br>127.0.0.1 　　 www.wokoo.net<br><br>127.0.0.1 　　 www.coolcdrom.com 　　　 # 要特别小心这个网站，它会在你 启动组里做手脚，使得重启以后标题依旧<br><br>127.0.0.1 　　 www.zhengdian.com 　　　 # 标题栏也没放过<br><br>127.0.0.1 　　 girlchinese.com 　　　　　 　 # ie的主页也被改了<br><br>127.0.0.1 　　 www.girl008.com<br><br>127.0.0.1 　　 xajh.15888.net<br><br>127.0.0.1 　　 www.51bug.com<br><br>127.0.0.1 　　 www.wplune.com<br><br>127.0.0.1 　　 www.777888.net<br><br>127.0.0.1 　　 pollen.my001.net<br><br>127.0.0.1 　　 www.yule21.com<br><br>127.0.0.1 　　 www.fish3000.com<br><br>127.0.0.1 　　 www.kuliao.com<br><br>127.0.0.1 　　 www.666e.com<br><br>127.0.0.1 　　 qm.8ok.com<br><br>127.0.0.1 　　 www.guosir.ccoo.com<br><br>127.0.0.1 　　 www.163mm.com<br><br>127.0.0.1 　　 www.cnooo.com<br><br>127.0.0.1 　　 www.es158.com<br><br>127.0.0.1 　　 www.aisa-girl.net<br><br>127.0.0.1 　　 www.boliwu.com<br><br>127.0.0.1 　　 www.cctv8.net<br><br>127.0.0.1 　　 www.89005.com<br><br>127.0.0.1 　　 www.cctv1.net<br><br>127.0.0.1 　　 www.play.cn.gs 　　　　　 　 # 要特别小心这个网站，…标题 依旧<br><br>127.0.0.1 　　 newyouth.3322.net<br><br>127.0.0.1 　　 chinabdkx.363.net<br><br>127.0.0.1 　　 www.zknew.com<br><br>127.0.0.1 　　 www.dhchao.com<br><br>127.0.0.1 　　 www.top666.net<br><br>127.0.0.1 　　 www.amoisonic.com<br><br>127.0.0.1 　　 www.markguide.com<br><br>127.0.0.1 　　 www.xyxc.ccoo.com<br><br>127.0.0.1 　　 www.flyingwalk.com<br><br>127.0.0.1 　　 www.yezine.net<br><br>127.0.0.1 　　 www.mmgirls.com<br><br>127.0.0.1 　　 www.wa<strong><em>.net<br><br>127.0.0.1 　　 www.net5w.com<br><br>127.0.0.1 　　 www.fbstu.com<br><br>127.0.0.1 　　 www.qlwl.com<br><br>127.0.0.1 　　 www.yibinren.com 　　　　　 　 # 更可怕，把ie的默认页都改成他的了<br><br>127.0.0.1 　　 www.yinshang.com<br><br>127.0.0.1 　　 www.ncunet.com<br><br>127.0.0.1 　　 www.555666.net<br><br>127.0.0.1 　　 www.fm1058.cc<br><br>127.0.0.1 　　 meim.y365.com<br><br>127.0.0.1 　　 www.qq520.net<br><br>127.0.0.1 　　 jjkafei.longcity.net<br><br>127.0.0.1 　　 chow.yesky.net<br><br>127.0.0.1 　　 oicq.hk.st<br><br>127.0.0.1 　　 www.my288.com<br><br>127.0.0.1 　　 www.youmiss.com<br><br>127.0.0.1 　　 www.laws-online.net<br><br>127.0.0.1 　　 www.hj168.net<br><br>127.0.0.1 　　 16888.6to23.com<br><br>127.0.0.1 　　 www.love520.net<br><br>127.0.0.1 　　 www.qq520.com<br><br>127.0.0.1 　　 www.mmgirls.com<br><br>127.0.0.1 　　 www.555666.net<br><br>127.0.0.1 　　 www.ezhgc.com<br><br>127.0.0.1 　　 www.ezhgc.com<br><br>127.0.0.1 　　 www.eastedu.com.cn<br><br>127.0.0.1 　　 www.435000.com<br><br>127.0.0.1 　　 sdik.8ok.net<br><br>127.0.0.1 　　 feiying.coolwww.net<br><br>127.0.0.1 　　 zhongxuesheng.myrice.com<br><br>127.0.0.1 　　 www.laws-online.net<br><br>127.0.0.1 　　 www.youmiss.com<br><br>127.0.0.1 　　 www.my288.com<br><br>127.0.0.1 　　 www.yes9999.com<br><br>127.0.0.1 　　 www.nnptt.com<br><br>127.0.0.1 　　 vod.hengshui.com<br><br>127.0.0.1 　　 tv.megajoy.com<br><br>127.0.0.1 　　 www.h444.net 　　　　　　 # trojan.qqwebaut.a及其变种<br><br>127.0.0.1 trojan.qqwebaut<br><br>127.0.0.1 　　 update.myxq.com<br><br>127.0.0.1 　　 www.dj3344.com 　　　　　 　　# 打开后，重启时你的主页就变成 它的，并通过qq向他人传播，现在正飙行，奇坏无<br><br>127.0.0.1 　　 www.qq168.net 　　　　　　 # 打开后，重启时?..<br><br>127.0.0.1 　　 www.777888.com 　<br><br>127.0.0.1 　　 www.5dsoft.com 　<br><br>127.0.0.1 　　 www.wokoo.net<br><br>127.0.0.1 　　 movie.sx.zj.cn 　　<br><br>127.0.0.1 　　 www.yeapple.com 　　　　　 　 # 黄色网站，打开后?..<br><br>127.0.0.1 　　 xyxy68.8u8.net<br><br>127.0.0.1 　　 www.youmiss.com<br><br>127.0.0.1 　　 www.cctv8.net<br><br>127.0.0.1 　　 www.kuliao.com<br><br>127.0.0.1 　　 www.yyqy.com<br><br>127.0.0.1 　　 winzheng.126.com<br><br>127.0.0.1 　　 www.sunvod.com<br><br>127.0.0.1 　　 www.t168.com<br><br>127.0.0.1 　　 www.boliwo.com<br><br>127.0.0.1 　　 www.coolcdrom.com 　　　　　 　 # 要特别小心?..<br><br>127.0.0.1 　　 www.zhengdian.comoe 　　　　　　　 # 标题栏也没放过<br><br>127.0.0.1 　　 girlchinese.comie 　　　　　 　 # 的主页也被改了<br><br>127.0.0.1 　　 www.yibinren.com 　　　　　 　 # 更可怕，把ie的默认页 都改成他的了<br><br>127.0.0.1 　　 www.mtv51.com 　　　　　　 　　　　 # 什么雪落无声音?..<br><br>127.0.0.1 　　 www.163[1].com 　　　　　　 　　　　 # 也是一个什么音乐网。 症状和楼上的差不多。我上次中招后化了一个多小时才改回来！！！还有夹带病 毒！！<br><br>127.0.0.1 　　 www.37021.com 　　　　　　 　　　　 # 看清楚!不是3721， 这 个最讨厌!!<br><br>127.0.0.1 　　 www.cnqb.net 　　　　　　 　　　　 # 禁止你的注册表，…<br><br>127.0.0.1 　　 www.qq3344.com 　　　　　 　　　　　 # 与文章中的1 2类似这 3个网站都有这种恶性互相为变种。<br><br>127.0.0.1 　　 www.qq3344.net<br><br>127.0.0.1 　　 youlove.3322.net 　　　　　 　 # 有恶意代码的特性外 还夹带病毒：trojan.pwdbox.d<br><br>127.0.0.1 　　 www.58589.com 　　　　　　 　　　　 # 有恶意代码的特性<br><br>127.0.0.1 　　 tty.yyun.net 　　　　　　 # 与上述的危害差不多<br><br>127.0.0.1 　　 www.ftlink.net 　　　　　 　 # 一般性恶意代码<br><br>127.0.0.1 　　 home.kimo.com.tw 　　　 # 一般性恶意代码<br><br>127.0.0.1 　　 www.pixpox.com 　　　　　 　 # 恶性<strong><em>*</em></strong></em></strong>…； 并且自动 开启计算机后门而且在计算机每个角落都有该网站留下的恶意程序危害甚大<br><br>127.0.0.1 　　 www.k163.com 　　　　　　 # 狩猎者变种 和dj344 qq3344 qq168是一伙的<br><br>127.0.0.1 　　 www.pk.com<br><br>127.0.0.1 　　 www.xxx.com<br><br>127.0.0.1 　　 204.177.92.68 　　　　　 　 # 去try看看 绝对让你的ie去回收 站<br><br>127.0.0.1 　　 www.fassia.net 　　　　　 　<br><br>127.0.0.1 　　 www.ehomeday.com 　　　 # 搜索的时候…阋话雅叮<br><br>127.0.0.1 　　 www.jinpin.net 　　　　　 　 # 这个是老套的跟以前的一样。<br><br>127.0.0.1 　　 www.happy666.net<br><br>127.0.0.1 　　 update.myxq.com<br><br>127.0.0.1 　　 www.myxq.com&lt;/DIV&gt;<br></div></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2005/11/21/e6-88-91-e4-bb-ac-e6-9d-a5-e7-9c-8b-e7-9c-8b-e5-8e-86-e5-b9-b4-e6-95-99-e8-82-b2-e9-83-a8-e4-b8-8b-e5-8f-91-e7-9a-84-e2-80-9c-e4-b8-a5-e7-a6-81-e2-80-9d-ef-bc-9a/" itemprop="url">
                 我们来看看历年教育部下发的“严禁”：
               </a>
@@ -836,78 +908,6 @@ if($mime == &quot;application/xhtml+xml&quot;) &#123; print &quot; &lt;object da
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2005/11/14/e9-a9-b3-e6-96-a5-e2-80-9c-e5-8c-97-e4-ba-ac-e5-a5-a5-e8-bf-90-e5-90-89-e7-a5-a5-e7-89-a9-e2-80-9d-e7-9a-84-e8-af-b4-e8-be-9e/" itemprop="url">
-                驳斥“北京奥运吉祥物”的说辞
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2005-11-14T07:02:21+08:00" content="2005-11-14">
-            2005-11-14
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/恶搞全球/" itemprop="url" rel="index"><span itemprop="name">恶搞全球</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!372" class="bvMsg"><div>驳斥“北京奥运吉祥物”的说辞<br>对传统文化一无所知,不知民族生存发展的根基所在，看不到它的强国价值，以各种形式对抗“弘扬”的大政方针，削弱弘扬的力度。是洋奴文化的侧翼。<br>奇文共欣赏，疑义相与析。<br>   对不起，您上贴的“re:2008北京奥运会吉祥物正式发布! 网友祝贺!:文化底蕴欠缺。龙怎么是不存在之物呢？没想到文化翻身！悲哀”一文，不适合发表，现在已放在您的回收站中，请参照论坛管理条例修改后重新上贴<br><br>作者:志扬 于 2005-11-11 19:02:24.0 发表　 来自：<br>发送短消息</div><br><div><br>候选者之一：中华龙 </div><br><div>竞选宣言：我们是龙的传人。我并不单纯是中国人的图腾，而是世界华人的图腾，象征的是华人文化和五分之一地球人的心理认同。其次，由于我在实体上并不存在，只要能够把我设计得可爱、不落俗套，就一定能为大部分人所接受。 </div><br><div><br>弱点：由于中西方存在文化的认同差异，对于奥运吉祥物而言，龙不一定能够得到全世界所有人的认同，也许仅仅是华人世界的普遍认同。<br>请注意：<br>“由于我在实体上并不存在，”<br>这是什么话？什么叫民族虚无主义，这是注脚：中国人把一个“在实体上并不存在，”的东西当做自己的图腾，当做民族文化的代表。<br>没有文化却要冒充有文化，徽记是象征艺术，那里去找实体？党徽<strong>_</strong>镰刀斧头交叉固定在一起，谁见过这种实体？它象征两个劳动阶级的联盟，有不认同的理由吗？国徽<strong><em>_</em></strong>五星照耀下的天安门；基座周边是麦穗和齿轮，它象徵工人阶级为领导，工农联盟为基础的人民民主政权。有谁见过它的实体？要多大尺码儿的齿轮和麦穗才能包住天安门。<br>龙是象徵物的艺术造型，而不是象徵对象自身。连这点文化细胞儿都不具备，却冒充文化人儿，充当大坛主，不是民族的悲哀？是什么？<br>已公布的五个娃娃，谁见过它的实体存在？<br>龙艺术造型所象徵的实物是存在的<strong>__</strong>369柱天文音律筝组成的测闰仪，繁体龙字包含了它的全部天文、历法、天体物理学会意信息。六千年文明的基础科学全在其中，是华夏文明的代表，是中国人的骄傲。《龙的传人说龙》五月上坛，致佯君可能不屑一读。<br>“龙不一定能够得到全世界所有人的认同，也许仅仅是华人世界的普遍认同。” 这又是一种没文化的匪夷所思。“只有民族的，才是世界的”，当今世界潮流<strong>__</strong>经济全球化；文化民族化，是大趋势，唯此方能显出人类在文化领域的无限创造力，世界文化才能成为姹紫嫣红的百花园。无民族特色的炒杂烩是上不了文化台面儿的。<br>假设我是一位外国运动员或观众，到北京来，我肯定不放过一切机会多领略中国文化，对于那些见过千百次的，大同小异的，狗屁卡通娃娃，老子绝对不屑一顾。“北京欢迎你”是句多余的废话，你北京办奥运，你欢迎，我来；你不欢迎？我照样来。这由不得你欢迎不欢迎。你拿我感觉新鲜的文化款待我，这是真欢迎；你拿我看腻了的东西窠碜我，是口是心非。<br>为了博得别人的认同，而放弃自身的风彩，是中国文化界洋奴潜意识，引发出的文化软骨病。是文化交际场上的奴颜婢膝、仰人鼻息、低三下四的乞丐相。这种可怜相只能博得外邦文化乞丐层的恻隐之心，施舍一两个铜板；外邦文化绅士层则感到恶心，而躲得远远的。<br>北京人应感到愤怒，有人用他又丑又下贱的灵魂，亵渎羞辱北京娃的尊严。企图用他那颠倒美丑的下流痞的灵魂来塑造北京娃。他自己丢尽人格国格，也要北京娃陪葬。看看那五顶帽子吧，“司马昭之心，路人皆知”的如意算盘已昭然若揭，他梦想：到时这帽子会成为北京人的抢手货。蠢物！与制帽商的交易，不该这早露馅。只准说好，不准说坏的霸道，引出了我的敏感<strong><em>_</em></strong>预先看到了小人的黄粱梦。<br>五个卡通娃娃，充其量是卡通文化转基因的克隆物，既无创新又无继承，毫无民族文化的气味儿。是普世文化价值取向盲、民族文化盲、艺术创作盲、图腾徵徽文化知识盲、强国大政方针盲，灵魂鄙贱；才能低下的拙劣之作的文化垃圾。却只允许网民吹喇叭抬轿子，不准批评。先定调子：“网友祝贺!” 见过这么霸道的贴子吗？国家政策、《人民日报》社论，百姓可以批评，这是现代中国民主政治洪流交响乐。跳出这么个不识时务的噪音来，太刺耳！开了网坛世界的先河。与顾大阔少花钱买文章的丑剧，何其相似乃尔。<br>这简直霸道的离谱、出格。脱出了中国历史车轮的轨道，全不知中国人在干什么，“政治文明建设”、“政治体制改革”的风雷此人充耳不闻、视而不见。在独裁梦中无法苏醒，过高地估计了手中权力的份量。一叶障目，不识泰山，全国有多少家网站？指望在一个通讯社网站窃取了一个要职，便可一手遮天，愚弄全国百姓，岂不是白日做梦。<br>2005-11-12日   张哲   于易痴翁草堂<br></div></div></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -947,7 +947,7 @@ if($mime == &quot;application/xhtml+xml&quot;) &#123; print &quot; &lt;object da
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">659</span>
+              <span class="site-state-item-count">660</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -961,7 +961,7 @@ if($mime == &quot;application/xhtml+xml&quot;) &#123; print &quot; &lt;object da
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-count">35</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>

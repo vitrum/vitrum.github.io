@@ -160,6 +160,111 @@
           
           
             
+              <a class="post-title-link" href="/2007/07/09/e6-99-ae-e9-80-9apc-e5-ae-89-e8-a3-85mac-os-x-e6-94-bb-e7-95-a5-e8-bd-ac-e8-b4-b4/" itemprop="url">
+                普通PC安装Mac OS X攻略- 转贴
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2007-07-09T09:24:12+08:00" content="2007-07-09">
+            2007-07-09
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!1119" class="bvMsg"><div><em>摘要：4月初，苹果公司出人意料地发布了一款名为“BootCamp”的小软件，使用它可以在苹果笔记本上安装Windows XP，并使之与Mac OS X共存，这让更多想拥有苹果却担心使用问题的用户雀跃欢呼。下面，让我们一起看看，如何在PC上安装好看并且好用的Mac OS X系统吧。
+</em><br>    进入2006年，随着采用英特尔处理器的全新iMac、Mac mini以及MacBook的全面上市，Mac和PC在硬件上的差异已经越来越少，二者软件的互通也越来越清晰。4月初，苹果公司出人意料地发布了一款名为“BootCamp”的小软件，使用它可以在苹果笔记本上安装Windows XP，并使之与Mac OS X共存。这一软件的发布引起了轩然大波，一方面让Mac OS X的忠诚Fans痛斥苹果的“变节”，另一方面却让更多想拥有苹果却担心使用问题的用户雀跃欢呼。<br><br>    苹果与PC之间的大门打开了，不过它是单向的，苹果用户可以使用Windows系统，却没有为PC用户发布Mac OS X系统。值得庆幸的是，有人对最新的Mac OS X 10.4.6的安装程序进行了修改，使它能够安装在普通PC上，而且它的运行效率已经和采用英特尔处理器的Mac计算机没有多大的差距，甚至可以使之作为一些人的主要操作系统了。 </div>
+
+<p>www.bitsCN.net中国网管博客</p>
+<pre><code>下面，让我们一起看看，如何在<span class="literal">PC</span>上安装好看并且好用的Mac OS X系统吧。 
+</code></pre><p><strong>Part1 刻录和分区，安装Mac OS X前的准备工作</strong> </p>
+<pre><code>首先当然需要一台电脑，而且这台电脑的配置不能太低，运行Windows XP都不流畅的电脑肯定玩不转<span class="keyword">Mac</span> OS X。有一个硬性的要求就是，这台PC的处理器必须支持SSE2或SSE3指令集，不过诸如<span class="keyword">Pentium</span> 4、<span class="keyword">Pentium</span> <span class="keyword">M</span>或基于二者的Celeron处理器以及Sempron和Athlon 64处理器都符合这一要求。也就是说，2005年以来的主流电脑基本上都能安装。 
+
+除此之外，内存最少要求256MB、硬盘最少要有4GB，如果要从光盘进行安装的话，还需要一台DVD光驱。如果使用的是nVIDIA的显卡，那么暂时没有适用的驱动，在使用过程中可能会遇到一些小问题。 
+
+安装分为两种情况：一种是在全新硬盘上安装，另一种是在已经安装了Windows系统的硬盘上进行安装。安装方式也分为两种，一种是利用光盘进行安装，另一种是通过虚拟机进行安装，前者需要刻录DVD光盘但是速度较快，后者不用刻录光盘但是速度比较慢，并且需要安装虚拟机软件，因此并不推荐。本文以通过刻录好的DVD光盘在已经安装有Windows操作系统的硬盘上进行安装为例进行说明。      
+1.刻录光盘。从网络上下载到的通常是一个ISO格式光盘镜像文件，注意检查相应的版本说明，尽量选择最新的版本，因为越新的版本集成的补丁越多，安装时出现错误的概率也越小。然后使用Nero之类的刻录软件直接用刻录镜像的方式将其刻录成光盘即可。 
+
+曾经有人说使用可擦写的光盘不能进行安装，可是笔者使用DVD+RW顺利完成了安装而且至今使用正常，倒是有一张DVD+R光盘不能进行安装，因此如果你在安装过程中提示光盘出错，那么不妨换一种光盘重新刻录试试。 
+
+2.硬盘分区。<span class="keyword">Mac</span> OS X的一个“另类”之处在于它使用的是HFS+分区格式，Windows和Linux都不支持这种分区，甚至连一些常用的磁盘工具也不能识别它们，因此必须在安装之前为<span class="keyword">Mac</span> OS X准备好可用的分区。 
+
+已经安装好系统的硬盘一般都没有可用空间了，我们可以将其他分区的可用空间集中到一起，并建立一个新分区。这个过程可以用PQ Magic、Acronis Disk Director来完成，不过更推荐使用Partition Manager（下载地址：http:<span class="comment">//www.onlinedown.net/soft/25982.htm），因为它还可以完成下面必须的另一步操作，而其他软件大都不能同时完成两个任务。 &lt;font color="#ffffff"&gt;bbs.bitsCN.com国内最早的网管论坛&lt;/font&gt; </span>
+</code></pre><p></p><p></p>
+<p></p><p>    具体操作方法为：运行Partition Manager，选中已经存在的分区，点击工具栏上的“调整大小”按钮，将分区的空间缩小。注意缩小的时候要尽量将可用空间留在靠前的位置，即用鼠标从左往右拖动游标（如图1）。挪出几处可用空间后，再将已有的分区向后移动，将可用空间集成到一起，等可用空间到6GB以上时，建立一个分区。此时这个分区应该还是逻辑分区，将它转换成主分区（如图2）。 </p>
+<p></p><p><br>    之所以进行这一步操作，是因为当分区起始位置超过硬盘的前1024柱面后有可能会出现不能引导的情况。不过此时的分区格式还不能为Mac OS X所识别，需要进行进一步修改。右击新建好的主分区，选择“修改”、“更改分区ID”，然后在弹出的窗口中输入“af”（不要引号），此时这个分区就变成Mac OS X使用的HFS+格式了（如图3）。 </p>
+<p></p><p></p>
+<p></p><p><br>    将Mac OS X安装光盘放入光驱，做好正式安装的准备吧！ <font color="#ffffff">bitsCN.com中国网管联盟</font> </p>
+<p></p><p><strong>Part2 按部就班，系统安装要注意驱动问题</strong> </p>
+<pre><code>启动电脑，设置为由光盘启动，如果引导成功的话会出现输入引导参数的提示，几秒钟后自动进入安装程序。 
+
+安装所需的时间取决于电脑的配置及光驱的速度。笔者使用的笔记本配置为：Celeorn M <span class="number">370</span>（<span class="number">1</span>.<span class="number">5</span>GHz/<span class="number">2</span>MB缓存）、<span class="number">1</span>GB内存、<span class="number">80</span>GB <span class="number">7200</span>转硬盘、<span class="number">8</span>X康宝驱动器、<span class="keyword">Buffalo </span>WLI-G54无线网卡，整个安装过程耗时约<span class="number">30</span>分钟，比安装Windows XP略快一些。 
+</code></pre><p></p><p>    刚进入安装程序后屏幕会显示出一个圆形的旋转光标，此时不能进行任何操作，光驱读取大概3分钟后才会正式进入安装界面，所以在这个过程中不要着急。 </p>
+<pre><code>第一步是要求用户选择安装程序的语言（如图4）。我们可以看到<span class="keyword">Mac</span> OS X支持包括简体中文和繁体中文在内的15种语言，而相比之下微软则为每一种语言的Windows制作了不同的安装程序。另外一个很明显的不同就是安装<span class="keyword">Mac</span> OS X并不需要序列号。产生这种差异的原因我们已经提过，那是因为苹果靠硬件赚钱而微软靠的就是软件，所以还是可以理解的。需要说明的是，在此处选择的语言只是安装过程中所使用，如果你希望安装好的系统使用英文或者其他语言，可以随时进行修改。 
+</code></pre><p></p><p>    接下来是对我们前面为Mac OS X准备好的分区进行格式化。打开顶部的“实用工具”菜单，然后选择“磁盘工具”，就会弹出一个新的窗口（如图5）。这个窗口左侧会显示出硬盘已有的分区，所有分区都会显示为灰色。如果前面的操作正确的话，点击第二个分区（可能会显示为disk0s2），底部的信息栏中会显示其分区格式为“Mac OS扩展（日志式）”，选中它之后在右侧的窗口中选择“抹掉”，然后确认后完成操作并返回安装程序（如图6）。 </p>
+<p></p><p>    这里需要说明的是，Mac OS X可以读取NTFS分区但不能进行写操作，如果想和Windows系统进行数据交换的话，最好将一个NTFS分区转换为FAT32分区，或者在Windows系统中安装MacDrive来对HFS+分区进行读写操作（后文会进行详细介绍）。 </p>
+<pre><code>接下来就是许可协议了，主要是对软件的使用权限进行描述，直接点击同意即可。再接着是选择目标磁盘，直接选择刚才已经格式化好的分区即可（如图7）。     由于前面的操作基本上都是一路回车，所以到了这一步也很容易让人产生错觉，笔者就因此而多做了两次无用功，安装好的系统根本无法启动。在安装类型选择界面上，点击下方左侧的“自定”按钮，会弹出一个组件列表供选择安装。 
+</code></pre><div>    在这个列表中，“打印机驱动程序”是可以选择安装的，如果全部不安装的话可以节省大约2GB硬盘空间；“本地化语言”中保留的语言可以供你在安装好系统后选择使用，一般情况下保留简体中文即可；“X11”对于普通用户完全可以不安装，如此一来比默认的安装方式可以省下2GB左右空间，以后在它上面安装其他应用软件也不用为硬盘发愁了（如图8）。 <font color="#ffffff">需要什么来搜一搜吧so.bitsCN.com</font> </div><br><p align="left">    保证系统可以运行的关键一步是在这个列表中选择合适的补丁。使用英特尔或AMD处理器要分别选择对应的补丁，此外还有针对GMA900显示芯片、创新USB声卡、Radeon Mobility 显示芯片、VIA与ATI的ATA总线以及无线网卡等设备的补丁，如果使用了相应的设备也一定要勾选上，否则以后再修改时会麻烦许多倍（如图9）。<br></p><p align="left"><br>    现在越来越多的电脑（尤其是笔记本电脑）都标配了无线网卡，不过只有采用Brodcomm芯片的无线网卡才可以在Mac OS X系统中正常使用，如果是其他芯片的话就不得不拉根网线才能上网了。<br><br>    一切设置妥当后就可以点击“安装”按钮了。苹果还会正式安装之前对安装光驱进行检查，这一步会耗费很长的时间，如果你确认自己刻录的光盘没有问题的话，可以直接跳过进入复制文件的环节。复制速度视电脑配置而定，在笔者的笔记本上大约用了15分钟。<br><br>    文件复制完成后，系统还会花大约5分钟来进行一次最后的优化，然后系统会进行重启，整个安装过程到这一步就算是真正完成了。另外需要提醒一下的是，在重新启动之前记得把光盘拿出来，否则可能会忽略一些存在的问题。<br><div align="left"><strong>Part3 注册账户，成功登录Mac OS X</strong><br><br>    Mac OS X成功完成安装，在重启后会播放一段听起来振奋人心的音乐，而且在这个过程中无法实现静音，如果是在晚上进行安装的话要做好心理准备哦^_^。<br><br>    音乐过后开始设置账户信息。系统首先会询问用户的国家信息，点击“Show All”后才会显示出China；然后会提示是否需要从另一台Mac计算机传输账户信息，选择第三项“Do not transfer my information”以后点击继续；至于键盘布局，选择默认的英文（U.S.）即可。<br><br>    如果你安装了无线网络补丁并且生效的话，系统会显示出已经检测到的无线网络并要求你进行设置，比如连接到哪个热点以及WEP密码等。<br><br>    接下来是Apple ID窗口，不用输入任何内容直接点击继续；注册信息一栏中，除了First Name和Last Name之外其他的信息都可以任意填写，不过任何一栏都不能为空；再下来苹果还会询问用户的身份职业情况，去掉下面的复选框后继续，就会进入建立账户界面（如图10）。需要提醒的是，这个密码一定要记住，以后在安装软件和进行系统设置时经常会用到（如果忘记的话也可以通过安装光盘来修改）。 </div><br><div align="left"><br>    最后苹果还会问你是否需要购买.Mac服务，两个对话框中都直接选择最后一项不购买，设置过程就算告一段落了。看看Mac OS X清爽的界面，是不是非常有成就感呢（如图11）？ </div><br></p><p align="left"><br></p><p align="left">    正式进入系统后你会发现默认是英文界面，不要着急，前面我们已经说过，Mac OS X可以随意修改语言，点击屏幕下方的Dock中从右向左数第三个图标，会打开系统预置窗口（如图12）；然后图标第一行的International图标打开区域设置窗口，从左侧的列表中将简体中文拖动到最上方（如图13），点击屏幕左上角的苹果菜单，注销后就会变成亲切的简体中文界面了。<br>    Mac OS X中的许多设置都是即时生效，在设置窗口中甚至没有“确定”按钮，这对于习惯了Windows的用户可能需要一段时间来适应。<br></p><p align="left"><strong>Part4 启动设置，让WinXP和Mac随意切换 
+</strong><br>    到此为止，我们的硬盘上已经有了Windows和Mac OS X两个操作系统，不过由于两个系统处在两个不同的硬盘分区中，而只有一个分区可以设为激活并引导系统，如果每次想切换系统都修改激活分区的话，岂不是太麻烦了吗？<br><br>    不要着急，通往罗马的路当然不止一条。如果你很少使用Mac OS X，那么可以进入Windows系统，将Mac OS X安装光盘上的Chain0这个文件复制到C盘根目录，然后用记事本打开boot.ini文件（默认属性为隐藏），在启动菜单[operating systems]字段下加入一行：<br></p><p align="left">    C:Chain0=&quot;Mac OS X&quot;<br><br>    引号内的内容可以自行设置，在Windows XP启动时会显示出一个菜单供用户选择。不过使用这种方法的缺陷在于，在这个启动菜单中选择了Mac OS X之后，Mac OS X还会再出一个菜单需要选择，操作上自然是麻烦了一点。<br><br>    如果你对Mac OS X比较满意想让它留在硬盘上与Windows共同为你服务，而且想一劳永逸的话，就需要使用第三方软件来配合了，在众多多重引导软件中，笔者推荐OS Selector（下载地址：<a href="http://www.onlinedown.net/soft/25934.htm）。OS" target="_blank" rel="external">http://www.onlinedown.net/soft/25934.htm）。OS</a> Selector是Acronis Disk Director软件中的一个组件，最多支持在同一台电脑上安装100个以上的操作系统（不过估计很少有人会这么做），安装过程非常简单，只需一路回车即可。<br><br>    运行OS Selector后它会自动搜索硬盘上已经存在的操作系统，并显示在图形化的列表中。尽管它可能不能识别这个修改版本的Mac OS X，将它显示为Unknown（如图14），但是并不影响它的正常启动，选择这个Unknown的系统仍然可以正常引导Mac OS X。选中Unknown系统的图标，然后在左侧的任务列表中选择“Properties”，然后在弹出的窗口中对这个系统进行重命名及更改图标等操作。可惜的是，OS Selector默认的图标库中并不包含Mac OS X的图标，如果想追求完美的话可以自行修改它的安装文件，这些图标都是以PNG格式存储在安装包中的。<br><div align="left">图14 OS Selector将Mac OS X识别为“Unknown” <span>bbs.bitsCN.com国内最早的网管论坛</span> </div><br></p><p align="left"><br>    OS Selector默认的显示分辨率为800X600，在CRT上显示的效果尚可，可是到了液晶显示器上面就差强人意了。在OS Selector主界面的工具栏中找到Option图标并点击，然后选择“Display Properties”（显示属性），在右侧设置适合显示器的分辨率及色深后应用，这样看起来就非常舒服了（如图15）。<br><div align="left">图15 设置OS Selector的显示选项     前面提到，Mac OS X不能对NTFS分区进行写操作，但是可以对FAT32分区进行读写。如果你担心在Mac OS X下操作时会因为误操作伤及FAT32分区上的东西，那么可以在OS Selector中为不同的系统设置不同的分区隐藏选项。方法是选中系统，然后点击“Properties”，然后在左侧选择“Partitions”，在右侧的窗口中就能对分区设置隐藏了（如图16）。 </div><br></p><p align="left">    OS Selector有三种工作方式，一般情况下建议使用延时模式。进入OS Selector选项设置窗口，在左侧选择“Startup Options”，在右侧选择“With timeout sec”（如图17），然后返回主界面选择一个系统作为默认引导项。 <font color="#ffffff">so.bitsCN.com网管资料库任你搜</font><br></p><p align="left"><strong>Part5 利用软件，实现WinXP和Mac OS的数据互访</strong><br><br>    Mac OS X本身就可以识别Windows XP所使用的FAT32和NTFS分区，区别在于对NTFS只能读取而FAT32可以读写操作，所以在Mac OS X下基本上不存在访问Windows数据的问题。<br><br>    然而反过来，要在Windows系统下访问Mac OS X分区的文件，则必须借助第三方软件（如前面提到的MacDrive，下载地址<a href="http://www.onlinedown.net/soft/31914.htm）来实现。虽然一般情况下没有这种需求，但是在对系统进行修改时，使用这种方式却比使用Mac" target="_blank" rel="external">http://www.onlinedown.net/soft/31914.htm）来实现。虽然一般情况下没有这种需求，但是在对系统进行修改时，使用这种方式却比使用Mac</a> OS X的字符界面终端要直观方便许多。<br><br>    安装MacDrive后会要求重新启动以加载驱动程序，重启后会在系统托盘中显示一个图标，点击后即可弹出MacDrive的向导式主界面（图18）。在这个界面上点击“View Mac Disks in My Computer”会在“我的电脑”中打开一个HFS+分区窗口，“Burn a Mac CD or DVD”用来刻录苹果格式的光盘；“Partition a Mac hard disk”可以设置HFS+分区，“Change MacDrive Options”则可以对MacDrive软件本身进行一些设置。<br></p><p align="left">    有时候虽然加载了MacDrive驱动，但是Windows XP并不会将HSF+分区显示在“我的电脑”列表中，这时我们可以使用Partition Manager对该分区进行加载。需要注意的是，MacDrive加载硬盘后默认可以进行写操作，在进行删除等操作时要小心不要破坏了HFS+分区的数据，否则可能造成Mac OS X系统不能引导。 <font color="#ffffff">bbs.bitsCN.com国内最早的网管论坛</font><br></p><p align="left"><strong>Part6 取代Windows？Mac OS X的实用性分析</strong><br><br>    一直以来，人们不接受Mac OS X的主要原因都是可用的软件太少。这一局面到了今天已经大为改观，Adobe与前Macromedia公司的系列软件一直就有Mac版本，微软也为Mac平台发布了专门的Office软件（不过在文本样式方面还没有做到100%兼容），至于邮件收发、音乐播放等方面，Mac OS X的iMail、iTunes比之Windows平台下的软件有过之而无不及（如图19）。<br></p><p align="left"><br></p><p align="left">    对于大部分人来讲，QQ、MSN、Yahoo通和Google Talk等即时交流工具比大型软件更为重要，而这些问题在修改版的Mac OS X上也得到了很好的解决。比如登录腾讯QQ可以使用iQQ、登录其他IM软件可以使用Adium，其功能及易用性都是非常出色。 <span>bbs.bitsCN.com国内最早的网管论坛</span><br></p><p align="left">    Adium是一款集多种协议于一身的IM软件，通过它可以在Mac平台上使用诸如MSN、ICQ、雅虎通等多种平台，而且可以将各平台的联系人集中在一起，使用起来非常方便（如图20）。使用iQQ时则要注意下载最新的Universal版本（即兼容使用PowerPC处理器和英特尔处理器的Mac系统），目前惟一的两个不足之处是不能使用自定义表情和传输文件，不过并不算是太大的问题（如图21）。至于下载工具，无论是http、ftp、BT还是eMule，都有比较好用的软件来代替。<br></p><p align="left">    iQQ的下载地址是：<a href="http://lumaqq.linuxsir.org/main/?q=node/95，Adium的下载地址是：http://www.macosx.com.cn/104/" target="_blank" rel="external">http://lumaqq.linuxsir.org/main/?q=node/95，Adium的下载地址是：http://www.macosx.com.cn/104/</a> 308.html。<br><br>    当这些常用软件都解决了之后，Mac OS X才有了一定的实用价值，也更坚定了向大家推荐的理由，也许试用一段时间之后，你把Windows请出硬盘也说不定呢！<br><br>附：讨论Mac OS X的专业论坛<br><br>麦课一班：<a href="http://www.elesson.com.cn" target="_blank" rel="external">http://www.elesson.com.cn</a><br>渤麦堂：<a href="http://www.sinomac.com" target="_blank" rel="external">http://www.sinomac.com</a><br>MacFans：<a href="http://www.macfans.com.cn" target="_blank" rel="external">http://www.macfans.com.cn</a><br>osx86project.org：<a href="http://forum.osx86project.org/index.php?showforum=60" target="_blank" rel="external">http://forum.osx86project.org/index.php?showforum=60</a><br><br></p><p></p><p></p></div></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2007/07/09/e6-96-b0-e8-b4-a5macbook-mb601-e4-b8-80-e5-8f-b0-e4-bb-8e-e6-ad-a4-e8-b5-b0-e4-b8-8a-e8-b4-a5-e5-ae-b6-e4-b8-8d-e5-bd-92-e8-b7-af/" itemprop="url">
                 新败MacBook mb601一台,从此走上败家不归路
               </a>
@@ -816,78 +921,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2007/06/25/e8-82-a1-e7-a5-a8-e6-b2-89-e8-bf-b7-e4-b8-8e-e7-bd-91-e7-bb-9c-e6-b8-b8-e6-88-8f-e6-b2-89-e8-bf-b7/" itemprop="url">
-                股票沉迷与网络游戏沉迷
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2007-06-25T07:44:25+08:00" content="2007-06-25">
-            2007-06-25
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!1107" class="bvMsg"><div>先转上一篇文字<a href="http://aw98.blog.hexun.com/10242495_d.html" target="_blank" rel="external">http://aw98.blog.hexun.com/10242495_d.html</a></div><br><div> </div><br><div><br><div><em><font size="3"><span>股市啊，你打扰了俺的生活</span> [原创 2007-06-22 23:04:30 ] 发表者: aw98 </font></em><a href="http://post.blog.hexun.com/aw98/postarticle.aspx?articleid=10242495" title="编辑..." target="_blank" rel="external"><em><font size="3"><img src="http://blog.hexun.com/images/icon_edit.gif" alt=""></font></em></a><em><font size="3"> </font></em><a href="http://blog.hexun.com/aw98/deletearticle.aspx?articleid=10242495" title="删除..." target="_blank" rel="external"><em><font size="3"><img src="http://blog.hexun.com/images/icon_del.gif" alt=""></font></em></a><em><font size="3"> </font></em></div><br><div><br><div><br><div align="right"><em><font size="3"><img src="http://blog.hexun.com/img/xiao.gif" alt="字体变小"> <img src="http://blog.hexun.com/img/da.gif" alt="字体变大"></font></em></div><br><div style="font-size:14px;"><br><br><em><font size="3">熊又来了，熊又来了！</font></em><br><p style="font-size:10pt;"><em><font size="3">从周二的端午节，到周五，三天蒸发了13万，想想俺们伟大祖国的股市总市值又要蒸发几万亿了吧？反正钱就是数字，可俺为何这阵子就被这些个数字缠上了呢？自今年春节以来，每个工作日，就如那些个吸毒的人那样，9：30到11：30，下午1：00到3：00，如果不在电脑前，总会浑身不自在，总会惦记着……</font></em><br></p><p style="font-size:10pt;"><em><font size="3">钱就这么重要吗？这股市一沾，就不仅仅是钱的问题了吗？想几年前，漫漫熊市，亏损额最大超过了80%，依然心如止水，上班下班，回家老婆孩子，生活平静平淡，但也幸福快活，可如今，熊变牛了，亏损小了，没了，赚钱了，反而心就静不下来了呢？</font></em><br></p><p style="font-size:10pt;"><em><font size="3">赚这点钱能改变俺现在的生活吗？答，不能！</font></em><br></p><p style="font-size:10pt;"><em><font size="3">因为要想改变俺现在的生活，至少要给俺500万，炒股能赚500万吗？答，不能！</font></em><br></p><p style="font-size:10pt;"><em><font size="3">半年了，这个股市确实影响了俺的工作和生活，也严重影响了俺的心情，每天晚上，看收成，看K线，何苦呢，俺就不能看看电视，看看碟片，想想工作上有啥新思路？</font></em><br></p><p style="font-size:10pt;"><em><font size="3">换车的钱目前也够了，多赚少赚也就那么回事，因为俺有工作，还能维持目前的在飞涨的物价面前的生活水准。</font></em><br></p><p style="font-size:10pt;"><em><font size="3">让俺远离股市，或者叫拉开点距离，做中长线，爱涨不涨，爱跌不跌，如持基金一样持股！</font></em><br></p><p style="font-size:10pt;"><em><font size="3">手中有股，心中无股！</font></em><br></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></div></div></div></div><br><div> 我写的感言,,</div><br><div><br><div><span><font size="3">说起来我个人觉得全民抄股,同一个现象很接近。<br>就是媒体关注的青少年沉迷网络游戏。<br>网络游戏里面，玩家的得和失都是虚幻的；股市里边，大家也就是看着价格变动，如果不兑现，也都是虚幻的。<br>游戏里面，通过时间的积累，精力的投入，能获得一定的真实财富。<br>股市里面，一切都很难说啊。<br>不过还好，国家领导和主管部门早就了解了情况，股票市场有了相对规范的防沉迷系统，哈哈，一天只能抄这么几个小时，周末还不给玩：D</font></span></div><br><div><span><font size="3"></font></span> </div><br><div><span><font size="3">后来跟同事聊天，同事说他的阿姨现在全天的日程表都是围绕股票来的，每天老清老早起来，</font></span></div><br><div><span><font size="3"></font></span> </div><br><div><span><font size="3">7点前把家务都弄好，吃好早饭，开始研究个大报纸的财经版，8点半开始收看电视财经新闻，</font></span></div><br><div><span><font size="3"></font></span> </div><br><div><span><font size="3">9点15分开市~11点半，木头人状，然后瞬间冲去吃饭。</font></span></div><br><div><span><font size="3"></font></span> </div><br><div><span><font size="3">1点到三点，木头人状，然后跟各个亲戚朋友电话交流工作经验。</font></span></div><br><div><span><font size="3"></font></span> </div><br><div><span><font size="3">晚饭后继续研究各大晚报的财经版面，同时收看电视财经新闻（一心二用）太牛B了。</font></span></div><br><div><span><font size="3"></font></span> </div><br><div><span><font size="3">据说人家叫他这阿姨出去旅游，阿姨说，虽然我人在外面玩，但是心还是在股市里的。</font></span></div><br><div><span><font size="3"></font></span> </div><br><div><span><font size="3">接着我说，那你阿姨要是去旅游看看海也就算了，要是看到什么山上都是绿油油的，</font></span></div><br><div><span><font size="3"></font></span> </div><br><div><span><font size="3">再搞个坡度啊什么的，不是要紧张的一塔糊涂啊。哈哈</font></span></div></div></div></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -927,7 +960,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">659</span>
+              <span class="site-state-item-count">660</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -941,7 +974,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-count">35</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
