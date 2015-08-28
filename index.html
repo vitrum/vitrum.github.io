@@ -160,6 +160,191 @@
           
           
             
+              <a class="post-title-link" href="/2015/08/28/制作OSX-10-11-El-Capitan-的USB安装盘/" itemprop="url">
+                制作OSX 10.11 El Capitan 的USB安装盘
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-08-28T15:00:31+08:00" content="2015-08-28">
+            2015-08-28
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>OS X El Capitan传说9月9日就要发正式了，碰巧我电脑换了硬盘，干脆装一个耍耍～</p>
+<p>特此收集了一下USB安装盘的做法，貌似和以前10.10的做法类似。</p>
+<h2 id="准备工作">准备工作</h2><ul>
+<li>首先要准备一个8G以上的U盘，我特地去买了个支持type-c的U盘，以后可以用来installB</li>
+<li><a href="https://developer.apple.com/osx/download/" target="_blank" rel="external">去APPLE开发者社区下载测试版</a></li>
+<li>一台能装OS X El Capitan的电脑</li>
+<li>确认在”/Applications/“目录中已经正确下载了安装文件：”Install OS X El Capitan Developer Beta.app”</li>
+<li>如果是在网盘上下载压缩包的，记得解压缩之后复制”Install OS X El Capitan Developer Beta.app”到/“Applications/“目录去</li>
+</ul>
+<h2 id="支持安装OS_X_El_Capitan的电脑">支持安装OS X El Capitan的电脑</h2><ul>
+<li>iMac (Mid-2007 or, newer)</li>
+<li>MacBook (13in Aluminum, Late 2008), (13in, Early 2009 or, newer)</li>
+<li>MacBook Pro (13in, Mid-2009 or, newer), (15in, Mid/Late 2007 or, newer), (17in, Late 2007 or, newer)</li>
+<li>MacBook Air (Late 2008 or, newer)</li>
+<li>Mac Mini (Early 2009 or, newer)</li>
+<li>Mac Pro (Early 2008 or, newer)</li>
+<li>Xserve (Early 2009)</li>
+</ul>
+<h2 id="现在开始制作安装U盘">现在开始制作安装U盘</h2><h3 id="第一步_格式化U盘">第一步 格式化U盘</h3><p><img src="http://ips.chotee.com/wp-content/uploads/2014/osx-yosemite-usb-install-drive/format-usb.jpg" alt="http://ips.chotee.com/wp-content/uploads/2014/osx-yosemite-usb-install-drive/format-usb.jpg"></p>
+<ul>
+<li>1 - 在左方列表中找到 U 盘的名称并点击</li>
+<li>右边顶部选择 2 -「分区」，然后在 3 -「分区布局」选择「1个分区」</li>
+<li>在分区信息中的 4 -「名称」输入「ElCapInstaller」 (由于后面的命令中会用到此名称，如果你要修改成其他(英文)，请务必对应修改后面的命令)</li>
+<li>在「格式」中选择 5 -「Mac OS 扩展 (日志式)」</li>
+<li>这时，先别急着点“应用”，还要先在 6 -「选项」里面，如下图</li>
+</ul>
+<p><img src="http://ips.chotee.com/wp-content/uploads/2014/osx-yosemite-usb-install-drive/guid.jpg" alt="http://ips.chotee.com/wp-content/uploads/2014/osx-yosemite-usb-install-drive/guid.jpg"></p>
+<ul>
+<li>选择「GUID 分区表」，然后点击「好」</li>
+<li>最后再点「应用」开始对 U 盘进行格式化。<br>*</li>
+</ul>
+<h3 id="第二步_输入终端命令开始制作启动盘">第二步 输入终端命令开始制作启动盘</h3><p>打开终端窗口，输入下面的命令</p>
+<p>For OS X El Capitan Public Beta:</p>
+<pre><code>sudo /Applications/Install<span class="string">\</span> OS<span class="string">\</span> X<span class="string">\</span> El<span class="string">\</span> Capitan<span class="string">\</span> Public<span class="string">\</span> Beta.app/Contents/Resources/createinstallmedia --volume /Volumes/ElCapInstaller --applicationpath /Applications/Install<span class="string">\</span> OS<span class="string">\</span> X<span class="string">\</span> El<span class="string">\</span> Capitan<span class="string">\</span> Public<span class="string">\</span> Beta.app --nointeraction
+</code></pre><p>For OS X 10.11 Developer Beta:</p>
+<pre><code>sudo /Applications/Install<span class="string">\</span> OS<span class="string">\</span> X<span class="string">\</span> <span class="number">10.11</span><span class="string">\</span> Developer<span class="string">\</span> Beta.app/Contents/Resources/createinstallmedia --volume /Volumes/ElCapInstaller --applicationpath /Applications/Install<span class="string">\</span> OS<span class="string">\</span> X<span class="string">\</span> <span class="number">10.11</span><span class="string">\</span> Developer<span class="string">\</span> Beta.app --nointeraction
+</code></pre><p>然后按下“回车” 键，等待结果</p>
+<h3 id="第三步_顺利的话输出这个">第三步 顺利的话输出这个</h3><pre><code>“Erasing Disk: 0%… 10%… 20%… 30%…100%…
+Copying installer files to disk…
+<span class="built_in">Copy</span> <span class="bash">complete.
+</span>Making disk bootable…
+Copying boot files…
+<span class="built_in">Copy</span> <span class="bash">complete.
+</span>Done.”
+</code></pre><p>看到Done就是说明好了，期间要等待好长时间，请喝杯茶，走一走，程序员要预防颈椎病～</p>
+<h3 id="第四步_测试一下">第四步 测试一下</h3><p>把做好的U盘推出系统，然后再插一下（好像很邪恶的说）。</p>
+<p>如果正常就会弹出安装界面。</p>
+<h2 id="另外">另外</h2><p>新系统常常伴随着各种问题，勇作小白鼠真是伟大的情操。如果你有重要的资料请做好备份，或者可以再开一个分区，在分区里安装。</p>
+<p>参考：</p>
+<ul>
+<li><a href="http://www.ibtimes.co.uk/os-x-10-11-el-capitan-how-make-bootable-usb-installer-drive-1505947" target="_blank" rel="external">OS X 10.11 El Capitan: How to make bootable USB installer drive</a></li>
+</ul>
+<ul>
+<li><a href="http://www.iplaysoft.com/osx-yosemite-usb-install-drive.html" target="_blank" rel="external">简单制作 OS X Yosemite 10.10 正式版U盘USB启动安装盘方法教程 (全新安装 Mac 系统)</a></li>
+</ul>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/08/26/Thunk函数/" itemprop="url">
+                Thunk函数
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-08-26T14:54:34+08:00" content="2015-08-26">
+            2015-08-26
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="缘起">缘起</h2><p>某天在看reack的文档时看到，这个Thunk词好像很屌，在ES6中做回调函数。搜索果然大有历史啊。（我基础太渣啊）</p>
+<p><a href="https://en.wikipedia.org/wiki/Thunk" target="_blank" rel="external">Wiki上这么介绍</a></p>
+<p>Thunk:形实转换程序, 1961年由Prof.Peter Ingerman发明，当时是在 ALGOL 60 语言里。</p>
+<p>说实话我还没搞懂，先挖坑，以后再填</p>
+<h2 id="堆资料">堆资料</h2><ul>
+<li><a href="https://gist.github.com/1571493" target="_blank" rel="external">Thunk in Javascript</a></li>
+<li><a href="http://blog.csdn.net/chenyujing1234/article/details/7443084?utm_source=tuicool" target="_blank" rel="external">WTL中 Thunk技术本质(含代码)</a></li>
+</ul>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/08/24/云上的数据/" itemprop="url">
                 云上的数据
               </a>
@@ -841,201 +1026,11 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2012/03/24/add-a-new-thing-in-life-at-30th-days/" itemprop="url">
-                Add a new thing in life at 30th days.
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2012-03-24T20:03:52+08:00" content="2012-03-24">
-            2012-03-24
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>Try some 3D webGL things~~~</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2011/09/27/e5-9c-a8ec2-e4-b8-ad-e6-90-ad-e5-bb-banode-js-e7-8e-af-e5-a2-83/" itemprop="url">
-                在EC2 中搭建node.js 环境
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2011-09-27T09:15:24+08:00" content="2011-09-27">
-            2011-09-27
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p><strong>1，为什么用EC2搭建node.js环境。</strong></p>
-<p><div>首先，本地虚拟机装centOs是很好的选择，但是需要在家里和公司同时搭好相同的环境比较麻烦，而且也不方便小团队一起折腾。</div></p>
-<p><div>亚马逊的免费虚拟机只要不跑太复杂的运算大概不会有额外的费用，而且亚马逊么有被墙，国内的托管目前cnode的邀请号求不到啊，还是自己动手丰衣足食吧。</div><br><strong>2，如何申请免费一年的EC2</strong></p>
-<p><div>在<a href="http://aws.amazon.com/上注册。" target="_blank" rel="external">http://aws.amazon.com/上注册。</a></div></p>
-<p><div>网上有很多教程，请自行GOOGLE。</div></p>
-<p><div><strong>3，EC2虚拟机简单的管理和设置</strong></div></p>
-<p><div>新建KEY，保存。</div></p>
-<p><div>For MAC &amp; Linux</div></p>
-<p><div>很简单，只要一句话</div></p>
-<p><div></div></p>
-<p><pre>ssh -i user.pem ec2-user@ec2-XXX-XXX-XXX-XXX.compute-1.amazonaws.com</pre><br></p>
-<p><div>以上user.pem可以是你的KEY的路径。</div></p>
-<p><div>For PC</div></p>
-<p><div>putty 链接ec2-XXX-XXX-XXX-XXX.compute-1.amazonaws.com</div></p>
-<p><div>注意需要在connection-&gt;SSH-&gt;Auth里选上你的KEY，之前需要转pem到ppk。</div></p>
-<p><div>怎么看DNS名：在管理界面里，先点击你要查看的虚拟机，点右键，再弹出的菜单上点“connect”就可以看到如下图：</div></p>
-<p><div>其中ec2-XXX-XXX-XXX-XXX.compute-1.amazonaws.com是你的DNS名</div></p>
-<p><div>一般不太需要调整什么，可能要改的就是端口8080要开启。</div></p>
-<p><div><strong>4，搭建node前的准备</strong></div></p>
-<p><div>默认的liunx中不会吧所有工具都装好，一些基本的工具，需要我们自己装。</div></p>
-<p><div>以下：</div></p>
-<p><div>a. make</div></p>
-<p><div>b.gcc++</div></p>
-<p><div>c.curl</div></p>
-<p><div>d.git</div></p>
-<p><div>一句话安装：</div></p>
-<p><div></div></p>
-<p><pre>sudo yum install gcc-c++ openssl-devel make curl git</pre><br><br><strong>5，安装node</strong></p>
-<p><div></div></p>
-<p><pre>wget <a href="http://nodejs.org/dist/node-v0.4.12.tar.gz" target="_blank" rel="external">http://nodejs.org/dist/node-v0.4.12.tar.gz</a><br>tar -xvf node-v0.4.12.tar.gz<br>cd node-v0.4.12<br>./configure<br>make</pre><br></p>
-<p><div>由于是在云里跑的，所以make可能会花上30多分钟， 我出去吃了个中饭，回办公室发现好了的。所以，不用在屏幕前傻等，出去走走，预防一下颈椎病。</div></p>
-<p><div></div></p>
-<p><pre>make install</pre><br></p>
-<p><div>其他调整，由于EC2中path的问题，node装完了不一定能直接跑。所以有时候需要做些映射。</div></p>
-<p><div></div></p>
-<p><pre>sudo ln -s /usr/local/bin/node /usr/bin/node<br>sudo ln -s /usr/local/lib/node /usr/lib/node<br>sudo ln -s /usr/local/bin/npm /usr/bin/npm<br>sudo ln -s /usr/local/bin/node-waf /usr/bin/node-waf</pre><br></p>
-<p><div><strong>6，测试第一个静态文件服务</strong></div></p>
-<p><div>先在/home/ec2-user/上建个nodeweb目录，里面放静态页面，然后可以测试了～～</div></p>
-<p><div></div></p>
-<p><pre>var libpath = require(‘path’),<br>    http = require(“http”),<br>    fs = require(‘fs’),<br>    url = require(“url”),<br>    mime = require(‘mime’);<br>var path = “/home/ec2-user/nodeweb”;<br>var port = 8080;<br>http.createServer(function (request, response) {<br>    var uri = url.parse(request.url).pathname;<br>    var filename = libpath.join(path, uri);<br>    libpath.exists(filename, function (exists) {<br>        if (!exists) {<br>            response.writeHead(404, {<br>                “Content-Type”: “text/plain”<br>            });<br>            response.write(“404 Not Found\n”);<br>            response.end();<br>            return;<br>        }<br>        if (fs.statSync(filename).isDirectory()) {<br>            filename += ‘/index.html’;<br>        }<br>        fs.readFile(filename, “binary”, function (err, file) {<br>            if (err) {<br>                response.writeHead(500, {<br>                    “Content-Type”: “text/plain”<br>                });<br>                response.write(err + “\n”);<br>                response.end();<br>                return;<br>            }<br>            var type = mime.lookup(filename);<br>            response.writeHead(200, {<br>                “Content-Type”: type<br>            });<br>            response.write(file, “binary”);<br>            response.end();<br>        });<br>    });<br>}).listen(port);</pre><br><br><strong>7，推荐阅读：</strong></p>
-<p><div> a.Installing Node.js On Amazon EC2 :<a href="http://www.embracingthecloud.com/2010/12/05/InstallingNodejsOnAmazonEC2.aspx" target="_blank" rel="external">http://www.embracingthecloud.com/2010/12/05/InstallingNodejsOnAmazonEC2.aspx</a></div></p>
-<p><div> b.npm : <a href="https://github.com/isaacs/npm" target="_blank" rel="external">https://github.com/isaacs/npm</a></div></p>
-<p><div> c.mime : <a href="https://github.com/bentomas/node-mime" target="_blank" rel="external">https://github.com/bentomas/node-mime</a></div></p>
-<p><div><strong>8，其他～</strong></div><br>求推荐操作简单的配合node用数据库。</p>
-<p>我的微博：<a href="http://weibo.com/vitrum" target="_blank" rel="external">http://weibo.com/vitrum</a></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/66/">66</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/67/">67</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
   </nav>
 
 
@@ -1070,7 +1065,7 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">660</span>
+              <span class="site-state-item-count">662</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -1084,7 +1079,7 @@ HoughLinesP<span class="params">(bw, lines, <span class="number">1</span>, CV_<s
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>

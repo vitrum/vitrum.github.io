@@ -160,6 +160,196 @@
           
           
             
+              <a class="post-title-link" href="/2012/03/24/add-a-new-thing-in-life-at-30th-days/" itemprop="url">
+                Add a new thing in life at 30th days.
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2012-03-24T20:03:52+08:00" content="2012-03-24">
+            2012-03-24
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>Try some 3D webGL things~~~</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2011/09/27/e5-9c-a8ec2-e4-b8-ad-e6-90-ad-e5-bb-banode-js-e7-8e-af-e5-a2-83/" itemprop="url">
+                在EC2 中搭建node.js 环境
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2011-09-27T09:15:24+08:00" content="2011-09-27">
+            2011-09-27
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p><strong>1，为什么用EC2搭建node.js环境。</strong></p>
+<p><div>首先，本地虚拟机装centOs是很好的选择，但是需要在家里和公司同时搭好相同的环境比较麻烦，而且也不方便小团队一起折腾。</div></p>
+<p><div>亚马逊的免费虚拟机只要不跑太复杂的运算大概不会有额外的费用，而且亚马逊么有被墙，国内的托管目前cnode的邀请号求不到啊，还是自己动手丰衣足食吧。</div><br><strong>2，如何申请免费一年的EC2</strong></p>
+<p><div>在<a href="http://aws.amazon.com/上注册。" target="_blank" rel="external">http://aws.amazon.com/上注册。</a></div></p>
+<p><div>网上有很多教程，请自行GOOGLE。</div></p>
+<p><div><strong>3，EC2虚拟机简单的管理和设置</strong></div></p>
+<p><div>新建KEY，保存。</div></p>
+<p><div>For MAC &amp; Linux</div></p>
+<p><div>很简单，只要一句话</div></p>
+<p><div></div></p>
+<p><pre>ssh -i user.pem ec2-user@ec2-XXX-XXX-XXX-XXX.compute-1.amazonaws.com</pre><br></p>
+<p><div>以上user.pem可以是你的KEY的路径。</div></p>
+<p><div>For PC</div></p>
+<p><div>putty 链接ec2-XXX-XXX-XXX-XXX.compute-1.amazonaws.com</div></p>
+<p><div>注意需要在connection-&gt;SSH-&gt;Auth里选上你的KEY，之前需要转pem到ppk。</div></p>
+<p><div>怎么看DNS名：在管理界面里，先点击你要查看的虚拟机，点右键，再弹出的菜单上点“connect”就可以看到如下图：</div></p>
+<p><div>其中ec2-XXX-XXX-XXX-XXX.compute-1.amazonaws.com是你的DNS名</div></p>
+<p><div>一般不太需要调整什么，可能要改的就是端口8080要开启。</div></p>
+<p><div><strong>4，搭建node前的准备</strong></div></p>
+<p><div>默认的liunx中不会吧所有工具都装好，一些基本的工具，需要我们自己装。</div></p>
+<p><div>以下：</div></p>
+<p><div>a. make</div></p>
+<p><div>b.gcc++</div></p>
+<p><div>c.curl</div></p>
+<p><div>d.git</div></p>
+<p><div>一句话安装：</div></p>
+<p><div></div></p>
+<p><pre>sudo yum install gcc-c++ openssl-devel make curl git</pre><br><br><strong>5，安装node</strong></p>
+<p><div></div></p>
+<p><pre>wget <a href="http://nodejs.org/dist/node-v0.4.12.tar.gz" target="_blank" rel="external">http://nodejs.org/dist/node-v0.4.12.tar.gz</a><br>tar -xvf node-v0.4.12.tar.gz<br>cd node-v0.4.12<br>./configure<br>make</pre><br></p>
+<p><div>由于是在云里跑的，所以make可能会花上30多分钟， 我出去吃了个中饭，回办公室发现好了的。所以，不用在屏幕前傻等，出去走走，预防一下颈椎病。</div></p>
+<p><div></div></p>
+<p><pre>make install</pre><br></p>
+<p><div>其他调整，由于EC2中path的问题，node装完了不一定能直接跑。所以有时候需要做些映射。</div></p>
+<p><div></div></p>
+<p><pre>sudo ln -s /usr/local/bin/node /usr/bin/node<br>sudo ln -s /usr/local/lib/node /usr/lib/node<br>sudo ln -s /usr/local/bin/npm /usr/bin/npm<br>sudo ln -s /usr/local/bin/node-waf /usr/bin/node-waf</pre><br></p>
+<p><div><strong>6，测试第一个静态文件服务</strong></div></p>
+<p><div>先在/home/ec2-user/上建个nodeweb目录，里面放静态页面，然后可以测试了～～</div></p>
+<p><div></div></p>
+<p><pre>var libpath = require(‘path’),<br>    http = require(“http”),<br>    fs = require(‘fs’),<br>    url = require(“url”),<br>    mime = require(‘mime’);<br>var path = “/home/ec2-user/nodeweb”;<br>var port = 8080;<br>http.createServer(function (request, response) {<br>    var uri = url.parse(request.url).pathname;<br>    var filename = libpath.join(path, uri);<br>    libpath.exists(filename, function (exists) {<br>        if (!exists) {<br>            response.writeHead(404, {<br>                “Content-Type”: “text/plain”<br>            });<br>            response.write(“404 Not Found\n”);<br>            response.end();<br>            return;<br>        }<br>        if (fs.statSync(filename).isDirectory()) {<br>            filename += ‘/index.html’;<br>        }<br>        fs.readFile(filename, “binary”, function (err, file) {<br>            if (err) {<br>                response.writeHead(500, {<br>                    “Content-Type”: “text/plain”<br>                });<br>                response.write(err + “\n”);<br>                response.end();<br>                return;<br>            }<br>            var type = mime.lookup(filename);<br>            response.writeHead(200, {<br>                “Content-Type”: type<br>            });<br>            response.write(file, “binary”);<br>            response.end();<br>        });<br>    });<br>}).listen(port);</pre><br><br><strong>7，推荐阅读：</strong></p>
+<p><div> a.Installing Node.js On Amazon EC2 :<a href="http://www.embracingthecloud.com/2010/12/05/InstallingNodejsOnAmazonEC2.aspx" target="_blank" rel="external">http://www.embracingthecloud.com/2010/12/05/InstallingNodejsOnAmazonEC2.aspx</a></div></p>
+<p><div> b.npm : <a href="https://github.com/isaacs/npm" target="_blank" rel="external">https://github.com/isaacs/npm</a></div></p>
+<p><div> c.mime : <a href="https://github.com/bentomas/node-mime" target="_blank" rel="external">https://github.com/bentomas/node-mime</a></div></p>
+<p><div><strong>8，其他～</strong></div><br>求推荐操作简单的配合node用数据库。</p>
+<p>我的微博：<a href="http://weibo.com/vitrum" target="_blank" rel="external">http://weibo.com/vitrum</a></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2011/08/16/e8-bd-ac-e8-bd-bd-ef-bc-9a-e5-a4-96-e5-9b-bd-e7-94-b5-e5-95-86-e7-bd-91-e7-ab-99/" itemprop="url">
                 转载：外国电商网站
               </a>
@@ -800,181 +990,11 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2011/04/24/ios-mobile-e7-bd-91-e7-ab-99-e7-89-b9-e6-ae-8a-e7-9a-84meta-e6-a0-87-e7-ad-be/" itemprop="url">
-                iOS mobile 网站特殊的Meta 标签
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2011-04-24T22:59:09+08:00" content="2011-04-24">
-            2011-04-24
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
-
-              
-              
-                ， 
-              
-
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/HTML5/" itemprop="url" rel="index"><span itemprop="name">HTML5</span></a></span>
-
-              
-              
-                ， 
-              
-
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/HTML5/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p><a href="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariHTMLRef/Articles/MetaTags.html" target="_blank" rel="external">http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariHTMLRef/Articles/MetaTags.html</a></p>
-<p>Apple-specific <code>meta</code> tags are described here.</p>
-<h3 id="apple-mobile-web-app-status-bar-style">apple-mobile-web-app-status-bar-style</h3><p>Sets the style of the status bar for a web application.</p>
-<p><strong><strong>Syntax</strong></strong></p>
-<dl><dd><br><div><br><table><br><tbody><br><tr><br><td scope="row"><br><pre>&lt;meta name=”apple-mobile-web-app-status-bar-style” content=”black”&gt;</pre><br></td><br></tr><br></tbody><br></table><br></div><br></dd></dl><strong><strong>Discussion</strong></strong><br><br><dl><dd>This meta tag has no effect unless you first specify full-screen mode as described in <a href="http://developer.apple.com/library/safari/documentation/appleapplications/reference/SafariHTMLRef/Articles/InputTypes.html#//apple_ref/doc/uid/TP40008055-SW5" target="_blank" rel="external">“url.”</a>If <code>content</code> is set to <code>default</code>, the status bar appears normal. If set to <code>black</code>, the status bar has a black background. If set to <code>black-translucent</code>, the status bar is black and translucent. If set to <code>default</code> or <code>black</code>, the web content is displayed below the status bar. If set to <code>black-translucent</code>, the web content is displayed on the entire screen, partially obscured by the status bar. The default value is <code>default</code>.<br><br></dd></dl><strong><strong>Availability</strong></strong><br><br><dl><dd>Available in iOS 2.1 and later.</dd></dl><strong><strong>Support Level</strong></strong><br><br><dl><dd>Apple extension.</dd></dl></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2011/04/20/e6-8b-a5-e6-8a-b1html5-e4-b8-8a-e6-b5-b72011-e5-b9-b4-e5-a4-a7-e4-bc-9a-e8-a7-81-e9-97-bb/" itemprop="url">
-                拥抱HTML5 上海2011年大会见闻
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2011-04-20T14:51:23+08:00" content="2011-04-20">
-            2011-04-20
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Uncategorized/" itemprop="url" rel="index"><span itemprop="name">Uncategorized</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>这次是4月16和17日两天都有议题的研讨会。由于女儿报名幼儿园和自己正在学车，所以第一天的内容错过了。17号参加了上午的内容。</p>
-<p>HTML5设计理念的发言之后，有个360浏览器的同学问现在HTML5的代码写法这么不严格，会不会导致很多的网站越写越烂那么浏览器就会很累。</p>
-<p>其实我老想说的，现在中国的状况是各大山寨浏览器横行，你们在IE或者webkit内核上做的莫名修改让前端同学们已经很郁闷了。</p>
-<p>我真心希望国内能有类似WHATWG的组织，可以请你们讲讲我们网站要怎么配合你们。</p>
-<p>现在当市场部或者客服说，哎呀用户用360 或者遨游上我们网站有问题啊。</p>
-<p>目前完全没有办法重现问题，根本没办法整啊，谁知道你们用的是啥核心，每一次升级又改了什么？</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/">&laquo;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/66/">66</a><a class="extend next" rel="next" href="/page/3/">&raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/67/">67</a><a class="extend next" rel="next" href="/page/3/">&raquo;</a>
   </nav>
 
 
@@ -1009,7 +1029,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">660</span>
+              <span class="site-state-item-count">662</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -1023,7 +1043,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>

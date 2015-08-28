@@ -1,0 +1,706 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+    
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
+
+
+
+
+  <meta name="keywords" content="install, OSX, 10.11, El Capitan, 安装osx," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
+
+
+<meta name="description" content="OS X El Capitan传说9月9日就要发正式了，碰巧我电脑换了硬盘，干脆装一个耍耍～
+特此收集了一下USB安装盘的做法，貌似和以前10.10的做法类似。
+准备工作
+首先要准备一个8G以上的U盘，我特地去买了个支持type-c的U盘，以后可以用来installB
+去APPLE开发者社区下载测试版
+一台能装OS X El Capitan的电脑
+确认在”/Applications/“目录中已经正">
+<meta property="og:type" content="article">
+<meta property="og:title" content="制作OSX 10.11 El Capitan 的USB安装盘">
+<meta property="og:url" content="http://vitrum.github.io/2015/08/28/制作OSX-10-11-El-Capitan-的USB安装盘/index.html">
+<meta property="og:site_name" content="Vitrum's Blog">
+<meta property="og:description" content="OS X El Capitan传说9月9日就要发正式了，碰巧我电脑换了硬盘，干脆装一个耍耍～
+特此收集了一下USB安装盘的做法，貌似和以前10.10的做法类似。
+准备工作
+首先要准备一个8G以上的U盘，我特地去买了个支持type-c的U盘，以后可以用来installB
+去APPLE开发者社区下载测试版
+一台能装OS X El Capitan的电脑
+确认在”/Applications/“目录中已经正">
+<meta property="og:image" content="http://ips.chotee.com/wp-content/uploads/2014/osx-yosemite-usb-install-drive/format-usb.jpg">
+<meta property="og:image" content="http://ips.chotee.com/wp-content/uploads/2014/osx-yosemite-usb-install-drive/guid.jpg">
+<meta property="og:updated_time" content="2015-08-28T07:32:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="制作OSX 10.11 El Capitan 的USB安装盘">
+<meta name="twitter:description" content="OS X El Capitan传说9月9日就要发正式了，碰巧我电脑换了硬盘，干脆装一个耍耍～
+特此收集了一下USB安装盘的做法，貌似和以前10.10的做法类似。
+准备工作
+首先要准备一个8G以上的U盘，我特地去买了个支持type-c的U盘，以后可以用来installB
+去APPLE开发者社区下载测试版
+一台能装OS X El Capitan的电脑
+确认在”/Applications/“目录中已经正">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post'
+  };
+</script>
+
+    <title> 制作OSX 10.11 El Capitan 的USB安装盘 // Vitrum's Blog </title>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+
+
+
+<div class="container one-column page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Vitrum's Blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-about"></i> <br />
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            標籤
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <div class="main-inner">
+            <div id="content" class="content">
+                
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              制作OSX 10.11 El Capitan 的USB安装盘
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-08-28T15:00:31+08:00" content="2015-08-28">
+            2015-08-28
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>OS X El Capitan传说9月9日就要发正式了，碰巧我电脑换了硬盘，干脆装一个耍耍～</p>
+<p>特此收集了一下USB安装盘的做法，貌似和以前10.10的做法类似。</p>
+<h2 id="准备工作">准备工作</h2><ul>
+<li>首先要准备一个8G以上的U盘，我特地去买了个支持type-c的U盘，以后可以用来installB</li>
+<li><a href="https://developer.apple.com/osx/download/" target="_blank" rel="external">去APPLE开发者社区下载测试版</a></li>
+<li>一台能装OS X El Capitan的电脑</li>
+<li>确认在”/Applications/“目录中已经正确下载了安装文件：”Install OS X El Capitan Developer Beta.app”</li>
+<li>如果是在网盘上下载压缩包的，记得解压缩之后复制”Install OS X El Capitan Developer Beta.app”到/“Applications/“目录去</li>
+</ul>
+<h2 id="支持安装OS_X_El_Capitan的电脑">支持安装OS X El Capitan的电脑</h2><ul>
+<li>iMac (Mid-2007 or, newer)</li>
+<li>MacBook (13in Aluminum, Late 2008), (13in, Early 2009 or, newer)</li>
+<li>MacBook Pro (13in, Mid-2009 or, newer), (15in, Mid/Late 2007 or, newer), (17in, Late 2007 or, newer)</li>
+<li>MacBook Air (Late 2008 or, newer)</li>
+<li>Mac Mini (Early 2009 or, newer)</li>
+<li>Mac Pro (Early 2008 or, newer)</li>
+<li>Xserve (Early 2009)</li>
+</ul>
+<h2 id="现在开始制作安装U盘">现在开始制作安装U盘</h2><h3 id="第一步_格式化U盘">第一步 格式化U盘</h3><p><img src="http://ips.chotee.com/wp-content/uploads/2014/osx-yosemite-usb-install-drive/format-usb.jpg" alt="http://ips.chotee.com/wp-content/uploads/2014/osx-yosemite-usb-install-drive/format-usb.jpg"></p>
+<ul>
+<li>1 - 在左方列表中找到 U 盘的名称并点击</li>
+<li>右边顶部选择 2 -「分区」，然后在 3 -「分区布局」选择「1个分区」</li>
+<li>在分区信息中的 4 -「名称」输入「ElCapInstaller」 (由于后面的命令中会用到此名称，如果你要修改成其他(英文)，请务必对应修改后面的命令)</li>
+<li>在「格式」中选择 5 -「Mac OS 扩展 (日志式)」</li>
+<li>这时，先别急着点“应用”，还要先在 6 -「选项」里面，如下图</li>
+</ul>
+<p><img src="http://ips.chotee.com/wp-content/uploads/2014/osx-yosemite-usb-install-drive/guid.jpg" alt="http://ips.chotee.com/wp-content/uploads/2014/osx-yosemite-usb-install-drive/guid.jpg"></p>
+<ul>
+<li>选择「GUID 分区表」，然后点击「好」</li>
+<li>最后再点「应用」开始对 U 盘进行格式化。<br>*</li>
+</ul>
+<h3 id="第二步_输入终端命令开始制作启动盘">第二步 输入终端命令开始制作启动盘</h3><p>打开终端窗口，输入下面的命令</p>
+<p>For OS X El Capitan Public Beta:</p>
+<pre><code>sudo /Applications/Install<span class="string">\</span> OS<span class="string">\</span> X<span class="string">\</span> El<span class="string">\</span> Capitan<span class="string">\</span> Public<span class="string">\</span> Beta.app/Contents/Resources/createinstallmedia --volume /Volumes/ElCapInstaller --applicationpath /Applications/Install<span class="string">\</span> OS<span class="string">\</span> X<span class="string">\</span> El<span class="string">\</span> Capitan<span class="string">\</span> Public<span class="string">\</span> Beta.app --nointeraction
+</code></pre><p>For OS X 10.11 Developer Beta:</p>
+<pre><code>sudo /Applications/Install<span class="string">\</span> OS<span class="string">\</span> X<span class="string">\</span> <span class="number">10.11</span><span class="string">\</span> Developer<span class="string">\</span> Beta.app/Contents/Resources/createinstallmedia --volume /Volumes/ElCapInstaller --applicationpath /Applications/Install<span class="string">\</span> OS<span class="string">\</span> X<span class="string">\</span> <span class="number">10.11</span><span class="string">\</span> Developer<span class="string">\</span> Beta.app --nointeraction
+</code></pre><p>然后按下“回车” 键，等待结果</p>
+<h3 id="第三步_顺利的话输出这个">第三步 顺利的话输出这个</h3><pre><code>“Erasing Disk: 0%… 10%… 20%… 30%…100%…
+Copying installer files to disk…
+<span class="built_in">Copy</span> <span class="bash">complete.
+</span>Making disk bootable…
+Copying boot files…
+<span class="built_in">Copy</span> <span class="bash">complete.
+</span>Done.”
+</code></pre><p>看到Done就是说明好了，期间要等待好长时间，请喝杯茶，走一走，程序员要预防颈椎病～</p>
+<h3 id="第四步_测试一下">第四步 测试一下</h3><p>把做好的U盘推出系统，然后再插一下（好像很邪恶的说）。</p>
+<p>如果正常就会弹出安装界面。</p>
+<h2 id="另外">另外</h2><p>新系统常常伴随着各种问题，勇作小白鼠真是伟大的情操。如果你有重要的资料请做好备份，或者可以再开一个分区，在分区里安装。</p>
+<p>参考：</p>
+<ul>
+<li><a href="http://www.ibtimes.co.uk/os-x-10-11-el-capitan-how-make-bootable-usb-installer-drive-1505947" target="_blank" rel="external">OS X 10.11 El Capitan: How to make bootable USB installer drive</a></li>
+</ul>
+<ul>
+<li><a href="http://www.iplaysoft.com/osx-yosemite-usb-install-drive.html" target="_blank" rel="external">简单制作 OS X Yosemite 10.10 正式版U盘USB启动安装盘方法教程 (全新安装 Mac 系统)</a></li>
+</ul>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/install-OSX-10-11-El-Capitan-安装osx/" rel="tag">#install, OSX, 10.11, El Capitan, 安装osx</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/08/26/Thunk函数/" rel="next">Thunk函数</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+            </div>
+
+            
+
+            
+              <div class="comments" id="comments">
+                
+              </div>
+            
+        </div>
+
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="https://avatars3.githubusercontent.com/u/401767?v=3&s=140" alt="Vitrum Zhu" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Vitrum Zhu</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">662</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">分類</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">37</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/vitrum" target="_blank">GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/vitrum" target="_blank">Twitter</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/vitrum" target="_blank">Weibo</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#支持安装OS_X_El_Capitan的电脑"><span class="nav-number">2.</span> <span class="nav-text">支持安装OS X El Capitan的电脑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#现在开始制作安装U盘"><span class="nav-number">3.</span> <span class="nav-text">现在开始制作安装U盘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步_格式化U盘"><span class="nav-number">3.1.</span> <span class="nav-text">第一步 格式化U盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步_输入终端命令开始制作启动盘"><span class="nav-number">3.2.</span> <span class="nav-text">第二步 输入终端命令开始制作启动盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步_顺利的话输出这个"><span class="nav-number">3.3.</span> <span class="nav-text">第三步 顺利的话输出这个</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四步_测试一下"><span class="nav-number">3.4.</span> <span class="nav-text">第四步 测试一下</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#另外"><span class="nav-number">4.</span> <span class="nav-text">另外</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="copyright" >
+  
+  &copy; &nbsp;  2005 - 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vitrum Zhu</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+        </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+</div>
+
+<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"vitrum.duoshuo.com"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+  	<script src="/js/ua-parser.min.js"></script>
+  	<script src="/js/hook-duoshuo.js"></script>
+  
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.4"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.4"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.4" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.4" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (CONFIG.sidebar === 'always') {
+            displaySidebar();
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+<!-- lazyload -->
+<script type="text/javascript" src="/js/lazyload.js"></script>
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery("#posts img").lazyload({
+            placeholder: "/images/loading.gif",
+            effect: "fadeIn"
+        });
+    });
+</script>
+</body>
+</html>
