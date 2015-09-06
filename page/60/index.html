@@ -160,6 +160,78 @@
           
           
             
+              <a class="post-title-link" href="/2005/09/28/rss-2-0-e8-a7-84-e8-8c-83/" itemprop="url">
+                RSS 2.0规范
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2005-09-28T07:40:12+08:00" content="2005-09-28">
+            2005-09-28
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!268" class="bvMsg"><div><br><br>### RSS 2.0规范<br><br>　　RSS是 Really Simple Syndication的缩写（对<a href="http://www.infomall.cn/cgi-bin/mallgate/20040514/http://blogs.law.harvard.edu/tech/rss" target="_blank" rel="external"><u><font color="#0000ff">rss2.0</font></u></a>而言，是这三个词的缩写，对<a href="http://www.infomall.cn/cgi-bin/mallgate/20040514/http://web.resource.org/rss/1.0/" target="_blank" rel="external"><u><font color="#0000ff">rss1.0</font></u></a>而言则是RDF Site Summary的缩写，1.0与2.0走的是两个体系）<br>　　RSS 基于XML，所有的 RSS 必须遵循w3c网站上公布的XML 1.0 规范。<br>　　在一个RSS文档中，根元素是&lt;rss&gt;，带有一个必备属性version，用以指明该文档遵循的rss规范，如果rss文档遵循本规范，则version值必须是2.0。<br>　　&lt;rss&gt;元素只有一个子元素，包含关于频道的一些信息。频道(channel)是整个blog，项(item)指一篇文章或日志(也有称这为post)。<br><br><a></a><br><br>#### RSS2.0元素channel的子元素列表<br><br><table border="1"><br><tbody><br><tr><br><td>元素(Element)</td><br><td>描述(Description)</td><br><td>值域</td><br><td>重要性</td><br><td>举例(Example)</td></tr><br><tr><br><td>title</td><br><td>频道名称</td><br><td></td><br><td>必备</td><br><td>GoUpstate.com News Headlines</td></tr><br><tr><br><td>link</td><br><td>频道的URL</td><br><td></td><br><td>必备</td><br><td><a href="http://www.goupstate.com/" target="_blank" rel="external">http://www.goupstate.com/</a></td></tr><br><tr><br><td>Description</td><br><td>频道的描述</td><br><td></td><br><td>必备</td><br><td>The latest news from GoUpstate.com, a Spartanburg Herald-Journal Web site.</td></tr><br><tr><br><td></td><br><td></td><br><td></td><br><td></td><br><td></td></tr><br><tr><br><td>language</td><br><td>频道文章所用语言，</td><br><td>可用netscape或w3c推荐的列表</td><br><td>可选</td><br><td>en-us</td></tr><br><tr><br><td>copyright</td><br><td>频道内容的版权说明</td><br><td></td><br><td>可选</td><br><td>Copyright 2002, Spartanburg Herald-Journal</td></tr><br><tr><br><td>managingEditor</td><br><td>责任编辑的email</td><br><td></td><br><td>可选</td><br><td>geo@herald.com (George Matesky)</td></tr><br><tr><br><td>webMaster</td><br><td>负责频道技术事务的网站管理员email</td><br><td></td><br><td>可选</td><br><td>betty@herald.com (Betty Guernsey)</td></tr><br><tr><br><td>pubDate</td><br><td>频道内容发布日期，格式遵循RFC822格式（年份可为2们或4位）</td><br><td></td><br><td>可选</td><br><td>Sat, 07 Sep 2002 00:00:01 GMT</td></tr><br><tr><br><td>lastBuildDate</td><br><td>频道内容最后的修改日期</td><br><td></td><br><td>可选</td><br><td>Sat, 07 Sep 2002 09:42:31 GMT</td></tr><br><tr><br><td>category</td><br><td>指定频道所属的一个或几个类别</td><br><td></td><br><td>可选</td><br><td>&lt;category&gt;Newspapers&lt;/category&gt;</td></tr><br><tr><br><td>generator</td><br><td>生成该频道的程序名</td><br><td></td><br><td>可选</td><br><td>MightyInHouse Content System v2.3</td></tr><br><tr><br><td>docs</td><br><td>指向该RSS文件所用格式说明的URL</td><br><td></td><br><td>可选</td><br><td><a href="http://blogs.law.harvard.edu/tech/rss" target="_blank" rel="external">http://blogs.law.harvard.edu/tech/rss</a></td></tr><br><tr><br><td>cloud</td><br><td>Allows processes to register with a cloud to be notified of updates to the channel, implementing a lightweight publish-subscribe protocol for RSS feeds. More info here.</td><br><td></td><br><td>可选</td><br><td>&lt;cloud domain=&quot;rpc.sys.com&quot; port=&quot;80&quot; path=&quot;/RPC2&quot; registerProcedure=&quot;pingMe&quot; protocol=&quot;soap&quot;/&gt;</td></tr><br><tr><br><td>ttl</td><br><td>有效期，用以指明该频道可被缓存的最长时间</td><br><td>分钟为单位</td><br><td>可选</td><br><td>&lt;ttl&gt;60&lt;/ttl&gt;</td></tr><br><tr><br><td>image</td><br><td>指定一个 GIF或JPEG或PNG图片，用以与频道一起显示</td><br><td></td><br><td>可选</td><br><td></td></tr><br><tr><br><td>rating</td><br><td>这个频道的分级（主要指成人、限制、儿童等）</td><br><td></td><br><td>可选</td><br><td></td></tr><br><tr><br><td>textInput</td><br><td>指定一个text输入框供用户输入，具体信息及功能未定。</td><br><td></td><br><td>可选</td><br><td></td></tr><br><tr><br><td>skipHours</td><br><td>提示新闻聚合器，那些小时时段它可以跳过。</td><br><td></td><br><td>可选</td><br><td></td></tr><br><tr><br><td>skipDays</td><br><td>提示新闻聚合器，那些天它可以跳过。</td><br><td></td><br><td>可选</td><br><td></td></tr></tbody></table><br><br>#### RSS2.0元素channel的子元素image的子元素列表<br><br><table border="1"><br><tbody><br><tr><br><td>元素(Element)</td><br><td>描述(Description)</td><br><td>值域</td><br><td>重要性</td><br><td>举例(Example)</td></tr><br><tr><br><td>url</td><br><td>图片的url</td><br><td></td><br><td>必备</td><br><td></td></tr><br><tr><br><td>title</td><br><td>图片的标题，用于http的alt属性</td><br><td></td><br><td>必备</td><br><td></td></tr><br><tr><br><td>link</td><br><td>网站的url(实际中常以频道的url代替)</td><br><td></td><br><td>必备</td><br><td></td></tr><br><tr><br><td>width</td><br><td>图片的宽度(象素为单位)</td><br><td>最大144,默认88</td><br><td>可选</td><br><td></td></tr><br><tr><br><td>height</td><br><td>图片的高度(象素为单位)</td><br><td>最大400，默认31</td><br><td>可选</td><br><td></td></tr><br><tr><br><td>description</td><br><td>用于link的title属性</td><br><td></td><br><td>可选</td><br><td></td></tr></tbody></table><br><br>#### RSS2.0元素channel的子元素cloud的子元素列表<br><br><table border="1"><br><tbody><br><tr><br><td>元素(Element)</td><br><td>描述(Description)</td><br><td>值域</td><br><td>重要性</td><br><td>举例(Example)</td></tr><br><tr><br><td>domain</td><br><td>Cloud程序所在机器的域名或IP地址</td><br><td></td><br><td></td><br><td>radio.xmlstoragesystem.com</td></tr><br><tr><br><td>port</td><br><td>访问clound程序所通过的端口</td><br><td></td><br><td></td><br><td>80</td></tr><br><tr><br><td>path</td><br><td>程序所在路径（不一定是真实路径）</td><br><td></td><br><td></td><br><td>/RPC2</td></tr><br><tr><br><td>registerProcedure</td><br><td>注册的可提供的服务或过程</td><br><td></td><br><td></td><br><td>xmlStorageSystem.rssPleaseNotify</td></tr><br><tr><br><td>protocol</td><br><td>协议</td><br><td>xml-rpc, soap , http-post 之一</td><br><td></td><br><td>xml-rpc</td></tr></tbody></table><br><br>#### RSS2.0元素channel的子元素textInput的子元素列表<br><br><table border="1"><br><tbody><br><tr><br><td>元素(Element)</td><br><td>描述(Description)</td><br><td>值域</td><br><td>重要性</td><br><td>举例(Example)</td></tr><br><tr><br><td>title</td><br><td>Submit按钮的标签</td><br><td></td><br><td>必备</td><br><td></td></tr><br><tr><br><td>description</td><br><td>解释text输入区</td><br><td></td><br><td>必备</td><br><td></td></tr><br><tr><br><td>name</td><br><td>Text area对象的名字</td><br><td></td><br><td>必备</td><br><td></td></tr><br><tr><br><td>link</td><br><td>处理提交的请求的cgi程序</td><br><td></td><br><td>必备</td><br><td></td></tr></tbody></table><br><br><p align="left">关于item的内容，请看<a href="http://www.infomall.cn/cgi-bin/mallgate/20040514/http://hedong.3322.org/archives/000268.html" target="_blank" rel="external"><u><font color="#0000ff">基于XML-RPC的BloggerAPI学习</font></u></a>.<br>说明：<br>　　rss2.0要求&lt;link&gt;和&lt;url&gt;的值的非常部分开头，须是在IANA注册过的，如<a href="http://或https://或ftp://等。" target="_blank" rel="external">http://或https://或ftp://等。</a><br>　　一个rss文件中，可以包括没有这儿定义的元素，只要它是在某个命名空间被定义过。<br>　　一个常见问题是与的区别，两者在有些情况下是相同的，但前者可指几某个长文中的某个位置（即所谓的页内锚点吧）。<br><br>Matt Mower 做的一个基于RSS2.0的一个project，里面有多cloud的定义的一些应用！或许对你有用！ ：）<br><br><a href="http://www.infomall.cn/cgi-bin/mallgate/20040514/http://matt.blogs.it/specs/ENT/1.0/" target="_blank" rel="external"><u><font color="#0000ff">http://www.infomall.cn/cgi-bin/mallgate/20040514/http://matt.blogs.it/specs/ENT/1.0/</font></u></a><br></p></div></div></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2005/09/28/flash-e6-98-af-e5-a6-82-e4-bd-95-e7-82-bc-e6-88-90-e7-9a-84/" itemprop="url">
                 flash 是如何炼成的
               </a>
@@ -826,79 +898,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2005/09/23/e5-af-b9-e4-ba-8edivcss-e7-9a-84-e5-bc-80-e5-8f-91-e6-96-b9-e5-bc-8f-ef-bc-8c-e6-88-91-e4-bb-ac-e4-b9-9f-e8-a6-81-e5-90-ac-e5-90-ac-e5-8f-a6-e5-a4-96-e7-9a-84-e5-a3-b0-e9-9f-b3/" itemprop="url">
-                对于DIV+CSS的开发方式，我们也要听听另外的声音
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2005-09-23T01:52:58+08:00" content="2005-09-23">
-            2005-09-23
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!251" class="bvMsg"><div><strong>
-</strong><br><br>经年以来，许多优秀的文章都在赞美着基于 CSS 设计的优越， 哀叹着基于表格设计的没落。但却很少有人换个角度想想，或许是因为你得在了解并运用了基于 CSS 的设计之后才可以批评它， 而一旦了解了之后，你又不愿意回头去用原先的老式设计方法了。<br><br>为了弥补一下这种不平衡，也因为在这场游戏中扮演一个大反派挺酷的，我决定写篇文章，说说为何在某些情况下，传统的表格设计方式就算不比基于CSS 的——或者说基于标准的——设计方式好，也不比它们差。<br><br><strong>一、妖魔化表格</strong><br><br>表格出现以前，Web 本是个相当乏味的地方，正是使用表格排版，才打开了可视化的页面设计的新局面。表格对于 Web 和 Web 设计领域普及的贡献到底有多大或许有争议，但一旦离开表格，我们这些网页设计师们必会失去工作，却是毋庸置疑的。<br><br>近年来基于表格的设计确实被妖魔化了，Web 纯化论者会告诉你，表格对排版毫无意义，因而你绝不能用到它。然而历史证明，许多技术一开始是为了实现某个目标设计的，却在别的领域发现了更大的用场而大展身手。 就像 Web 本身，一开始不也只是为了共享研究数据嘛，现在在娱乐和商业方面的应用却与信息与教育方面的并驾齐驱了。<br><br><strong>二、只为舒服一点</strong><br><br>Web 设计师们多年以来都在使用表格排版页面，这是绝大部分设计师都已掌握的能力。如此地使用表格能保证你获得预想的效果，通过一些简单的 hack，比如间隔 gif， 我们几乎一定能保证我们的站点在最广泛的 Web 浏览器上看起来都一样，从最低版本的 Netscape 4到Safari 这样的现代浏览器。<br><br>尽管先驱者们早已宣传了好久 Web 标准， 大部分的网站还是使用表格和不兼容标准的代码开发的，因此用户代理就不得不在很长一段时间内支持基于表格的排版方式。 这对于 Web 标准的卖点来说，是个致命的打击：标准没有标准应有的地位。不大可能会出现下面这种情况，某个主要的浏览器厂商 (唔，还是说 Microsoft) 突然发布了一个大部分网站都显示不了的浏览器。<br><br>所以网页设计者们总感觉不到开始使用基于 CSS 排版和支持标准的代码的那种危机感和必要性。<br><br><strong>三、降低门槛Web</strong><br><br>正是因为它的门槛低才如此成功的： HTML 是个简单易学的语言，浏览器又能容忍许多标记混乱的文档。 这使在 Web 上发布内容变得难以置信地容易。即便你 12 岁的侄子也能用 Microsoft Office 中附带的 Frontpage 捣鼓出一个简单的网站来。<br><br>基于表格的设计比之基于 CSS 的，当然 CSS 的语法很简单，正常人都会同意：你没必要是火箭科学家才能学会 CSS。尽管如此，其中有些概念还是过于微妙了，不易领会。比如表面上看，Box 模型很简单，但我偶尔还是会在边界折叠 (margin collapsing) 上滑一跤， 浮动(float) 和清除 (clear) 这样的概念也不好理解，较难运用。 以我的经验而言，从了解 CSS 的基本概念到能自如地用 CSS 开发站点，大约需要走过一条为期 6-12 月的学习曲线。<br><br>然后是浏览器支不支持的问题。一旦你正式开始干活，就会慢慢了解哪个浏览器支持什么、不支持什么，和一些常见的浏览器 bug。可惜bug 太多了， 就算“专家”们也难以估量自己花在修整 bug 上的时间。对新手来说就更让人泄气了，因为他们不知道是因为自己误解了CSS 呢，还是某些晦涩的浏览器 bug？也许这就是为何同样的问题一再出现在 CSS-Discuss 等邮件列表上的原因吧。<br><br>如果浏览器厂商们终能步调一致， 用 CSS 开发站点将会容易得多。但我还是觉得——大部分人也会同意——CSS 开发的门槛比基于表格的还是太高了。换个说法， 我觉得这也说明了为何基于 CSS 的设计在Web 专家们之间如此流行。这让他们把自己和那些业余的“Front-page 牛仔”们区分开来，让他们找回当年 Web 只属于自己这个小群体时的感觉。 大概这正式因此，那么多人都把 Web 标准看作不可触及的“象牙塔”， 那么多 Web 标准的鼓吹者却以狂热的态度，带着优越感去看待网页设计。<br><br><strong>四、有些东西还是用表格来做更容易</strong><br><br>我确信我们大家都曾发现，自己为了实现用表格做起来是小菜一碟的功能写了相当复杂的 CSS。比如处理表单 (form) 的外观，形状再复杂怪异的表单也能用表格轻松搞定。 你是可以用 CSS 的浮动元素实现类似的结果，但就麻烦多了。 如果你是个 CSS guru，这种麻烦也是快乐的事。可毫无疑问，如果你只是个普通人，还有个会掐住你的喉咙问你怎么做个小表单也花了这么久的老板，事情就不那么好玩了。<br><br>如果你有足够的知识，又有足够的耐心，习惯于用表格做的大部分事情还是都能用 CSS 实现的。 虽说花的时间长点吧，还是有个限度的(或者被打击得放弃了尝试)。关键是确实有些无论你怎么努力，还是无法实现的东西，其中一项便是页脚栏 (page footer)。我常常见到来自灰心失望的 CSS 作者的贴子， 他们试图创建那种可以粘在窗口底端的页脚栏，使即便那个窗口没伸展到整个屏幕也能保证效果。如果用到了表格，要做出这种效果简单得很， 可单独用 CSS 来做就是另一回事了。为什么还有 Web 开发者们不愿意用 CSS？就是因为一旦不用表格，简单的事情反而变复杂了。<br><br><strong>五、夸大收益</strong><br><br>有很多理由让你丢掉表格、去适应基于 CSS 的排版， 可在推动 Web标准的洪流中，许多人夸大了收益。 大的站点改用 CSS 排版确实能节省不少带宽。可对大部分的其他站点来说，受益小得庶几可以忽略不计。<br><br>大家都希望页面载入得更快， 而标准鼓吹者们也说 CSS 能帮你做到这一点。大多数站点的“设计”都是均匀分布在整个站点上的，但基于 CSS 的“设计”是放在一个到更多的文件中的。 这些文件会很快变得很复杂、很大，即便一个小站点也是如此。我最近设计的一个站点用了 4 个样式表，加起来有 12k 之大 (虽说包括了空白和注释)。使用 CSS其实是在先集中地载入然后再浏览，而不是把要载入的数据平均分布到整个站点各处。也就是说，相比用表格排版，首页需要花更长的时间来下载。只不过如果样式表已经下载了，它们会被缓存起来而不需要重新下载。可毕竟一个站点的首页是你最不希望载入得那么慢的一页呀。<br><br><strong>六、招揽客户</strong><br><br>即便有时网页设计者们觉得把符合 Web 标准搭售给客户是有必要的，但令人遗憾的事实是，大多数的客户对站点的代码好坏并不在意。我们一般用的是胡萝卜加大棒的方式，胡萝卜是诸如对搜索引擎的友好度之类，而大棒才是网页的亲和力 (accessibility)。<br><br>确然，搜索引擎是比较喜欢语义化标记的页面，而且大家也都认为搜索引擎喜欢短小的代码，通过 CSS 和 Web 标准来建构站点可以大大增进对搜索引擎友好的站点的开发。然而没有银弹。许多基于表格的站点照样获得了很高的搜索引擎排名。 用 CSS 开发的站点照样也可能只获得一个很糟糕的排名。高排名的关键是内容和来自别处的链接，而不是用表格还是用 CSS 来排版。<br><br>另外关于利用客户对“亲和力”这个词的敬畏来搭售 Web 标准特别是 CSS 设计， 其实基于表格的设计没有什么天生的亲和力缺陷，表格只要线性化了，就有意义，内容也就具有亲和力了。现时的读屏器技术已经不错，而且大部分的读屏器都能很好的支持基于表格的站点。当然你的站点的语法最好被认证通过 AA 亲和力等级，即便对更严格的 AAA 等级，不用表格设计也不过是个建议罢了，并非必备。<br><br>另一个经常提到的受益是可以让客户独立于设计提供商。在人人都依照标准开发的世界里，客户要换个开发伙伴是很容易的事情，新的开发人员可以很快明白站点的组织结构，而不需趟过先前某人的标记泥淖。但这得要大量的设计提供商都精通 Web 标准才行。 不幸的是，现在的情况并非如此。 虽然经验丰富的 CSS 开发者在增多，但这还是个相对比较专业的领域，因此，大公司要锁定在这种开发方式上还是比较有风险的——缺少熟练的开发者。我个人的经验是如果一个组织要用 CSS 开发站点， 得长期保持至少一个经验丰富的设计师才够用。 所以现在转向 Web 标准不是降低了客户对开发者的依赖，而是增加了。<br><br><strong>七、总结</strong><br><br>毫无疑问地，Web 标准和基于 CSS 的设计是未来之路。 可在我们奔向它们、鼓吹新技术的过程中，也会怀疑自己鼓吹的东西是否太夸张了。比较现实地做点东西却往往达不到我们的期望。而教条地推行这些很可能疏远了我们最应该赢得的伙伴。<br><br>基于表格的设计还会存在好长一段时间。要吸引开发者，我们可以用实例来教人上手，并降低门槛。更别弄出新的门槛来了。我们得诚实地正视利益和代价。 开发 CSS 站点可能比较困难、耗时，而在某些情况下用表格来排版比 CSS 有意义得多。<br>『中国赢网』转载请注明出处： <a href="http://bbs.winet.cn/showthread_threadidis135.html" target="_blank" rel="external"><u><font color="#800080">http://bbs.winet.cn/showthread_threadidis135.html</font></u></a><br></div></div></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -938,7 +937,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">662</span>
+              <span class="site-state-item-count">663</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>

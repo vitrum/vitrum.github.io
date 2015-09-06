@@ -57,7 +57,7 @@
 确认在”/Applications/“目录中已经正">
 <meta property="og:image" content="http://ips.chotee.com/wp-content/uploads/2014/osx-yosemite-usb-install-drive/format-usb.jpg">
 <meta property="og:image" content="http://ips.chotee.com/wp-content/uploads/2014/osx-yosemite-usb-install-drive/guid.jpg">
-<meta property="og:updated_time" content="2015-08-28T07:32:54.000Z">
+<meta property="og:updated_time" content="2015-08-28T08:03:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="制作OSX 10.11 El Capitan 的USB安装盘">
 <meta name="twitter:description" content="OS X El Capitan传说9月9日就要发正式了，碰巧我电脑换了硬盘，干脆装一个耍耍～
@@ -216,6 +216,7 @@
 <li>确认在”/Applications/“目录中已经正确下载了安装文件：”Install OS X El Capitan Developer Beta.app”</li>
 <li>如果是在网盘上下载压缩包的，记得解压缩之后复制”Install OS X El Capitan Developer Beta.app”到/“Applications/“目录去</li>
 </ul>
+<p>如果要把本地下载好的.app压缩打包上网盘，可能需要切分</p>
 <h2 id="支持安装OS_X_El_Capitan的电脑">支持安装OS X El Capitan的电脑</h2><ul>
 <li>iMac (Mid-2007 or, newer)</li>
 <li>MacBook (13in Aluminum, Late 2008), (13in, Early 2009 or, newer)</li>
@@ -239,7 +240,9 @@
 <li>最后再点「应用」开始对 U 盘进行格式化。<br>*</li>
 </ul>
 <h3 id="第二步_输入终端命令开始制作启动盘">第二步 输入终端命令开始制作启动盘</h3><p>打开终端窗口，输入下面的命令</p>
-<p>For OS X El Capitan Public Beta:</p>
+<p>这里是和我下载的文件名一样的</p>
+<pre><code>sudo /Applications/Install<span class="string">\</span> OS<span class="string">\</span> X<span class="string">\</span> El<span class="string">\</span> Capitan<span class="string">\</span> Developer<span class="string">\</span> Beta.app/Contents/Resources/createinstallmedia --volume /Volumes/ElCapInstaller --applicationpath /Applications/Install<span class="string">\</span> OS<span class="string">\</span> X<span class="string">\</span> El<span class="string">\</span> Capitan<span class="string">\</span> Developer<span class="string">\</span> Beta.app --nointeraction
+</code></pre><p>For OS X El Capitan Public Beta:</p>
 <pre><code>sudo /Applications/Install<span class="string">\</span> OS<span class="string">\</span> X<span class="string">\</span> El<span class="string">\</span> Capitan<span class="string">\</span> Public<span class="string">\</span> Beta.app/Contents/Resources/createinstallmedia --volume /Volumes/ElCapInstaller --applicationpath /Applications/Install<span class="string">\</span> OS<span class="string">\</span> X<span class="string">\</span> El<span class="string">\</span> Capitan<span class="string">\</span> Public<span class="string">\</span> Beta.app --nointeraction
 </code></pre><p>For OS X 10.11 Developer Beta:</p>
 <pre><code>sudo /Applications/Install<span class="string">\</span> OS<span class="string">\</span> X<span class="string">\</span> <span class="number">10.11</span><span class="string">\</span> Developer<span class="string">\</span> Beta.app/Contents/Resources/createinstallmedia --volume /Volumes/ElCapInstaller --applicationpath /Applications/Install<span class="string">\</span> OS<span class="string">\</span> X<span class="string">\</span> <span class="number">10.11</span><span class="string">\</span> Developer<span class="string">\</span> Beta.app --nointeraction
@@ -278,6 +281,8 @@ Copying boot files…
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/09/06/当输入网址按下回车键之后/" rel="prev">当输入网址按下回车键之后 (转)</a>
             
           </div>
 
@@ -369,7 +374,7 @@ Copying boot files…
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">662</span>
+              <span class="site-state-item-count">663</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
