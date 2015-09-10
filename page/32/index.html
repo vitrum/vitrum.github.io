@@ -160,6 +160,78 @@
           
           
             
+              <a class="post-title-link" href="/2007/02/28/ie-e9-bb-98-e8-ae-a4input-e6-8c-89-e9-92-ae-e7-9a-84-e5-b8-b8-e8-a7-81-e9-97-ae-e9-a2-98-e8-bd-ac-e8-b4-b4/" itemprop="url">
+                IE默认input按钮的常见问题 - 转贴
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2007-02-28T15:11:55+08:00" content="2007-02-28">
+            2007-02-28
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!963" class="bvMsg"><div>出处:<a href="http://www.planabc.net/article.asp?id=81" target="_blank" rel="external">http://www.planabc.net/article.asp?id=81</a></div><br><div>原作者:<a href="http://vitrum.spaces.live.com/mmm2007-02-10_13.26/user.asp?act=view&amp;id=1" target="_blank" rel="external"><u><font color="#0000ff">Blank</font></u></a></div><br><div> </div><br><div>在制作按钮的时候大家一般都很头疼，经常会出现这样那样问题，搞得很烦恼，那对于IE默认情况下的input按钮我们经常会碰见那些问题呢？下面列举了一些出现几率比较高的问题：<br><br>一、IE默认按钮的value值，每增加4个字节（汉字为2个）时，就会在按钮的两边产生总共一个字节的内边距宽度。<br><br>二、XP风格的IE默认按钮样式是一个固定尺寸的圆角矩形图片作背景，一旦按钮变宽变高后，这个固定尺寸的圆角矩形图片的边缘会出现“拉毛”现象。<br><br>三、当你触发按钮的时候，会出现1px的黑色的外边框，在input的bordor属性的外面。<br><br><a href="http://www.blueidea.com/" title="http://www.blueidea.com/" target="_blank" rel="external">蓝色</a>论坛<a href="http://bbs.blueidea.com/forum-5-1.html" title="http://bbs.blueidea.com/forum-5-1.html" target="_blank" rel="external">标准版</a>版主zbm2001z 针对上面的一和二问题，提出了一个解决方案：<br><br><div>&lt;!— IE Quirks mode —&gt;<br>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&amp;gt" target="_blank" rel="external">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&amp;gt</a>;<br>&lt;html xmlns=&quot;<a href="http://www.w3.org/1999/xhtml&quot;&amp;gt" target="_blank" rel="external">http://www.w3.org/1999/xhtml&quot;&amp;gt</a>;<br>&lt;head&gt;<br>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot; /&gt;<br>&lt;style type=&quot;text/css&quot;&gt;<br><em>&#123;font-size:12px;&#125;<br>.button,.button input&#123;<br>  display:-moz-inline-box;<br>  display:inline-block;<br>  background-image:url(<a href="http://bbs.blueidea.com/attachments/2006/12/25/add_ZKfMl3JpD868.png" target="_blank" rel="external">http://bbs.blueidea.com/attachments/2006/12/25/add_ZKfMl3JpD868.png</a>);<br>&#125;<br>.button&#123;<br>  margin:auto 1%;<br>  padding-right:3px;<br>  background-position:100% 0;<br>&#125;<br>.button input&#123;<br>  padding:1px 3px 3px 15px;<br>  _padding:3px 0 0 12px;<br>  border:0;<br>  text-align:center;<br>&#125;<br>label.button:hover,.button:hover&#123;<br>  background-position:100% 100%;<br>&#125;<br>label.button:hover input,.button:hover input&#123;<br>  background-position:0 100%;<br>  color:#f00;<br>&#125;<br>@media all and(min-width:0px)&#123;/</em> opera 7 styles <em>/<br>  .button input&#123;padding:4px 6px 4px 18px;&#125;<br>&#125;<br>&lt;/style&gt;<br>&lt;title&gt;&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&lt;label class=&quot;button&quot;&gt;<br>&lt;input type=&quot;button&quot; value=&quot;永远爱我的老婆-赜赜！&quot; /&gt;<br>&lt;/label&gt;<br>&lt;script type=&quot;text/javascript&quot;&gt;<br>var nav=navigator.appVersion;<br>if (nav.indexOf(‘MSIE’)!=-1)&#123;<br>  var input=document.getElementsByTagName(&quot;input&quot;);<br>  for(var i=0; i&lt;input.length; i++)&#123;<br>    var inputs=input[i];<br>    if(inputs.type==&quot;button&quot;)&#123;<br>      var inputL=inputs.value.replace(/[^x00-xff]/g,’**’).length;<br>      if(inputL&gt;4)&#123;<br>        var iCFS=inputs.currentStyle.fontSize.substring(0,2);<br>        inputs.style.width=inputs.clientWidth-((inputL-4)</em>iCFS/4)+&quot;px&quot;;<br>      &#125;<br>    &#125;<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;</div><br><strong>CSS要点提示：</strong><br><br>1、display:-moz-inline-box;为Firefox的私有属性。<br><br>2、background-position:x y;第一个值用于横坐标，第二个值用于纵坐标。<br><br>3、下划线（_padding:3px 0 0 12px;），可参看Blank翻译的文章<a href="http://www.planabc.net/article.asp?id=28" title="http://www.planabc.net/article.asp?id=28" target="_blank" rel="external">《翻译:The Underscore Hack》</a><br><br>4、opera进行特殊控制可以用：<br><br>@media all and (min-width: 0px) &#123;<br><br>#选择器 &#123;<br>CSS代码<br>&#125;<br>&#125;<br><br>此方法里的属性仅针对opera有效,其它浏览器不识别,所以有时候当opera浏览器和别的浏览器不兼容的时候我们就可以用这种方面来进行调整。</div></div></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2006/12/11/e7-99-be-e6-8a-80-e9-a3-9e-e9-b8-bd-e7-8e-a9-e8-bd-ac-e7-bd-91-e7-bb-9c/" itemprop="url">
                 百技飞鸽-玩转网络
               </a>
@@ -804,78 +876,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2006/11/21/e7-98-8b-e7-8b-82-e6-b0-91-e7-9c-be-e5-9c-a8-e7-b6-b2-e4-b8-8a-e4-bb-a5-900-e7-be-8e-e5-85-83-e6-90-b6-e8-b3-bc-e5-88-b0-e3-80-8cplaystation-3-e5-8f-b0-e3-80-8d/" itemprop="url">
-                瘋狂民眾在網上以 900 美元搶購到「PlayStation 3 台」
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2006-11-21T02:01:15+08:00" content="2006-11-21">
-            2006-11-21
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/恶搞全球/" itemprop="url" rel="index"><span itemprop="name">恶搞全球</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!950" class="bvMsg"><div><br><br>Filed under: <a href="http://www.engadget.com/category/gaming/" target="_blank" rel="external"><u><font color="#0000ff">Gaming</font></u></a><br><a href="http://cgi.ebay.com/ws/eBayISAPI.dll?ViewItem&amp;ih=020&amp;sspagename=STRK:MESO:IT&amp;viewitem=&amp;item=300050305788&amp;rd=1&amp;rd=1" target="_blank" rel="external"><u><font color="#0000ff"><img src="http://www.blogsmithmedia.com/www.engadget.com/media/2006/11/11.20.06---ebayrippedoff.jpg" alt=""></font></u></a>In what’s sure to be a frontrunner for the &quot;<a href="http://www.engadget.com/2006/11/20/wii-being-hit-by-fatal-error-110213-could-be-funky-firmware/" target="_blank" rel="external"><u><font color="#0000ff">oh snap</font></u></a>&quot; moment of the day (or year), a presumably frustrated, delusional, and impatient individual apparently forgot to read the fine print on his latest <a href="http://www.engadget.com/2005/04/22/uncle-ricos-time-machine-modulus-crystal-on-ebay-now/" target="_blank" rel="external"><u><font color="#0000ff">eBay</font></u></a> win. While it’s no secret that <a href="http://www.engadget.com/tag/ps3" target="_blank" rel="external"><u><font color="#0000ff">PlayStation 3</font></u></a> units have been selling for incredulous prices, snagging one for $900 probably seemed like quite the deal at the time; however, the poor sap failed to realize that he /she just committed almost one thousand dollars to purchasing three <em><a href="http://www.engadget.com/2006/03/24/sony-pulls-plug-on-psone-production/" target="_blank" rel="external"><u><font color="#0000ff">original PlayStation</font></u></a></em> consoles. To make matters even worse, no games, controllers, or heartfelt sympathy was to be included, leaving the unsuspecting buyer in quite a bad predicament. No, we don’t actually think (at least we hope not) that this fellow / lady went through with their purchase (although it was snatched up at the &quot;Buy it Now&quot; price), but if they did, we’ve got to look at the bright side — that free shipping saved him / her a bundle.</div><br><div> </div><br><div>在這個絕對足堪列入今年十大「我＊」排行榜的事件中，一位顯然急著將 eBay  拍賣品標回家的人，連標題都沒看清楚就按下按鈕，以 900 美元（近三萬台幣）的價格標下了他／她心目中值回票價的「PlayStation 3」。問題是，這位可憐的仁兄沒發覺人家寫的是「（第一代的）PlayStation<em> 3台</em>」，而且更糟糕的是還不附送任何遊戲或額外的搖桿！<br><br>我們相信這種事應該是可以退貨，或至少有反應管道的。但倘若沒有的話……往好處想吧，至少它是免費寄到家的 XD。</div><br><div> </div><br><div><a href="http://chinese.engadget.com/2006/11/20/overzealous-ebayer-drops-900-for-sony-playstations-3-of-them/" target="_blank" rel="external">http://chinese.engadget.com/2006/11/20/overzealous-ebayer-drops-900-for-sony-playstations-3-of-them/</a><br></div></div></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -915,7 +915,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">663</span>
+              <span class="site-state-item-count">664</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -929,7 +929,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">37</span>
+              <span class="site-state-item-count">38</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
