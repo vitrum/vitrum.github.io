@@ -160,6 +160,105 @@
           
           
             
+              <a class="post-title-link" href="/2011/04/07/use-jquery-to-asynchronous-loading-sina-weibo-openid-javascript/" itemprop="url">
+                Use jQuery to asynchronous loading Sina weibo OPENID javascript
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2011-04-07T10:47:27+08:00" content="2011-04-07">
+            2011-04-07
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/jQuery/" itemprop="url" rel="index"><span itemprop="name">jQuery</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>HTML CODE</p>
+<pre>&lt;div&gt;
+  &lt;a href="####" alt="新浪微博" id="openidweibolink"&gt;新浪微博&lt;/a&gt;
+  &lt;form id="openidsinafrom" action="" method="post"&gt;&lt;/form&gt;
+&lt;/div&gt;</pre>
+javascript with jQuery
+<pre>jQuery(document).ready(function(){
+  var weiboUrl = "";
+  jQuery('#openidweibolink').bind('click', function() {
+    var ajaxUrl     = "/openid/weibo/";  // 后台PHP页面内配置OPENID相关参数，包括KEY值、登录回调页面地址等
+    var urlCheckTime = 0 ;
+    if (weiboUrl =='' ){
+      jQuery.ajax({ //一个Ajax过程
+      type: "post",  //以post方式与后台沟通
+      url :  ajaxUrl,//与此php页面沟通
+      dataType:'json',//从php返回的值以 JSON方式 解释
+      data:  '', //发给php的数据
+      success: function(json){//如果调用php成功
+        weiboUrl = json.urlAuth;
+        //window.open(newUrl);
+        //alert("weiboUrl:"+weiboUrl);
+        jQuery('#openidsinafrom').attr("action",weiboUrl);
+        jQuery('#openidsinafrom').submit();
+        }
+      });
+    }
+  });
+});</pre></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2011/03/20/html5-video-and-flowplayer/" itemprop="url">
                 HTML5 video and flowplayer
               </a>
@@ -850,78 +949,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2009/09/16/adobe-e6-96-a5-e8-b5-84-e7-ba-a618-e4-ba-bf-e7-be-8e-e5-85-83-e6-94-b6-e8-b4-adomniture/" itemprop="url">
-                Adobe斥资约18亿美元收购Omniture
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2009-09-16T05:44:42+08:00" content="2009-09-16">
-            2009-09-16
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!1786" class="bvMsg"><a href="http://www.adobe.com/aboutadobe/invrelations/adobeandomniture.html" target="_blank" rel="external">http://www.adobe.com/aboutadobe/invrelations/adobeandomniture.html</a> <div><br></div><div><span style="font-family:arial;font-size:13px;border-collapse:collapse;">Adobe斥资约18亿美元收购Omniture，以整合其在网站设计、开发以及互联网市场营销领域的实力。</span></div><div><font face="arial" size="3"><span style="border-collapse:collapse;font-size:13px;"><br></span></font></div><div><font face="arial" size="3"><span style="border-collapse:collapse;font-size:13px;">好把,,CS5一定会内嵌Omniture的Tracking Code了,,至少做的时候方便很多,</span></font></div><div><font face="arial" size="3"><span style="border-collapse:collapse;font-size:13px;"><br></span></font></div><div><font face="arial" size="3"><span style="border-collapse:collapse;font-size:13px;">但是Omniture的培训估计会由收费变成ADOBE擅长的考证形式了吧,,毕竟GA都在考证呢,,,</span></font></div></div></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -961,7 +988,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">664</span>
+              <span class="site-state-item-count">665</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -975,7 +1002,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">38</span>
+              <span class="site-state-item-count">39</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>

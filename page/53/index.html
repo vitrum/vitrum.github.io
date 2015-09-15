@@ -160,6 +160,117 @@
           
           
             
+              <a class="post-title-link" href="/2005/11/15/e4-bd-bfgoogle-e5-b9-bf-e5-91-8aadsense-e5-9c-a8xhtml-e4-b8-ad-e5-b7-a5-e4-bd-9c/" itemprop="url">
+                使Google广告AdSense在XHTML中工作
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2005-11-15T08:39:14+08:00" content="2005-11-15">
+            2005-11-15
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!380" class="bvMsg"><div><br><br># <a href="http://www.omemo.net/neo/tech/adsense.php" target="_blank" rel="external">http://www.omemo.net/neo/tech/adsense.php</a><br><br><a href="http://spaces.msn.com/" target="_blank" rel="external"><u><font color="#0000ff">主页</font></u></a> &gt; <a href="http://spaces.msn.com/neo/tech/" target="_blank" rel="external"><u><font color="#0000ff">设计与技术</font></u></a> &gt; <a href="http://spaces.msn.com/mmm2005-10-24_14.28/adsense.php" target="_blank" rel="external"><u><font color="#0000ff">使Google广告AdSense在XHTML中工作</font></u></a><br><br><div><br><div><br><div><br><br>### 翻译手记<br><br>我开始使用XHTML 1.1的时候，发现Google的AdSense广告在IE上正常，在Firefox和Opera中则一片空白，纳闷，对着代码检查了良久，终究无法得知问题于何处。幸亏还有Google，我终于找到这个解决方案。我也不能不说，推广标准，还真的是任重道远，连Google都无法保证它的代码会在任何的(X)HTML上工作。<br><br>这其实是一个JavaScript的问题，假如你发现你在XHTML 1.0 Stric或者XHTML 1.1中无法使用JavaScript的调用，或许，这篇文章对你也有启示。<br></div>
+
+<h2 id="为什么AdSense不能在真正的XHTML中工作？">为什么AdSense不能在真正的XHTML中工作？</h2><p>Google的<a href="https://www.google.com/adsense/afc-online-overview" title="Google AdSense：概述" target="_blank" rel="external"><u><font color="#0000ff">AdSense</font></u></a>使用JavaScript生成一个<code>iframe</code>来动态地发送广告。如果页面是使用常规的<abbr title="Hypertext Markup Language">HTML</abbr>或者不严格版本的XHTML，以<code>text/html</code>来伺服的话，没有任何问题。这个JavaScript如你所愿地生成<code>iframe</code>，任何事情都工作得很好。不幸的是，对于站长以<code>application/xhtml+xml</code>来伺服的XHTML，Google的方法不能工作。</p>
+<p>主要问题出在JavaScript。<code>Document.Write()</code>不会在正确伺服的由一个<abbr title="Extensible Markup Language">XML</abbr>解析器处理的XML页面中工作。Ian Hickson给出了为什么会这样的<a href="http://ln.hixie.ch/?start=1091626816&amp;count=1" title="Hixie:  Why document.write() doesn" target="_blank" rel="external"><u><font color="#0000ff">理由</font></u></a>（中文版本站已经翻译：<a href="http://spaces.msn.com/neo/tech/dw_not_work.php" target="_blank" rel="external"><u><font color="#0000ff">为什么<code>document.write</code>在XML中不工作</font></u></a>）。就如我们所觉察到的，<code>Document.Write()</code>用来生成<code>iframe</code>，因此，Google的广告永远不会出现。</p>
+<p>第二个问题在于<code>iframe</code>本身。这个元素没有出现在任何严格的XHTML版本中，所以尽管JavaScript可以生成，<code>iframe</code>会使这个页面的XHTML不合法。</p>
+<h2 id="怎么才能使它工作呢？">怎么才能使它工作呢？</h2><p>解决这些问题的一条途径是，简单地以<code>text/html</code>来伺服AdSense代码。为达到目的，有必要创建一个独立的网页，使用<code>text/html</code>的<acronym title="Multipurpose Internet Mail Extension">MIME</acronym>类型，然后以<code>object</code>的形式插入到需要的页面中。下面是一个独立的文档的样例：</p>
+<pre>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;title&gt;Sponsorship&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body &#123; margin: 0; padding: 0; &#125;
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+这里是Google AdSense的参数
+&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://pagead2.googlesyndication.com/pagead/show_ads.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>对于使用这个<a href="http://spaces.msn.com/neo/tech/mime_type.php" title="使用正确的MIME类型伺服XHTML" target="_blank" rel="external"><u><font color="#0000ff">分离内容和MIME内容脚本</font></u></a>来同时伺服<code>application/xhtml+xml</code>和<code>text/html</code>的站长，最好能够利用已经存在的代码来决定这两种不同的方法的采用。在原始的分离内容和MIME内容脚本中，MIME类型由<code>$mime</code>变量来保存。如果该变量的值是“application/xhtml+xml”，则可以在文档中使用<code>object</code>。否则，则把标准AdSense的JavaScript包含进来。下面的脚本演示这是如何做到的：</p>
+<pre> &lt;div class=&quot;ads&quot;&gt;
+&lt;?php
+if($mime == &quot;application/xhtml+xml&quot;) &#123; print &quot; &lt;object data=&quot;/includes/google.php&quot; type=&quot;text/html&quot;&gt;&lt;/object&gt;n&quot;;
+&#125; else &#123;
+?&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+这里是Google AdSense的参数 
+&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://pagead2.googlesyndication.com/pagead/show_ads.js&quot;&gt;&lt;/script&gt;
+&lt;?php
+&#125;
+?&gt;
+&lt;/div&gt;</pre>
+
+<p>这个解决方案业已在IE 6， <a href="http://www.spreadfirefox.com/?q=affiliates&amp;id=38491&amp;t=72" target="_blank" rel="external"><u><font color="#0000ff">Firefox</font></u></a> 0.92和Opera 7.0中测试通过。<br></p></div></div></div></div><p></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2005/11/15/e7-9c-8b-e7-9c-8b-e8-bf-99-e4-b8-aa-e7-90-83-e8-bf-b7-e6-80-8e-e6-a0-b7-e8-a2-ab-e9-aa-97-ef-bc-9f-ef-bc-88-e8-bd-ac-e8-b4-b4-ef-bc-89/" itemprop="url">
                 看看这个球迷怎样被骗？（转贴）
               </a>
@@ -797,78 +908,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2005/11/03/e7-97-9b-e8-8b-a6-e7-9a-84-e9-87-8d-e6-9e-84-e5-8e-9f-e5-88-9b/" itemprop="url">
-                痛苦的重构-原创
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2005-11-03T07:53:18+08:00" content="2005-11-03">
-            2005-11-03
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!366" class="bvMsg"><div>总是看都别人在讨论应用XHTML重构页面的痛苦之处，实在是没有体会。</div><br><div> </div><br><div>由于农家乐信息网打算用WEB2。0的形式来吸引人气，所以干脆从头用CSS+XHTML构建整个网站。</div><br><div> </div><br><div>没想到，从此走上了痛苦的旅程。</div><br><div> </div><br><div>先放上还在构啊构中的临时页给大家参观</div><br><div> </div><br><div><a href="http://www.nongjiale.org/make-it/index.html" target="_blank" rel="external">http://www.nongjiale.org/make-it/index.html</a></div><br><div> </div><br><div>一、布局之苦</div><br><div> </div><br><div>向左靠，向右靠</div><br><div> </div><br><div>在父层定义不同的情况之下，有多种方式</div><br><div> </div><br><div>二、长江后层盖前层</div><br><div> </div><br><div>解决办法，</div><br><div> </div><br><div>.HackBox&#123;<br>border-top:1px solid transparent !important;<br>margin-top:-1px !important;<br>border-top:0;<br>margin-top:0;<br>clear:both;<br>visibility:hidden;<br>&#125; </div><br><div> </div><br><div>&lt;div class=&quot;HackBox&quot;&gt;&amp;nbsp;&lt;/div&gt;</div></div></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -908,7 +947,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">664</span>
+              <span class="site-state-item-count">665</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -922,7 +961,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">38</span>
+              <span class="site-state-item-count">39</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
