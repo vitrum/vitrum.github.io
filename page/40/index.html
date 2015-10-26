@@ -160,6 +160,78 @@
           
           
             
+              <a class="post-title-link" href="/2006/03/20/ajax-e7-9a-84-e4-b8-80-e4-b8-aa-e5-b0-8f-e4-b8-9c-e8-a5-bf-e8-bd-ac-e8-b4-b4/" itemprop="url">
+                AJAX的一个小东西--转贴
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2006-03-20T01:58:26+08:00" content="2006-03-20">
+            2006-03-20
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分類於
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/计算机与-Internet/" itemprop="url" rel="index"><span itemprop="name">计算机与 Internet</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!623" class="bvMsg"><div>出处:蓝色理想</div><br><div>作者:hubro</div><br><div> </div><br><div><a href="http://www.hubro.net/spank.aspx" target="_blank" rel="external"><u><font color="#800080">www.hubro.net/spank.aspx</font></u></a><br>还是老外写得好<br>用AJAX请求XML文件,返回XML再处理,生成HTML</div><br><div> </div><br><div> </div><br><div>…<br>xmlhttp.open(sMethod, sURL, <font color="red">true</font>); 这个true才是不卡的原因<br>xmlhttp.onreadystatechange = function() &#123;<br>if (xmlhttp.readyState == 4 &amp;&amp; !bComplete)//再才发现,为什么别人写的不卡了,原因在这,请求完成后才处理<br>…<br><br>顺便问问网速慢的卡不</div><br><div><pre>function ajaxObj()<br>&#123;<br>  var xmlhttp, bComplete = false;<br>  try &#123; xmlhttp = new ActiveXObject(&quot;Msxml2.XMLHTTP&quot;); &#125;<br>  catch (e) &#123; try &#123; xmlhttp = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;); &#125;<br>  catch (e) &#123; try &#123; xmlhttp = new XMLHttpRequest(); &#125;<br>  catch (e) &#123; xmlhttp = false; &#125;&#125;&#125;<br>  if (!xmlhttp) return null;<br>  this.connect = function(sURL, sMethod, fnDone)<br>  &#123;<br>    if (!xmlhttp) return false;<br>    bComplete = false;<br>    sMethod = sMethod.toUpperCase();<br><br>    try<br>    &#123;<br>      if (sMethod == &quot;GET&quot;)<br>      &#123;<br>        xmlhttp.open(sMethod, sURL, true);<br>        sVars = &quot;&quot;;<br>      &#125;<br>      else<br>      &#123;<br>        xmlhttp.open(sMethod, sURL, true);<br>        xmlhttp.setRequestHeader(&quot;Method&quot;, &quot;POST &quot;+sURL+&quot; HTTP/1.1&quot;);<br>        xmlhttp.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-form-urlencoded&quot;);<br>      &#125;<br>      xmlhttp.onreadystatechange = function() &#123;<br>        if (xmlhttp.readyState == 4 &amp;&amp; !bComplete)//再才发现,为什么别人写的不卡了,原因在这,请求完成后才处理<br>        &#123;<br>          bComplete = true;<br>          fnDone(xmlhttp);<br>        &#125;&#125;;<br>      xmlhttp.send(sVars);<br>    &#125;<br>    catch(z) &#123; return false; &#125;<br>    return true;<br>  &#125;;<br>  return this;<br>&#125;<br>代码分析<br><pre>var p=15;//初始每页大小<br>var page=1;//初始当前页<br>var count=0;//初始请求的总数<br>var q=&quot;&quot;;//是不是有查询<br>var all_count=0;//初始DATATABLE的总数,由XML文件的COUNT返回<br>var page_count=0;//初始分页数<br>var t_out=false;<br>function replaceit(str)<br>&#123;<br>    var re;<br>    re=/&lt;/g;<br>    str=str.replace(re,&quot;&amp;lt;&quot;);<br>    re=/&gt;/g;<br>    str=str.replace(re,&quot;&amp;gt;&quot;);<br>    return str;<br>&#125;<br><br>function ajaxObj()//完成一个XMLHTTP请求,并处理<br>&#123;<br>  var xmlhttp, bComplete = false;<br>  try &#123; xmlhttp = new ActiveXObject(&quot;Msxml2.XMLHTTP&quot;); &#125;<br>  catch (e) &#123; try &#123; xmlhttp = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;); &#125;<br>  catch (e) &#123; try &#123; xmlhttp = new XMLHttpRequest(); &#125;<br>  catch (e) &#123; xmlhttp = false; &#125;&#125;&#125;<br>  if (!xmlhttp) return null;<br>  this.connect = function(sURL, sMethod, fnDone)<br>  &#123;<br>    if (!xmlhttp) return false;<br>    bComplete = false;<br>    sMethod = sMethod.toUpperCase();<br><br>    try<br>    &#123;<br>      if (sMethod == &quot;GET&quot;)<br>      &#123;<br>        xmlhttp.open(sMethod, sURL, true);<br>        sVars = &quot;&quot;;<br>      &#125;<br>      else<br>      &#123;<br>        xmlhttp.open(sMethod, sURL, true);<br>        xmlhttp.setRequestHeader(&quot;Method&quot;, &quot;POST &quot;+sURL+&quot; HTTP/1.1&quot;);<br>        xmlhttp.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-form-urlencoded&quot;);<br>      &#125;<br>      xmlhttp.onreadystatechange = function() &#123;//处理在这呢<br>        if (xmlhttp.readyState == 4 &amp;&amp; !bComplete)<br>        &#123;<br>          bComplete = true;<br>          fnDone(xmlhttp);<br>        &#125;&#125;;<br>      xmlhttp.send(sVars);<br>    &#125;<br>    catch(z) &#123; return false; &#125;<br>    return true;<br>  &#125;;<br>  return this;<br>&#125;<br><br>function http_send(url)//发出添加请求<br>&#123;<br>    var request = new ajaxObj();<br>    var requestComplete = function (oXML) &#123;<br>        //o(&quot;spank_body&quot;).innerHTML=&quot;Loading…&quot;;<br>    &#125;;<br>    request.connect(url, &quot;POST&quot;, requestComplete);<br>&#125;<br>function xml_dom() &#123; //返回一个XML对像,没用了<br>    var xmldom;<br>    if (window.ActiveXObject)&#123;<br>         xmldom = new ActiveXObject(&quot;Microsoft.XMLDOM&quot;);<br>    &#125; else &#123;<br>        if (document.implementation &amp;&amp; document.implementation.createDocument) &#123;<br>         xmldom = document.implementation.createDocument(&quot;&quot;,&quot;doc&quot;,null);<br>        &#125;<br>    &#125;<br>    xmldom.async = false;<br>    xmldom.resolveExternals = false;<br>    xmldom.validateOnParse = false;<br>    xmldom.preserveWhiteSpace = true;<br>    return xmldom;<br>&#125;<br><br>function o(obj)//获取一个元素<br>&#123;<br>return document.getElementById(obj)<br>&#125;<br><br>function spank_it()//添加一个新记录<br>&#123;<br>var ss1=o(&quot;select&quot;).value;<br>var ss2=o(&quot;talk&quot;).value;<br>url=&quot;?inc=new&amp;s=&quot;+ss1+&quot;&amp;t=&quot;+ss2;<br>http_send(url);<br>//document.write(url)<br>q=&quot;&quot;;<br>first();<br>o(&quot;talk&quot;).value=&quot;&quot;;<br>return false;<br>&#125;<br>function settimeout()//发出对XML文件的请求<br>&#123;<br>//var objDom = xml_dom()<br>url=&quot;?inc=list&amp;q=&quot;+q+&quot;&amp;page=&quot; +page+&quot;&amp;p=&quot;+p+&quot;&amp;s=&quot;+Math.random();<br><br>//objDom.load(url);<br><br>var request = new ajaxObj();<br>var objDom;<br>    var requestComplete = function (oXML) &#123;<br>        responsexml(oXML.responseXML);<br>    &#125;;<br>    request.connect(url, &quot;GET&quot;, requestComplete);<br>    //objDom(objDom)<br><br>&#125;<br>function responsexml(objDom)//输出XML<br>&#123;<br>    var span_td=o(&quot;spank_body&quot;);<br>    var items=objDom.getElementsByTagName(&quot;item&quot;);<br>all_count=objDom.getElementsByTagName(&quot;count&quot;).item(0).firstChild.nodeValue;<br>str=&quot;&lt;table width=90%  align=right border=0 align=center cellpadding=4 cellspacing=0&gt;&quot;;<br>for (var i=0; i&lt;items.length; i++)<br>      &#123;<br>      str1=items[i].childNodes[0].firstChild.nodeValue;<br>      str2=items[i].childNodes[1].firstChild.nodeValue;<br>      str3=items[i].childNodes[2].firstChild.nodeValue;<br>      str+=&quot;&lt;tr&gt;&lt;td align=right width=120 class=sp_title&gt;&quot;+replaceit(str1)+&quot;:&lt;/td&gt;&lt;td class=sp_content&gt;&quot;+replaceit(str2)+&quot;&lt;/td&gt;&lt;/tr&gt;&quot;;<br><br>      &#125;<br>      count=items.length;<br>      str+=&quot;&lt;/table&gt;&quot;;<br>      span_td.innerHTML=str;<br>      var pspan=o(&quot;page_span1&quot;);<br>      if(all_count % p&gt;0)<br>      page_count=Math.floor(all_count / p)+1;<br>      else<br>      page_count=all_count / p;<br>      pspan.innerHTML=page_count;<br>&#125;<br>function re_load()//初始化,当搜索和分页时<br>&#123;<br>    q=&quot;&quot;;<br>    first();<br>&#125;<br><br>function set_p(value)//设置每页大小,重新初始化<br>&#123;<br>p=value;<br>load_spank();<br>&#125;<br>function change_pagetxt(num)//更改分页显示<br>&#123;<br>    o(&quot;page_span&quot;).innerText=num;<br>&#125;<br>/<em>分页,就不多说了</em>/<br>function next()<br>&#123;<br>if(count==p)<br>&#123;<br>page+=1;<br>load_spank();<br>&#125;<br>change_pagetxt(page);<br>&#125;<br>function last()<br>&#123;<br>if(page&gt;1)<br>&#123;<br>page-=1;<br>load_spank();<br>&#125;<br>change_pagetxt(page);<br>&#125;<br>function first()<br>&#123;<br>    page=1;<br>load_spank();<br>change_pagetxt(page);<br>&#125;<br><br>function end()<br>&#123;<br>    page=page_count;<br>load_spank();<br>change_pagetxt(page);<br>&#125;<br><br>function search_spank()<br>&#123;<br>    q=o(&quot;q&quot;).value;<br>    load_spank();<br>    return false;<br>&#125;<br>function load_spank()<br>&#123;<br>    t_out=false;<br>    o(&quot;spank_body&quot;).innerHTML=&quot;Loading…&quot;;<br>    settimeout();<br>&#125;<br><br></pre><br>关键在这里<br><pre>function settimeout()<br>&#123;<br>//var objDom = xml_dom()<br>url=&quot;?inc=list&amp;q=&quot;+q+&quot;&amp;page=&quot; +page+&quot;&amp;p=&quot;+p+&quot;&amp;s=&quot;+Math.random();<br><br>//objDom.load(url);<br><br>var request = new ajaxObj();<br>var objDom;<br>    var requestComplete = function (oXML) &#123;//在完成请求时执行该方法<br>        responsexml(oXML.responseXML);<br>    &#125;;<br>    request.connect(url, &quot;GET&quot;, requestComplete);<br>    //objDom(objDom)<br><br>&#125;<br></pre></pre></div></div></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2006/03/20/thebar-e7-9c-9f-e6-ad-a3-e4-ba-92-e5-8a-a8-e7-9a-84-e9-85-92-e5-90-a7-e8-bd-ac-e8-b4-b4/" itemprop="url">
                 TheBar真正互动的酒吧--转贴
               </a>
@@ -847,83 +919,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2006/03/09/e4-b8-89-e4-bd-8d-e5-8c-97-e4-ba-ac-e4-bb-a3-e8-a1-a8-e9-a6-96-e6-ac-a1-e7-bd-91-e8-81-8a-e2-80-9c-e6-96-b0-e5-86-9c-e6-9d-91-e2-80-9d-e5-bb-ba-e8-ae-be-e8-bd-ac-e8-b4-b4/" itemprop="url">
-                三位北京代表首次网聊“新农村”建设 - 转贴
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2006-03-09T08:13:12+08:00" content="2006-03-09">
-            2006-03-09
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分類於
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/公益研究/" itemprop="url" rel="index"><span itemprop="name">公益研究</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><div id="msgcns!9697D6160EFEBC17!611" class="bvMsg"><div>出处:<a href="http://news.xinhuanet.com/misc/2006-03/08/content_4276234.htm" target="_blank" rel="external">http://news.xinhuanet.com/misc/2006-03/08/content_4276234.htm</a></div><br><div> </div><br><div><strong>北京28000位农村困难 老人小病不用再“自己扛”</strong>      </div>
-
-<pre><code>“培养农民成为农产品的经济人”、“全国农村劳力高中以上文化水平的只占<span class="number">12</span><span class="comment">%”、“慈善救助两三年内能使北京28000困难老人小病不用再自己扛”……3月7日晚上7点半，正在出席十届全国人大四次会议的北京团全国人大代表———北京市第十一届人大常委会副主任张燕丽、大兴区区委书记沈宝昌、昌平区委书记赵凤桐做客市人大常委会门户网站与千龙网共同设置的两会直播间，就北京市建设社会主义新农村的话题接受在线访谈。 </span>
-</code></pre><p></p><p>    张燕丽代表认为，要建设社会主义新农村，就要培养新型农民，全国现在大概有四亿九千七百万农村劳力，高中以上文化水平的只有12％。小学和小学以下的大概占40％，受教育程度普遍低。所以，应该加强农民各方面的技能培训。张代表还在网上透露：“有些生活困难的老年人一般小病自己就扛了，因为他没有钱。我们给了500元慈善医疗卡以后，他的小病可以得到及时治疗。北京市农村大概有28000位这样的老人，根据慈善协会的财力，争取两三年之内，把他们看不起病的问题全部解决。” </p>
-<p></p><p>    沈宝昌代表谈到，大兴区已成立了农产品的流通组织，培养农民成为农产品的经济人，这样使农民增收渠道向流通领域延伸。他还提到，大兴区会进一步丰富旅游点的旅游内容、提高接待能力，这样使当地的农民也能够致富。（记者孟环）<br></p></div><p></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -963,7 +958,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">666</span>
+              <span class="site-state-item-count">667</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -977,7 +972,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-count">41</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>

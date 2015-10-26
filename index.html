@@ -160,6 +160,78 @@
           
           
             
+              <a class="post-title-link" href="/2015/10/26/NPM太慢了怎么办/" itemprop="url">
+                NPM太慢了怎么办
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於
+          <time itemprop="dateCreated" datetime="2015-10-26T15:45:36+08:00" content="2015-10-26">
+            2015-10-26
+          </time>
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h1 id="NPM速度太慢，感觉生命都浪费在了等待上">NPM速度太慢，感觉生命都浪费在了等待上</h1><p>为了解决史前社会访问NPM速度慢，有聪明的人类发明了CNPM，速度快了不少，但是也有很多遗憾。</p>
+<p>很多包安装并不会理睬CNPM的存在，例如react-natice, yeoman等等。装一半还是要Ctrl + C 中断，然后再 cnpm install，感觉相当不舒服。</p>
+<h1 id="—verbose_加参数看进度">—verbose 加参数看进度</h1><p>为了解决安装时卡着没反应，聪明的人类发现了可以加参数，例如：</p>
+<pre><code>npm <span class="operator"><span class="keyword">install</span> hexo -g <span class="comment">--verbose</span></span>
+</code></pre><p>这样可以一直看到进程，某种程度上缓解焦虑症，然并卵，它不能从根本上解决问题。</p>
+<h1 id="smart-npm">smart-npm</h1><p><a href="https://github.com/qiu8310/smart-npm" target="_blank" rel="external">github</a></p>
+<p>这里有个少年，想到了封装npm，按照操作来自动判断使用npm还是cnpm，感觉上智能了很多。只是侵入感太强，要修改很多东西。</p>
+<h1 id="nrm">nrm</h1><p><a href="https://github.com/Pana/nrm" target="_blank" rel="external">github</a></p>
+<p>另一个少年，想到了切换registry源，可以先测试各地npm镜像速度，然后修改注册源的地址，从而达到快速访问效果。</p>
+<h1 id="写在最后">写在最后</h1><p>如果可能的话，使用cnpm搭建私有源，配合nrm感觉上是最靠谱的。</p>
+<p>如果有一个高速VPN，以上都不是问题了～</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/09/18/django-cms/" itemprop="url">
                 django cms in Mac
               </a>
@@ -1201,87 +1273,6 @@ withInputParameters: [
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/03/Nodejs项目中用到的用户权限管理系统/" itemprop="url">
-                Nodejs项目中用到的用户权限管理系统
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-08-03T18:26:02+08:00" content="2015-08-03">
-            2015-08-03
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>权限管理，是管理系统中的常见组件。通常需要定义资源，把资源调配给用户，通过判断用户是否有权限增删改查来实现。</p>
-<p><a href="https://en.wikipedia.org/wiki/Access_control_list" target="_blank" rel="external">ACL</a>：Access Control List，访问控制列表，是比较流行的设计方式。通过吧用户和权限挂钩来实现。</p>
-<p><a href="https://en.wikipedia.org/wiki/Role-based_access_control" target="_blank" rel="external">RBAC</a>：Role Based Access Control，角色访问控制系统，是另一个实现思路。提炼出角色对象，把用户和角色绑定，角色来对应权限，角色和权限没有直接关联，对复杂的系统来说，更加容易管理。</p>
-<h2 id="RBAC">RBAC</h2><p><img src="https://upload.wikimedia.org/wikipedia/en/c/c3/RBAC.jpg" alt="wiki"></p>
-<p><img src="http://dl.iteye.com/upload/attachment/425543/d2573c4d-dca7-380f-b2fc-6cda19d6eaf5.jpg" alt=""></p>
-<h2 id="资料">资料</h2><p><a href="http://rongxh2010.iteye.com/blog/930648" target="_blank" rel="external">扩展RBAC用户角色权限设计方案</a></p>
-<p><a href="http://blog.csdn.net/tch918/article/details/18449043" target="_blank" rel="external">基于AOP实现权限管理：访问控制模型RBAC和ACL</a></p>
-<p><a href="http://blog.csdn.net/gxp/article/details/6741652" target="_blank" rel="external">基于RBAC模型的权限管理系统的设计和实现</a></p>
-<h2 id="node_实现">node 实现</h2><p>源自：<a href="https://gist.github.com/facultymatt/6370903" target="_blank" rel="external">这篇</a></p>
-<p><a href="https://github.com/seeden/rbac" target="_blank" rel="external">https://github.com/seeden/rbac</a><br>Hierarchical Role Based Access Control for NodeJS</p>
-<p><a href="https://github.com/djvirgen/virgen-acl" target="_blank" rel="external">https://github.com/djvirgen/virgen-acl</a><br>Simple and elegant, create your own checks. No middleware? </p>
-<p><a href="https://github.com/OptimalBits/node_acl" target="_blank" rel="external">https://github.com/OptimalBits/node_acl</a><br>Use as middleware, create your own roles and access. Great choice. </p>
-<p><a href="https://github.com/tschaub/authorized" target="_blank" rel="external">https://github.com/tschaub/authorized</a><br>Similar to connect roles… but a bit more robust? you can create roles and action, and associate many roles with that action</p>
-<p><a href="https://github.com/scottkf/ability-js" target="_blank" rel="external">https://github.com/scottkf/ability-js</a><br>Like canCan for rails. This is a traditional controller / function type permission system. May be too abstract. </p>
-<p><a href="https://github.com/dresende/node-roles" target="_blank" rel="external">https://github.com/dresende/node-roles</a><br>More traditional setRole() hasRole() based checking. Last activity 2 years ago. </p>
-<p><a href="https://github.com/carlos8f/node-relations" target="_blank" rel="external">https://github.com/carlos8f/node-relations</a><br>Natural language style roles. Looks very promising and is in active development</p>
-<p><a href="https://github.com/ForbesLindesay/connect-roles" target="_blank" rel="external">https://github.com/ForbesLindesay/connect-roles</a><br>Simple and closer to action / natural language based. Requires writing your own checks for each. </p>
-<p><a href="https://github.com/ajlopez/SimplePermissions" target="_blank" rel="external">https://github.com/ajlopez/SimplePermissions</a><br>Maybe too simple? Makes sense for assigning roles but then its hard to check against roles! </p>
-<p><a href="https://npmjs.org/package/entitlement" target="_blank" rel="external">https://npmjs.org/package/entitlement</a><br>Not ideal but here for reference sake.</p>
-<h2 id="Mongoose_Field_Access_Control">Mongoose Field Access Control</h2><p><a href="https://github.com/codedoctor/mongoose-plugins-accessible-by" target="_blank" rel="external">https://github.com/codedoctor/mongoose-plugins-accessible-by</a> Set access per field of mongoose Schema. Not supported or maintained, and noted as not a perfect fit in all cases… but worth considering as a simple way to control access to fields. </p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1321,7 +1312,7 @@ withInputParameters: [
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">666</span>
+              <span class="site-state-item-count">667</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -1335,7 +1326,7 @@ withInputParameters: [
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-count">41</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
