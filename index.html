@@ -193,10 +193,12 @@
         
           <span itemprop="articleBody"><h1 id="NPM速度太慢，感觉生命都浪费在了等待上">NPM速度太慢，感觉生命都浪费在了等待上</h1><p>为了解决史前社会访问NPM速度慢，有聪明的人类发明了CNPM，速度快了不少，但是也有很多遗憾。</p>
 <p>很多包安装并不会理睬CNPM的存在，例如react-natice, yeoman等等。装一半还是要Ctrl + C 中断，然后再 cnpm install，感觉相当不舒服。</p>
-<h1 id="—verbose_加参数看进度">—verbose 加参数看进度</h1><p>为了解决安装时卡着没反应，聪明的人类发现了可以加参数，例如：</p>
+<h1 id="npm_参数">npm 参数</h1><h2 id="—verbose_加参数看进度">—verbose 加参数看进度</h2><p>为了解决安装时卡着没反应，聪明的人类发现了可以加参数，例如：</p>
 <pre><code>npm <span class="operator"><span class="keyword">install</span> hexo -g <span class="comment">--verbose</span></span>
 </code></pre><p>这样可以一直看到进程，某种程度上缓解焦虑症，然并卵，它不能从根本上解决问题。</p>
-<h1 id="smart-npm">smart-npm</h1><p><a href="https://github.com/qiu8310/smart-npm" target="_blank" rel="external">github</a></p>
+<h2 id="—ignore-scripts_跳过安装脚本错误">—ignore-scripts 跳过安装脚本错误</h2><p>跳过一些安装脚本报错，反正先给我装上再说啊</p>
+<pre><code><span class="comment">npm</span> <span class="comment">install</span> <span class="comment">hexo</span> <span class="literal">-</span><span class="comment">g</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">verbose</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">ignore</span><span class="literal">-</span><span class="comment">scripts</span>
+</code></pre><h1 id="smart-npm">smart-npm</h1><p><a href="https://github.com/qiu8310/smart-npm" target="_blank" rel="external">github</a></p>
 <p>这里有个少年，想到了封装npm，按照操作来自动判断使用npm还是cnpm，感觉上智能了很多。只是侵入感太强，要修改很多东西。</p>
 <h1 id="nrm">nrm</h1><p><a href="https://github.com/Pana/nrm" target="_blank" rel="external">github</a></p>
 <p>另一个少年，想到了切换registry源，可以先测试各地npm镜像速度，然后修改注册源的地址，从而达到快速访问效果。</p>
